@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-010"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Meta"
@@ -119,7 +119,7 @@ validation_status:
     stage_3_watch_items: ["Verify whether the pseudospectrum winding of the Orr-Sommerfeld-Squire symbol rigorously equals the count of wall-localized resolvent modes via bulk-boundary correspondence in the same sense as Kane-Lubensky winding", "Confirm that the claimed discontinuous jump in localization length at Re_τ^* ≈ 1800-2500 is not already anticipated by existing resolvent or SPOD analyses"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 010
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 010
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Topological structural mechanics of isostatic Maxwell lattices exhibiting Kane-Lubensky protected floppy modes and states of self-stress localized at free boundaries due to topological polarization.

@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-018"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Alibaba"
@@ -115,7 +115,7 @@ validation_status:
     stage_3_watch_items: ["Confirm that the Dreybrodt-style aperture law plus cubic-flow coarse-graining truly yields a logistic-like drift A_k(b) under the parameter regimes typical of hypogene settings.", "Verify whether the quasi-stationary gamma/negative-binomial form and logarithmic breakthrough-time scaling are genuine predictions of the gene-family birth-death process under the stated boundary conditions."]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 018
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 018
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Gene-family evolution, specifically stochastic duplication–loss–innovation dynamics of discrete gene-copy-number states evolving along phylogenies, with observed extant copy-number distributions and inferred ancestral family sizes.

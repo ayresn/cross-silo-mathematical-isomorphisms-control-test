@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-017"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Alibaba"
@@ -111,7 +111,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether the shared amplitude normal form and reduction-to-Liénard claims in Section 3 are regarded as sufficient demonstration of a common numerical-solution family, or whether explicit shared algorithmic structure is required."]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 017
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 017
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Computational aeroelasticity — nonlinear flutter and limit-cycle oscillation (LCO) of a two-degree-of-freedom airfoil or control surface with unsteady aerodynamic lag, structural freeplay, and cubic stiffness effects.

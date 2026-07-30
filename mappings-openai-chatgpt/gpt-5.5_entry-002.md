@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-002"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "OpenAI"
@@ -118,7 +118,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether stiffness variation is intended as a design parameter or as a time-dependent parametric coefficient comparable to β(z)", "Verify that the aeroelastic state-space form after discretization genuinely inherits a Hamiltonian or near-Hamiltonian structure under the claimed slowly-varying coefficients", "Assess whether interaction-picture splitting has already been explored in partitioned aeroelasticity literature at a level that would reduce novelty"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 002
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 002
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 

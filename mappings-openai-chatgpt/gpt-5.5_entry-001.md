@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-001"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "OpenAI"
@@ -114,7 +114,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether damage variable D and local reactivity are treated as objects of identical mathematical type in any shared operator formulation", "Verify that a common variational or numerical-solution family is actually shared (beyond the transfer proposed in Section 4)", "Assess whether the parabolic character of the damage evolution equation undermines the claimed elliptic reaction-diffusion isomorphism"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 001
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 001
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 

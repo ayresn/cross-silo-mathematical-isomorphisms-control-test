@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-004"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Google"
@@ -112,7 +112,7 @@ validation_status:
     stage_3_watch_items: ["Confirm that the directed (asymmetric) mobility matrix in the NGM admits an identical SMW rank-1 update form to the symmetric susceptance Laplacian without additional symmetrization steps.", "Verify that the stated O(1) multi-edge GLODF transfer remains exact when the NGM spectral radius R_* is the target rather than the resolvent itself."]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 004
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 004
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Power Grid Cascading Failure Analysis ($N-k$ Contingency Security) - The study of how the sequential failure of transmission lines triggers non-local redistribution of active power flow, leading to widespread systemic collapse.

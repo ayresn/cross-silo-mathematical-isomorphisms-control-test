@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-012"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "DeepSeek"
@@ -105,7 +105,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether any continuum energy-balance derivation actually yields the quoted cylindrical-streamer ODE with effective inertia and surface energy", "Verify that the Laplace-potential free-boundary formulation is used in the dielectric literature in a form that maps onto the Rayleigh-Plesset structure", "Assess whether the claimed VOF-style source term for (E²-E_c²) has been attempted or is purely speculative"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 012
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 012
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Hydrodynamic cavitation – the nucleation, growth, and collapse of vapor bubbles in a liquid when the local pressure drops below the vapor pressure, as modeled by the Rayleigh-Plesset equation and multi-phase flow solvers.

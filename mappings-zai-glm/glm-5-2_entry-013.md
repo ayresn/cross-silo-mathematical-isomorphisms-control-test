@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-013"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Z.AI"
@@ -110,7 +110,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether mutational meltdown / strain localization correspondence can be given operator-level or variational form comparable to the complementarity and projection statements already present", "Probe whether the continuous-complementarity formulation claimed for gene-family evolution is an original mapping or an imported relabeling of the plasticity system"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 013
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 013
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Gene-family-evolution (evolutionary dynamics of paralogous sequences across a high-dimensional viability landscape).

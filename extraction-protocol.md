@@ -3,7 +3,7 @@ type: "methodological-protocol"
 utility: "large-language-model-structural-isomorphism-discovery"
 target_architecture: "model-agnostic-deep-learning-systems"
 reproducibility: "protocol-guided-candidate-generation"
-schema_version: "1.0-production"
+schema_version: "1.0-control"
 pipeline_stage: "stage-1-generation"
 ---
 
@@ -47,7 +47,7 @@ Every entry has exactly one 3-digit number, scoped to the generating model's own
 ---
 sid_metadata:
   entry_id: "SID-[Entry Number per the Entry Numbering Rule above, e.g., 001]"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "candidate"
 provenance:
   company: "[Insert AI Company Name]"
@@ -88,7 +88,7 @@ validation_status:
   bibliometric_validation: "pending"
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY [Same Entry Number as sid_metadata.entry_id above, e.g., 001]
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY [Same Entry Number as sid_metadata.entry_id above, e.g., 001]
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** [Specific technical sub-discipline and core phenomenon observed].

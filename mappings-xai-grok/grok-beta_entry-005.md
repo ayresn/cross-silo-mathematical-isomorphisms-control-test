@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-005"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "xAI"
@@ -111,7 +111,7 @@ validation_status:
     stage_3_watch_items: []
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 005
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 005
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 * **Silo A (Field 1):** Nonlocal continuum damage mechanics of quasi-brittle solids, specifically eikonal and gradient-enhanced models in which damage evolves a position-dependent Riemannian metric that regularizes localization bands via anisotropic nonlocal interactions.

@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-016"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Anthropic"
@@ -113,7 +113,7 @@ validation_status:
     stage_3_watch_items: ["Verify whether the added first-order relaxation term preserves the exact spectral point-gap structure claimed for the maximally non-reciprocal limit under open boundaries", "Confirm that the GBZ envelope formula yields a quantitatively distinct N-dependence from classical convective criteria on the cited trajectory datasets"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 016
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 016
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Microscopic traffic-flow theory — optimal-velocity/GM-family car-following models, and the convective-vs-absolute string-instability transition that produces stop-and-go ("phantom") jams in a finite vehicle platoon.

@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-006"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "xAI"
@@ -114,7 +114,7 @@ validation_status:
     stage_3_watch_items: []
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 006
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 006
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 * **Silo A (Field 1):** Population-viability analysis via continuous-state diffusion approximations of density-dependent birth-death processes, tracking quasi-stationary distributions and mean extinction times under demographic and environmental stochasticity.

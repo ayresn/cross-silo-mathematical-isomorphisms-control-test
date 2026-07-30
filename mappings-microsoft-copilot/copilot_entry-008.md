@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-008"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Microsoft"
@@ -100,7 +100,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether continuum-like gradient-flow representations of network cascades (with double-well + graph-Laplacian regularization) are sufficiently common in the cascade literature to support the claimed operator equivalence, or whether the entry relies primarily on a constructed continuum limit."]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY SID-008
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY SID-008
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** *Information cascade fronts on complex networks* — the spatio-temporal propagation of adoption/infection states across heterogeneous graphs, often modeled by threshold, contagion, or reaction–diffusion-like dynamics producing sharp advancing fronts across communities.

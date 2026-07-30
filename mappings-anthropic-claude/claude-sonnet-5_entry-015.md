@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-015"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Anthropic"
@@ -106,7 +106,7 @@ validation_status:
     stage_3_watch_items: []
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 015
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 015
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Actuarial ruin theory — the classical and generalized Cramér–Lundberg collective risk model, specifically the search for the Lundberg adjustment coefficient (or, for matrix-exponential/phase-type claim severities, the full set of roots of the generalized Lundberg equation) governing the exponential decay rate of the infinite-horizon ruin probability ψ(u).

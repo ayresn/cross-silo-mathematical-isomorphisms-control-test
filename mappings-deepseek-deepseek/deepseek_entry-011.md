@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-011"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "DeepSeek"
@@ -117,7 +117,7 @@ validation_status:
     stage_3_watch_items: ["Exact source-term identification of d versus ρ_m in the respective elliptic operators", "Whether Helmholtz (screened) versus pure Poisson constitutes the claimed operator family without residual mismatch", "Whether the irreversibility restriction noted in primary_failure_risk undermines the avalanche-rate-equation equivalence under cyclic loading"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 011
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 011
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Artificial-spin-ice (ASI) – collective dynamics of emergent magnetic monopole quasiparticles on a geometrically frustrated lattice of single-domain nanomagnets, described by vertex‑charge models that obey a Poisson equation for the scalar magnetic potential.

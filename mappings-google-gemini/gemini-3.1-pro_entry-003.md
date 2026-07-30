@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-003"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Google"
@@ -116,7 +116,7 @@ validation_status:
     stage_3_watch_items: ["Confirm whether Section 3's dynamical equations plus latent-space topology paragraph sufficiently instantiate supermode eigenvalue solutions, or whether the claim relies primarily on Section 4 transfer language", "Verify that the pure-imaginary coupling iκ versus complex (D + i W_syn) does not introduce a structural mismatch under the claimed conservative Laplacian operator role"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 003
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 003
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Semiconductor Laser Dynamics (Specifically, laterally evanescent-coupled broad-area or vertical-cavity laser arrays operating in the weakly non-linear regime).

@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-007"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-flagged"
 provenance:
   company: "Microsoft"
@@ -116,7 +116,7 @@ validation_status:
     stage_3_watch_items: ["Whether zero eigenvalue of the OS/Squire operator genuinely coincides with a fold of the underlying steady NS residual (or only with neutral modal stability of a parallel base)", "Extent to which power-system bordering/pseudo-arclength pipelines differ in practice from existing CFD continuation packages already applied to separated boundary layers", "Empirical status of hysteresis and fold curves in Falkner–Skan or adverse-pressure-gradient families relative to TS thresholds"]
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY SID-007
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY SID-007
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** *Power‑system voltage stability analysis* — slow parameter drift (load increase, generator reactive limits) leading to **saddle‑node voltage collapse** detected via singularity of the power‑flow Jacobian and tracked with numerical continuation and bifurcation analysis.

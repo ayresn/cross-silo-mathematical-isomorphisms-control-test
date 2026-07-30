@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-014"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Z.AI"
@@ -106,7 +106,7 @@ validation_status:
     stage_3_watch_items: []
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 014
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 014
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Dislocation-dynamics-in-crystalline-solids, specifically the continuum transport of geometrically necessary dislocations (GNDs) modeled via the Nye tensor.

@@ -1,7 +1,7 @@
 ---
 sid_metadata:
   entry_id: "SID-009"
-  schema_version: "1.0-production"
+  schema_version: "1.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
   company: "Meta"
@@ -121,7 +121,7 @@ validation_status:
     stage_3_watch_items: []
 ---
 
-# INTERDISCIPLINARY STRUCTURAL MAPPING: ENTRY 009
+# INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 009
 
 ## 1. CROSS-SILO SYSTEM DEFINITION
 *   **Silo A (Field 1):** Finite-strain computational elastoplasticity with Lee multiplicative decomposition and associative J2 flow, where stress is elastically predicted then plastically corrected via projection onto a evolving convex yield surface.
