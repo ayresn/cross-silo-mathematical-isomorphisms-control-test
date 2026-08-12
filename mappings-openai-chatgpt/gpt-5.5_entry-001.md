@@ -121,7 +121,7 @@ validation_status:
       - "Check 3: The correspondence vector 'variational_and_numerical_solution_family' is listed but not demonstrated with any equation, operator identity, or derivation in the body."
     flagged_checks: []
     quoted_evidence:
-      - "Check 1 — Section 3: 'In latent operator space, both problems are governed by nonlinear elliptic reaction-diffusion systems whose qualitative transition is determined by spectral migration of the principal eigenvalue under evolving material coefficients.' The damage equation displayed is \dot{D} = R(\sigma,D) + \nabla\cdot(\ell_d^2 \nabla D), \qquad \nabla\cdot\sigma=0, which contains a first-order time derivative and is parabolic, not elliptic."
+      - "Check 1 — Section 3: 'In latent operator space, both problems are governed by nonlinear elliptic reaction-diffusion systems whose qualitative transition is determined by spectral migration of the principal eigenvalue under evolving material coefficients.' The damage equation displayed is \\dot{D} = R(\\sigma,D) + \\nabla\\cdot(\\ell_d^2 \\nabla D), \\qquad \\nabla\\cdot\\sigma=0, which contains a first-order time derivative and is parabolic, not elliptic."
       - "Check 3 — YAML `triple_correspondence_vectors` includes 'variational_and_numerical_solution_family'. The body (Section 4) only describes the transfer of eigenmode acceleration techniques; it supplies no equation, operator identity, or derivation that establishes this solution family as a shared structural correspondence. The vector is merely named."
     stage_3_watch_items: []
   seventh_adversarial_review:
