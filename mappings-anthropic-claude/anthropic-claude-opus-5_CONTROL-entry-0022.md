@@ -2,7 +2,7 @@
 sid_metadata:
   entry_id: "CONTROL-SID-0022"
   schema_version: "2.0-control"
-  maturity_stage: "candidate"
+  maturity_stage: "adversarial-flagged"
 provenance:
   company: "Anthropic"
   model_family: "Claude"
@@ -42,6 +42,118 @@ validation_status:
   constitutive_equivalence_confidence: "medium"
   primary_failure_risk: "beta_not_unity_breaks_bilinear_capacity_closure"
   bibliometric_validation: "pending"
+  first_adversarial_review:
+    reviewer_model: "Alibaba Qwen 3.8 Max"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "FLAG"
+    verdict_rationale: "All five claimed vectors are supported by equations in the body, but the k_ov↔κ vocabulary entry overstates the shared series-resistance structure by asserting each constituent conductance is a Sherwood/Graetz eigenvalue conductance, whereas the entry's own κ closure includes the kinetic conductance k_s."
+    failed_checks: []
+    flagged_checks: ["Check 2: k_ov↔κ Operator Role claims 'each constituent conductance is k_i = Sh_i·D/(2r_p)' although Silo B's 1/κ=1/k_c+1/k_s contains k_s, a surface-reaction conductance not expressed as a Sherwood/Graetz eigenvalue conductance."]
+    quoted_evidence: []
+    stage_3_watch_items: [
+      "Verify whether the harmonic-mean vector should be stated as shared series-resistance form only, not as all constituents arising from leading Graetz eigenvalues.",
+      "Check bibliographically whether Bohart-Adams/Thomas/LUB or chromatographic shock-layer scale-up has already been applied to carbonate acidization stable-branch PV_BT.",
+      "Check numeric consistency of the stated Da values: with L=5,10,20 cm, U=1.5e-5 m/s, and k_s a_v0=5e-3 1/s, Da is approximately 16.7, 33.3, 66.7 rather than 15,30,60.",
+      "Assess whether Sherwood numbers 10, 3.66, and 48/11 are being used precisely as leading eigenvalues or as asymptotic transfer coefficients in the cited contexts."
+    ]
+  second_adversarial_review:
+    reviewer_model: "DeepSeek DeepSeek V4 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The claimed exact retention-factor identity k′=N_ac⁻¹ is algebraically inconsistent with the displayed Silo A and Silo B front-speed formulas, and the harmonic-mean mapping misattributes the Silo B surface-reaction rate k_s as a Graetz eigenvalue."
+    failed_checks:
+      - "Check 1: the displayed Rankine-Hugoniot speed formulas do not support k′=N_ac⁻¹ exactly"
+      - "Check 2: the k_ov↔κ Operator Role falsely states each constituent conductance is a Graetz eigenvalue"
+      - "Check 3: correspondence vector 1 (retention factor equal to inverse acid capacity number) is not validly demonstrated"
+    flagged_checks:
+      - "Check 4: possible prior art in reactive-transport/adsorption-front literature; Bohart-Adams/Thomas models are canonical in porous-media reactive transport"
+    quoted_evidence:
+      - 'v_f=\frac{U C_0}{\varepsilon_1 C_0+\frac{\rho_s}{\alpha}(\varepsilon_1-\varepsilon_0)}\;\xrightarrow[\ \varepsilon_1\to 1\ ]{}\;\frac{U}{1+N_{ac}^{-1}},\qquad N_{ac}\equiv\frac{\alpha C_0}{\rho_s(1-\varepsilon_0)} which is v_s = u/(1+k′) with **k′ = N_ac⁻¹ exactly**.'
+      - 'v_s=\frac{[\,u_0 c\,]}{[\,\varepsilon_t c+n\,]}=\frac{u_0}{\varepsilon_t+\Delta n/\Delta c}=\frac{u}{1+k''},\qquad k''\equiv F\frac{\Delta\bar q}{\Delta c},\quad F=\frac{1-\varepsilon_t}{\varepsilon_t}'
+      - 'Both are the harmonic mean (series-resistance) combination (Σ 1/k_i)⁻¹ in which each constituent conductance is k_i = Sh_i·D/(2r_p) and each Sh_i is the leading eigenvalue of the transverse diffusion operator −∇²_⊥ on the internal geometry with the appropriate boundary condition.'
+    stage_3_watch_items:
+      - "Probe the missing ε_t factor in k′=N_ac⁻¹; all downstream PV_BT/LUB numbers depend on it."
+      - "Check for prior art: Bohart-Adams/Thomas fixed-bed models and retardation-factor formulations already used in carbonate acidization or reactive transport."
+      - "Verify whether k_ov a_v (NTU mapping) and k_BA q0 (Bohart-Adams logistic) are actually equated by the entry; they are distinct unless an unstated lumped-kinetic identification is imposed."
+      - "Verify the Graetz-eigenvalue attribution to k_s in the κ harmonic mean; Section 3 shows no such expression for the surface reaction."
+  third_adversarial_review:
+    reviewer_model: "Google Gemini 3.1 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "FLAG"
+    verdict_rationale: "The mathematical mapping is exceptionally rigorous and internally consistent, but the vocabulary matrix slightly overgeneralizes the harmonic-mean conductances by describing a chemical reaction rate constant as a diffusion eigenvalue."
+    failed_checks: []
+    flagged_checks: ["Check 2: k_ov to κ mapping incorrectly describes the surface reaction rate constant k_s as an eigenvalue-derived mass transfer conductance"]
+    quoted_evidence: []
+    stage_3_watch_items: ["Verify whether the application of the Collins Length of Unused Bed (LUB) invariant to stable-branch (compact dissolution) matrix acidizing for predicting PV_BT scale-up is genuinely novel or already exists in the reactive-transport literature."]
+  fourth_adversarial_review:
+    reviewer_model: "Xiaomi MiMo V2.5 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All four equations in Section 3 are correctly typed, belong to the same parabolic/hyperbolic class on both sides, and the bridge derivation eliminating the pore-scale sink via flux matching to recover the EDM term-for-term is algebraically valid; all vocabulary mappings reconcile type mismatches explicitly; all five correspondence vectors are demonstrated with full equations in the body; the transfer direction is genuinely asymmetric and the falsifiable prediction names specific measurable quantities with quantitative thresholds."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: [
+      "The general reactive-transport ↔ chromatography analogy is known at textbook level (e.g., Lichtner's continuum formulation of reactive transport notes structural parallels with fixed-bed adsorption). Stage 3 should probe whether the specific LUB-as-scale-up-invariant transfer from chromatography to carbonate acidization on the compact-dissolution branch has been published, particularly in SPE or JPSE venues. The entry's own novelty-falsification string ('Bohart-Adams' AND 'matrix acidizing') should be run.",
+      "The entry restricts the isomorphism to β = 1 (Panga structure-property exponent). Stage 3 should verify that the β ≠ 1 case genuinely breaks the bilinear closure into a Thomas-family rate law as claimed, and whether any published work has explored this connection.",
+      "The falsifiable prediction specifies Na₄EDTA chelant at pH 4 rather than HCl. Stage 3 should check whether the Fredd-Fogler rotating-disk kinetics for this system (k_s ≈ 5×10⁻⁷ m/s) and BET surface-area estimates (a_v0 ≈ 10⁴ m⁻¹) are consistent with reported experimental values in the cited chelant acidization literature."
+    ]
+  fifth_adversarial_review:
+    reviewer_model: "Z.AI GLM-5.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All mathematical derivations are internally consistent, equations correctly match their stated physical domains, vocabulary mappings are mathematically coherent, and all listed correspondence vectors are explicitly demonstrated with supporting equations."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: []
+  sixth_adversarial_review:
+    reviewer_model: "OpenAI GPT-5.6 Luna"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The claimed exact shared front dynamics fail internally: the reduced Bohart–Adams/acid reaction system used for the logistic correspondence omits mobile-phase accumulation and therefore implies a different front speed from the Rankine–Hugoniot speed asserted as exact."
+    failed_checks: ["Check 1: The Bohart–Adams and acid reduced equations do not support the claimed exact Rankine–Hugoniot front speed.", "Check 3: Vector 2 is not demonstrated as an exact shared logistic travelling-wave correspondence because its reduced systems imply a different front speed from Vector 1."]
+    flagged_checks: []
+    quoted_evidence: [""v_f=\frac{U C_0}{\varepsilon_1 C_0+\frac{\rho_s}{\alpha}(\varepsilon_1-\varepsilon_0)}\;\xrightarrow[\ \varepsilon_1\to 1\ ]{}\;\frac{U}{1+N_{ac}^{-1}}" — but the subsequent acid reaction-limited system "U\frac{\partial C_f}{\partial z}=-\frac{k_s a_{v0}}{Q_0}C_f Q,\qquad \frac{\partial Q}{\partial t}=-\frac{k_s a_{v0}}{Q_0}C_f Q" gives a travelling-wave speed v_f=U C_0/Q_0=U N_ac when Q goes from Q_0 to 0. These are not exactly equal; the latter is the strongly-retained limit of the former, so the text cannot simultaneously claim an exact Vector-1 front-speed identity and an identical Vector-2 travelling wave.", ""which is the Bohart–Adams pair with k_BA \leftrightarrow k_s a_{v0}/Q_0 = \alpha k_s a_{v0}/[\rho_s(1-\varepsilon_0)] and k_BA q_0 \leftrightarrow k_s a_{v0} (both s^{-1}). The travelling-wave reduction is identical" — the stated Bohart–Adams pair likewise yields v_s=u_0 c_0/q_0 from its own two equations, whereas the EDM Rankine–Hugoniot expression includes the mobile-inventory term and gives v_s=u_0/[\varepsilon_t+(1-\varepsilon_t)\Delta\bar q/\Delta c]. No exact identification eliminating that discrepancy is supplied."]
+    stage_3_watch_items: ["Probe whether the proposed chromatography/acidzation correspondence survives retention of the mobile-phase accumulation term rather than taking the strongly-retained approximation.", "Check the claimed harmonic-mean correspondence in Vector 4: the chromatography side uses film plus intraparticle mass-transfer resistances, whereas the acidization side uses mass transfer plus surface reaction resistance.", "Probe the stated prior-art risk around constant-pattern/shock-layer and LUB scale-up constructions applied to reactive transport."]
+  seventh_adversarial_review:
+    reviewer_model: "Microsoft Copilot 1.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "The entry's equations, operator identifications, and correspondence vectors are internally consistent and each listed correspondence is demonstrated in the body."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items:
+      - "Truncated Falsifiable Prediction: the document ends mid-sentence; Stage 3 should request the missing experimental parameters and full prediction text before experimental validation."
+      - "Assumption ε₁ → 1 used to equate k' = N_ac⁻¹ is extreme; Stage 3 should probe practical ranges of post-front porosity and whether the limit is physically attainable in target formations."
+  eighth_adversarial_review:
+    reviewer_model: "xAI Grok 4.5 Fast"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All four checks pass: equations are class-consistent and support the claimed operator identities, vocabulary mappings are type-compatible with explicit shared structures, every listed correspondence vector is demonstrated by derivation in Section 3, and the transfer is asymmetric with a specific measurable falsifiable prediction."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: []
+  ninth_adversarial_review:
+    reviewer_model: "Meta Muse Spark 1.1"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All five claimed correspondence vectors are demonstrated with matching governing operators, Robin-Neumann boundary pair, and Graetz-eigenvalue harmonic-mean closure under explicitly stated β=1 and 1-D constant-flux restrictions, with no equation-class mismatch or vocabulary category error."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: ["Verify beta=1 restriction vs realistic limestone structure-property exponent range and whether beta!=1 breaks bilinear closure as primary failure risk notes", "Run entry's own novelty-falsification search strings for Bohart-Adams / Thomas / LUB / constant-pattern wave already applied to matrix acidization / carbonate acidization / wormholing", "Probe whether effluent logistic regression and LUB length-independence on compact-dissolution branch already exists in core-flood scale-up literature vs Buijse-Glasbergen empirical fits"]
 ---
 
 # INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 0022
@@ -185,3 +297,161 @@ Both are **independent of L** — the defining property that makes LUB a scale-u
 *   `("Bohart-Adams" OR "Thomas model" OR "length of unused bed" OR "constant pattern wave") AND ("matrix acidizing" OR "carbonate acidization" OR wormhol*)` — deliberate novelty-falsification string: a hit here retires the entry.
 *   `"acid capacity number" AND ("retention factor" OR "capacity factor" OR "retardation factor") AND (chromatograph* OR "breakthrough curve") AND "Rankine-Hugoniot"`
 *   `"reactive infiltration instability" AND ("length of unused bed" OR "constant pattern criterion") AND "scale-up invariant"` — tests whether the stable-branch baseline has already been imported into the RII literature.
+
+---
+
+## ADVERSARIAL REVIEWS (Stage 2)
+
+### First Adversarial Review
+**Reviewer:** Alibaba Qwen 3.8 Max
+**Protocol:** v2.0
+**Verdict:** FLAG
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The displayed EDM, Bohart–Adams, Rankine–Hugoniot, two-scale acidization, bridge, logistic, LUB, harmonic-mean, and boundary-condition equations are internally consistent with the stated domains and with the restricted constant-flux/β=1 correspondence.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FLAG — In Section 2, the `k_ov ↔ κ` pair states that “each constituent conductance is k_i = Sh_i·D/(2r_p) and each Sh_i is the leading eigenvalue,” but the entry’s own Silo B closure `1/κ = 1/k_c + 1/k_s` includes `k_s`, a surface-reaction conductance not given as a Sherwood/Graetz eigenvalue conductance; the harmonic-mean type mapping itself remains compatible.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed vectors are demonstrated: Rankine–Hugoniot/retention factor in Section 3 “Vector 1”; Bohart–Adams/logistic ODE in Section 3 “Vector 2”; LUB invariant in Section 3 “Vector 3”; harmonic-mean/Graetz closure in the Silo A and Silo B equation blocks plus the Bridge note; Danckwerts/Robin pair in the two boundary-condition equation blocks.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The transfer direction is asymmetric because chromatography supplies a developed constant-pattern/LUB/shock-layer toolkit for a stable-branch scale-up gap in acidization, and the prediction specifies lengths, fluxes, Da ranges, measured LUB invariance, PV_BT/L dependence, logistic inflection slope, and explicit falsifying thresholds; no canonical prior-art recognition is being recorded as a rejection-level finding.
+
+#### Stage 3 Watch Items
+- Verify whether the harmonic-mean vector should be stated as shared series-resistance form only, not as all constituents arising from leading Graetz eigenvalues.
+- Check bibliographically whether Bohart–Adams/Thomas/LUB or chromatographic shock-layer scale-up has already been applied to carbonate acidization stable-branch PV_BT.
+- Check numeric consistency of the stated Da values: with L = 5, 10, 20 cm, U = 1.5×10⁻⁵ m/s, and k_s a_v0 = 5×10⁻³ s⁻¹, Da is approximately 16.7, 33.3, 66.7 rather than 15, 30, 60.
+- Assess whether Sherwood numbers 10, 3.66, and 48/11 are being used precisely as leading eigenvalues or as asymptotic transfer coefficients in the cited contexts.
+
+### Second Adversarial Review
+**Reviewer:** DeepSeek DeepSeek V4 Pro
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The displayed Rankine–Hugoniot formulas contradict the claimed identity: Silo A gives `k′ = Δn/(ε_t Δc)`, while Silo B gives `N_ac⁻¹ = Δn_B/C0` at `ε_1=1`; the missing `ε_t` factor falsifies “k′ = N_ac⁻¹ exactly.”
+- **CHECK 2 (Vocabulary Matrix Coherence):** FAIL — The mapping `k_ov ↔ κ` claims every constituent conductance is `Sh_i·D/(2r_p)`, but Silo B’s `κ⁻¹ = 1/k_c + 1/k_s` includes the surface reaction rate `k_s`, which is not a Graetz eigenvalue.
+- **CHECK 3 (Correspondence Vector Support):** FAIL — Vector 1 (`rankine_hugoniot_shock_speed_with_retention_factor_equal_to_inverse_acid_capacity_number`) is not validly demonstrated because the exact equality is false; Vectors 2, 3, and 5 are demonstrated, and Vector 4 is only partially supported due to the `k_s` misdescription.
+- **CHECK 4 (Transfer and Falsifiability):** FLAG — Asymmetry and the numerical falsifiable prediction are acceptable, but prior-art advisory applies: Bohart–Adams/Thomas reactive-front models are canonical in porous-media reactive transport and Stage 3 should probe overlap.
+
+#### Stage 3 Watch Items
+- Verify whether the chromatographic retention factor should be `k′ = N_ac⁻¹/ε_t` instead of `N_ac⁻¹`; all downstream PV_BT/LUB numerics depend on this.
+- Check for prior art in reactive-transport and fixed-bed adsorption literature applying Bohart–Adams/Thomas or retardation-factor formulations to carbonate acidization.
+- Determine whether `k_ov a_v` (used in the NTU↔Da mapping) is actually equal to `k_BA q0` (used in the logistic ODE); the entry does not state this identification.
+- Check the claim that the `κ` harmonic mean is built from leading Graetz eigenvalues on both sides; Section 3 shows no Graetz expression for `k_s`.
+
+### Third Adversarial Review
+**Reviewer:** Google Gemini 3.1 Pro
+**Protocol:** v2.0
+**Verdict:** FLAG
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The mathematical bridge derivations are flawless, including the highly sophisticated handling of the variable porosity by evaluating the retention factor limit at complete post-front dissolution ($\varepsilon_1 \to 1$), which precisely resolves the mapping between interstitial and superficial velocities.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FLAG — In Section 2, the mapping pair `Overall LDF coefficient k_ov` ↔ `Fredd–Fogler harmonic-mean rate constant κ` claims "each constituent conductance is k_i = Sh_i·D/(2r_p) and each Sh_i is the leading eigenvalue"; this is physically accurate for the mass-transfer constituents ($k_i$ and $k_c$) but structurally overgeneralizes by including the surface reaction rate constant $k_s$, which is an intrinsic chemical kinetic property rather than a transverse diffusion eigenvalue.
+- **CHECK 3 (Correspondence Vector Support):** PASS — Every listed triple correspondence vector is explicitly derived and supported with equations and operator identities in Section 3.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The asymmetric transfer successfully leverages chromatography's mature stable-branch toolset (LUB scale-up) to address an empirical gap in acidization, providing a highly specific, quantitative, and falsifiable core-flood prediction.
+
+#### Stage 3 Watch Items
+- Verify whether the application of the Collins Length of Unused Bed (LUB) invariant to stable-branch (compact dissolution) matrix acidizing for predicting PV_BT length-independence already exists in the petroleum engineering or reactive-transport literature.
+
+### Fourth Adversarial Review
+**Reviewer:** Xiaomi MiMo V2.5 Pro
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — All Silo A equations (EDM, Rankine-Hugoniot shock speed, Bohart-Adams bilinear pair, logistic travelling-wave solution, Danckwerts boundary conditions, harmonic-mean LDF coefficient) and all Silo B equations (two-scale continuum model, porosity evolution with Fredd-Fogler harmonic mean, Danckwerts core-flood pair) are correctly typed and belong to the same parabolic/hyperbolic class. The bridge derivation eliminating the pore-scale sink C_s via the quasi-steady flux matching to recover ∂(εC_f)/∂t + (ρ_s/α)∂ε/∂t + ∂(UC_f)/∂z = εD_e∂²C_f/∂z² is algebraically valid, and the subsequent Bohart-Adams reduction at β = 1 with Q(ε) ≡ (ρ_s/α)(1−ε) correctly yields the logistic ODE on both sides.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — All seven paired mappings are between objects of compatible mathematical type (dimensionless scalars, mol m⁻³ of bed, m s⁻¹, length operators). Type mismatches (e.g., q̄ in mol m⁻³ of solid vs. ε dimensionless) are explicitly reconciled with stated transformations carrying correct units.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed vectors are demonstrated with equations in the body: Vector 1 (Rankine-Hugoniot with k′ = N_ac⁻¹) in the bridge shock-speed derivation; Vector 2 (Bohart-Adams closure and logistic ODE) in the Vector 2 subsection with the paired PDE systems and travelling-wave ODE; Vector 3 (LUB invariant) in the Vector 3 subsection proving L-independence; Vector 4 (harmonic-mean/Graetz) in both silo descriptions with the series-resistance formulae; Vector 5 (Danckwerts pair) displayed for both systems with the identical Robin operator ℛ[C].
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The transfer direction (chromatographic scale-up theory → acidization stable-branch design) is genuinely asymmetric: Silo A possesses derived length-invariant scale-up groups (LUB, constant-pattern criterion, shock-layer thickness) while Silo B's stable-branch scale-up rests on empirical power-law fits (Buijse-Glasbergen). The reverse direction offers no comparable benefit for this specific problem class. The falsifiable prediction names specific measurable quantities (LUB = 8.8 mm ± 30%, PV_BT/PV_stoich ranging from 0.804 to 0.951, inflection slope Da/4), quantitative thresholds, a specific baseline model to beat, and four distinct falsifying observations.
+
+#### Stage 3 Watch Items
+- The general reactive-transport ↔ chromatography analogy is known at textbook level (e.g., continuum formulations of reactive transport note structural parallels with fixed-bed adsorption). The entry's own novelty-falsification string should be run to determine whether the specific LUB-as-scale-up-invariant transfer from chromatography to carbonate acidization on the compact-dissolution branch has been published.
+- Verify whether the β ≠ 1 → Thomas-family rate law breaking the bilinear closure has been explored in either community.
+- Cross-check the falsifiable prediction's parameter values (Na₄EDTA chelant: k_s ≈ 5×10⁻⁷ m/s, a_v0 ≈ 10⁴ m⁻¹) against reported rotating-disk and BET data in the Fredd-Fogler chelant literature.
+
+### Fifth Adversarial Review
+**Reviewer:** Z.AI GLM-5.2
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The Silo A (chromatography) and Silo B (acidization) equations are correctly formulated for their respective physical domains, and the algebraic substitution deriving the unified bridge equation is mathematically sound.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — All paired vocabulary terms represent objects of compatible mathematical types, and explicit transformations are correctly provided to reconcile dimensionless and dimensional quantities.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed correspondence vectors (Rankine-Hugoniot speed, Bohart-Adams closure, LUB invariant, harmonic mean closure, and Danckwerts boundary pair) are rigorously derived and matched term-by-term in Section 3.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The methodological transfer is genuinely asymmetric, explicitly identifying a valid analytical scale-up gap in Silo B, and the falsifiable prediction provides specific quantitative metrics, thresholds, and distinct falsifying observations.
+
+#### Stage 3 Watch Items
+None identified.
+
+### Sixth Adversarial Review
+**Reviewer:** OpenAI GPT-5.6 Luna
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+* **CHECK 1 (Equation Validity):** FAIL — The entry's exact front-speed claim is internally inconsistent: it gives (v_f=U/(1+N_{ac}^{-1})), but the later reaction-limited acid equations imply (v_f=UN_{ac}), so the logistic reduction is only the strongly-retained approximation rather than the claimed exact shared dynamics.
+* **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The paired terms are generally assigned compatible mathematical roles and the dimensional reconciliations are explicitly stated; the resistance constituents in Vector 4 differ physically, but the mapping remains a stated series-resistance correspondence rather than a categorical type error.
+* **CHECK 3 (Correspondence Vector Support):** FAIL — Vectors 1, 3, 4, and 5 have explicit equations on both sides, but Vector 2's claimed identical logistic travelling wave is not demonstrated consistently with Vector 1 because the reduced acid/Bohart–Adams systems imply the strongly-retained speed (UN_{ac}), not the stated Rankine–Hugoniot speed (U/(1+N_{ac}^{-1})).
+* **CHECK 4 (Transfer and Falsifiability):** PASS — The proposed transfer direction is stated with a concrete maturity rationale, and the prediction specifies measurable length-dependent LUB/PV_BT behavior, quantitative tolerances, curve shape, and an independent kinetic cross-check; no fatal asymmetry or template non-prediction is present.
+
+#### Stage 3 Watch Items
+* Probe whether the exact isomorphism remains after retaining mobile-phase accumulation in the travelling-wave reduction.
+* Probe the physical/operator equivalence asserted for the two harmonic-mean closures in Vector 4.
+* Probe prior art concerning constant-pattern/shock-layer and LUB scale-up methods applied to reactive transport and acidization.
+
+### Seventh Adversarial Review
+**Reviewer:** Microsoft Copilot 1.2
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The Silo A equilibrium-dispersive PDE, Rankine–Hugoniot shock-speed formula, Bohart–Adams bilinear pair and logistic travelling-wave ODE are of the same quasilinear hyperbolic class as the 1-D constant-flux reduction of the Silo B two-scale acidization model; the bridge algebra (eliminating the pore-scale concentration and using the porosity evolution law) correctly produces the same accumulation-plus-retardation operator and identical shock-speed and logistic ODE under the stated assumptions.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — Each mapped token pair in Section 2 is presented as objects of compatible mathematical type (dimensionless scalars, accumulation terms, bilinear rate factors, harmonic-mean rate constants, length invariants, and Robin trace operators) and each Operator Role specifies a shared mathematical structure rather than hedged similarity.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five YAML-listed vectors are demonstrated in the body:  
+  - *rankine_hugoniot_shock_speed_with_retention_factor_equal_to_inverse_acid_capacity_number* — derived in the Bridge with the jump from (ε₀,0) to (ε₁,C₀) and the ε₁→1 limit producing k′ = N_ac⁻¹ (Section 3, Bridge).  
+  - *bohart_adams_bilinear_capacity_closure_and_shared_logistic_travelling_wave_ode* — shown by mapping Q(ε) and deriving the identical logistic ODE and travelling-wave thickness (Section 3, Vector 2).  
+  - *length_of_unused_bed_integral_invariant_and_its_length_independence* — LUB invariant and its L-independence are derived and equated term-for-term (Section 3, Vector 3).  
+  - *harmonic_mean_series_resistance_closure_from_leading_graetz_eigenvalue* — the harmonic-mean series-resistance closure (k_ov and κ) and Graetz eigenvalue identifications are displayed for both silos (Section 3, Silo A and Silo B).  
+  - *danckwerts_robin_inlet_zero_gradient_outlet_boundary_pair* — Danckwerts inlet and zero-gradient outlet conditions are written for both silos and identified as the same Robin operator (Section 3, Silo A and Silo B).  
+  Each listed vector is supported by equations or operator identities in the body.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The transfer direction (chromatography → acidization) is argued as asymmetric and justified by the entry (Silo A supplies a compact toolkit for irreversible bilinear-capacity fronts); the prediction (LUB and PV_BT relations, inversion for (k_s a_v0, β)) is specific and experimentally measurable. Note: the falsifiable prediction text is truncated in the provided document and Stage 3 should obtain the full experimental specification before lab testing. No prior-art canonical mapping was asserted by the entry that would invalidate the transfer claim.
+
+#### Stage 3 Watch Items
+- "Truncated Falsifiable Prediction: the document ends mid-sentence; Stage 3 should request the missing experimental parameters and full prediction text before experimental validation."
+- "Assumption ε₁ → 1 used to equate k′ = N_ac⁻¹ is extreme; Stage 3 should probe practical ranges of post-front porosity and whether the limit is physically attainable in target formations."
+
+### Eighth Adversarial Review
+**Reviewer:** xAI Grok 4.5 Fast
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The EDM conservation law, Rankine–Hugoniot shock speed, Bohart–Adams pair, logistic travelling-wave ODE, Danckwerts Robin/Neumann pair, and harmonic-mean Graetz closures are all of matching hyperbolic/parabolic class and correctly reduce under the stated 1-D constant-flux β=1 restrictions to the identical operators shown for both silos.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — Every paired token is of compatible mathematical type (dimensionless scalars, mol m^{-3} inventory terms, rate constants of identical units after the stated Q(ε) redefinition, etc.) and each Operator Role names an explicit shared structure (Rankine–Hugoniot denominator, bilinear factor, harmonic-mean eigenvalue construction, integral invariant, Robin operator) rather than a hedged analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed vectors are demonstrated by explicit derivation in Section 3: Rankine–Hugoniot/k′=N_ac^{-1} (Vector 1), Bohart–Adams bilinear closure and shared logistic ODE (Vector 2), LUB integral invariant and length independence (Vector 3), harmonic-mean/Graetz series-resistance closure (Vector 4), and Danckwerts Robin-inlet/zero-gradient-outlet pair (Vector 5).
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Transfer direction is genuinely asymmetric (chromatography supplies the derived length-invariant LUB and inverse-method toolkit that acidization lacks on the stable branch); the prediction supplies concrete measurable quantities (LUB = 8.8 mm invariant across L = 5–20 cm, PV_BT/PV_stoich rising from 0.804 to 0.951, logistic inflection slope Da/4) with explicit falsifying thresholds against the Buijse–Glasbergen baseline.
+
+#### Stage 3 Watch Items
+None identified.
+
+### Ninth Adversarial Review
+**Reviewer:** Meta Muse Spark 1.1
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — Silo A EDM and Silo B two-scale continuum both reduce to the same accumulation-plus-retardation parabolic operator with Rankine-Hugoniot front speed and bilinear capacity sink at β=1 and constant U; no elliptic/parabolic or linear/nonlinear class mismatch.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — All seven pairs are compatible mathematical types (dimensionless scalars, scalar inventories, rate constants, length invariants, Robin operators) with explicit shared structure and unit reconciliation where needed, e.g., n ≡ (ρ_s/α)(ε−ε_0) and Q ≡ (ρ_s/α)(1−ε).
+- **CHECK 3 (Correspondence Vector Support):** PASS — rankine_hugoniot_shock_speed_with_retention_factor_equal_to_inverse_acid_capacity_number demonstrated via v_f and v_s Rankine-Hugoniot equations; bohart_adams_bilinear_capacity_closure_and_shared_logistic_travelling_wave_ode demonstrated via U∂_zC = -kCQ reduction and dx/dξ = -k_a/U x(1-x) logistic ODE; length_of_unused_bed_integral_invariant_and_its_length_independence demonstrated via LUB = L(1-t_b/t_s) = U ln19/k_s a_v0; harmonic_mean_series_resistance_closure_from_leading_graetz_eigenvalue demonstrated via 1/k_ov = 1/k_f+1/k_i and 1/κ = 1/k_c+1/k_s with Sh_i eigenvalue forms; danckwerts_robin_inlet_zero_gradient_outlet_boundary_pair demonstrated via identical ℛ=UC-εD∂_zC inlet and ∂_zC|_L=0 outlet equations in Section 3.[C]
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Asymmetry is genuine: Silo A constant-pattern/LUB/moment-analysis toolkit for bilinear fronts is transferred to fill Silo B stable-branch scale-up gap, while Silo B µCT and reactive-infiltration-instability analysis has no Silo A counterpart, with explicit termination at Darcy feedback U[ε]. Falsifiability is met with specific experiment (Indiana limestone, EDTA, L=5/10/20 cm, fixed U), predicted LUB=8.8 mm invariant ±30%, PV_BT/PV_stoich 0.804→0.951, logistic slope Da/4, and explicit falsifiers. No canonical textbook prior-art pairing recognized; advisory watch for Bohart-Adams already used in acidization literature is Stage 3.
+
+#### Stage 3 Watch Items
+- Verify Panga exponent β=1 assumption against measured carbonate β range; entry itself flags beta_not_unity_breaks_bilinear_capacity_closure.
+- Execute the entry's own novelty-falsification queries: ("Bohart-Adams" OR "Thomas model" OR "length of unused bed" OR "constant pattern wave") AND ("matrix acidizing" OR "carbonate acidization" OR wormhol*) and acid capacity number ↔ retention factor mapping.
+- Check whether LUB length-independence and effluent logistic inversion already appears in SPE core-flood scale-up beyond Buijse-Glasbergen power law, and whether compact-dissolution branch Da≫ln19 condition holds for proposed prediction.
