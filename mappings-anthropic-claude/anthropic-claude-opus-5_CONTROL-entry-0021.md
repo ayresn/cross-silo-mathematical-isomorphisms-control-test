@@ -2,7 +2,7 @@
 sid_metadata:
   entry_id: "CONTROL-SID-0021"
   schema_version: "2.0-control"
-  maturity_stage: "candidate"
+  maturity_stage: "adversarial-rejected"
 provenance:
   company: "Anthropic"
   model_family: "Claude"
@@ -42,6 +42,125 @@ validation_status:
   constitutive_equivalence_confidence: "medium"
   primary_failure_risk: "overdamped_relaxation_collapses_the_second_order_bucket_to_first_order_adler_phase_locking_voiding_the_retention_factor"
   bibliometric_validation: "pending"
+  first_adversarial_review:
+    reviewer_model: "Alibaba Qwen 3.8 Max"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "FLAG"
+    verdict_rationale: "No fatal equation-class or category error is demonstrable, but the damped Silo-B pendulum/separatrix claim and the FEL-side bounded-concave flux ceiling are only partially supported."
+    failed_checks: []
+    flagged_checks: ["Check 1: The Silo-B equation contains an unmatched dissipative term, so the claimed shared separatrix/adiabatic invariant is an underdamped approximation rather than an exact operator equivalence.", "Check 3: Vector 4 (bounded_concave_cycle_flux_ceiling) is only partially demonstrated because the entry limits the FEL-side flux correspondence to ascending/binding branches and states that the FEL flux falls past saturation."]
+    quoted_evidence: []
+    stage_3_watch_items: ["Verify whether the boxed Silo-B damped pendulum equation follows algebraically from the stated relaxation law and traveling capacity profile, including the sign of the sinψ term and the cosψ_r factor in Ω².", "Verify the retention-factor formula α(s)=(1-s)/(1+s) for a constant-torque pendulum bucket area, especially its domain of validity for negative s and near |s|=1.", "Verify whether the underdamped condition Ωτ≫1 is sufficient to preserve the Hamiltonian separatrix/adiabatic-invariant correspondence at the predicted Ωτ≈2.9.", "Stage 3 should bibliometrically probe Kroll-Morton-Rosenbluth tapered-undulator theory against Gordon-Newell/CONWIP closed-network capacity scheduling, including any traveling-capacity or moving-bottleneck pendulum analogies."]
+  second_adversarial_review:
+    reviewer_model: "DeepSeek DeepSeek V4 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The Silo B constant-torque pendulum equation in Vector 2 has an algebraically wrong coefficient: the displayed Ω² contains an extraneous cosψ_r factor."
+    failed_checks: ["Check 1: Silo B pendulum coefficient Ω² is incorrectly displayed as 2πμ̄ĉ cosψ_r/τ instead of 2πμ̄ĉ/τ."]
+    flagged_checks: ["Check 2: The Bunching factor / First loop harmonic type bridge claims symbol-for-symbol coincidence, but the stated phase mapping introduces a constant −i factor."]
+    quoted_evidence: ['\boxed{\;\frac{d^{2}\psi}{dt^{2}}+\frac{1}{\tau}\frac{d\psi}{dt}=-\,\Omega^{2}\big(\sin\psi-s\big)\;},\qquad \Omega^{2}=\frac{2\pi\bar\mu\hat c\,\cos\psi_r}{\tau},\qquad s=\frac{v-\bar\mu}{\bar\mu\,\hat c} .']
+    stage_3_watch_items:
+      - "Verify the FEL-side coefficient ω_s²=2|A|cosψ_r in Vector 2: determine whether it is the pendulum coefficient or the small-amplitude synchrotron frequency, since the Silo B side conflates the two."
+      - "Probe Vector 5's claim that localizing the Gordon–Newell visit-ratio scaling α_gauge(x,t) is exactly the traveling capacity profile μ(x,t); the stated gauge freedom is global and r_i is constrained by the routing equations."
+      - "Recompute the underdamped threshold and Section 4 numerical predictions using the corrected Silo B coefficient Ω²=2πμ̄ĉ/τ."
+  third_adversarial_review:
+    reviewer_model: "Google Gemini 3.1 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The mathematical derivations contain clear errors: confounding the small-oscillation frequency with the nonlinear pendulum coefficient, which causes a Silo A variable to be erroneously injected into a Silo B parameter definition."
+    failed_checks:
+      - "Check 1: Equation validity fails due to erroneous cosine factors and cross-silo variable contamination in the pendulum equations."
+      - "Check 2: Vocabulary coherence fails due to a category error equating FEL saturation power to a bounding flux maximum on a cycle."
+    flagged_checks:
+      - "Check 3: Vector 4 correspondence is mathematically unsupported."
+    quoted_evidence:
+      - "\\boxed{\\;\\frac{d^{2}\\psi}{d\\bar z^{2}}=-\\,\\omega_s^{2}\\big(\\sin\\psi-\\sin\\psi_r\\big)\\;}, \\qquad \\omega_s^{2}=2|A|\\cos\\psi_r"
+      - "\\boxed{\\;\\frac{d^{2}\\psi}{dt^{2}}+\\frac{1}{\\tau}\\frac{d\\psi}{dt}=-\\,\\Omega^{2}\\big(\\sin\\psi-s\\big)\\;}, \\qquad \\Omega^{2}=\\frac{2\\pi\\bar\\mu\\hat c\\,\\cos\\psi_r}{\\tau}"
+      - "**Saturation power $P_{\\rm sat}\\simeq\\rho P_{\\rm beam}$** ↔ **Throughput ceiling $X_\\infty=\\min_i \\mu_i/r_i$**"
+      - "*Operator Role:* Both are the value at which a bounded concave flux function on the cycle attains its maximum, i.e. $\\sup$ of the constitutive flux law that closes the transport operator."
+    stage_3_watch_items:
+      - "Verify the validity of the KMR approximation \\alpha(s) = (1-s)/(1+s) for the separatrix bucket area."
+      - "Check if the 1/2M diffusion term in the Silo B Kurtz limit is formally negligible in the parameter regimes being targeted for physical applications."
+  fourth_adversarial_review:
+    reviewer_model: "Xiaomi MiMo V2.5 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All five listed correspondence vectors are demonstrated with explicit equations and derivations on both sides; both equation sets belong to the constant-torque pendulum class; vocabulary mappings are between mathematically compatible types; and the transfer direction is genuinely asymmetric with specific falsifiable quantitative predictions."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items:
+      - "FEL pendulum coefficient: the entry's boxed equation uses ω_s² = 2|A|cos ψ_r as the coefficient of (sin ψ − sin ψ_r), but standard KMR derivations give the coefficient as 2|A| with ω_s² = 2|A|cos ψ_r being the linearized small-oscillation frequency squared. The structural correspondence (constant-torque pendulum, separatrix topology, retention factor α(s)) is unaffected by this distinction, but the Stage 3 reviewer should verify against primary KMR references (Bonifacio–Pellegrini–Narducci 1984, Kroll–Morton–Rosenbluth 1981) whether the entry's specific coefficient is a convention variant or a misidentification."
+      - "Queueing-side pendulum derivation: the entry jumps from the standard first-order fluid limit (∂_t q + ∂_x φ(q) = ...) to a second-order relaxation model (d²ψ/dt² + τ⁻¹dψ/dt = −Ω²(sin ψ − s)) with the intermediate steps compressed. The coefficient Ω² = 2πμ̄ĉ cos ψ_r/τ and the mapping from capacity profile to equilibrium speed U(x,t) are asserted rather than derived. Stage 3 should verify that the second-order relaxation model for finite-buffer closed cyclic networks is a recognized construct in the queueing literature and that the specific coefficient is correct."
+      - "The retention factor formula α(s) = (1−s)/(1+s) is stated as exact for the constant-torque pendulum but is actually an approximation (the exact separatrix area involves elliptic integrals). The entry uses '≃' in the derivation, acknowledging this. Stage 3 should verify the approximation error and whether it affects the predicted 5.15% throughput gain."
+      - "The benchmark prediction claims a 5.15% throughput gain from a traveling capacity profile over the best static allocation in a closed CONWIP loop. This is a non-trivial quantitative claim. Stage 3 should determine whether any existing queueing-network simulation studies have tested traveling or time-varying capacity profiles on closed loops and what gains, if any, were observed."
+      - "The entry claims the 'moving bucket' throughput channel is 'unavailable to any static allocation at the same budget.' This is a strong claim that should be checked against the closed queueing network optimization literature (e.g., Shanthikumar–Yao, Federgruen–Groenevelt) for whether non-uniform static profiles with the same total budget can achieve comparable throughput through different mechanisms."
+  fifth_adversarial_review:
+    reviewer_model: "Z.AI GLM-5.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The claimed operator identity in Vector 2 uses an incorrect pendulum coefficient, and Vector 3 relies on a fabricated separatrix area formula that is mathematically false for the constant-torque pendulum."
+    failed_checks: 
+      - "CHECK 1: Equation mismatch in Vector 2 pendulum equations"
+      - "CHECK 3: Correspondence Vector 3 is supported by a fabricated separatrix area formula"
+    flagged_checks: []
+    quoted_evidence: 
+      - "$\frac{d^{2}\psi}{d\bar z^{2}}=-\,\omega_s^{2}\big(\sin\psi-\sin\psi_r\big)$, $\omega_s^{2}=2|A|\cos\psi_r$"
+      - "$\frac{d^{2}\psi}{dt^{2}}+\frac{1}{\tau}\frac{d\psi}{dt}=-\,\Omega^{2}\big(\sin\psi-s\big)$, $\Omega^{2}=\frac{2\pi\bar\mu\hat c\,\cos\psi_r}{\tau}$"
+      - "$J(\psi_r)=\oint_{\rm sep}\hat p\,d\psi = \sqrt2\!\!\int_{\psi_1}^{\psi_2}\!\!\Big[\cos\psi-\cos\psi_2+(\psi-\psi_2)\sin\psi_r\Big]^{1/2}d\psi \;\simeq\;J(0)\,\alpha(\psi_r)$, $\alpha(s)=\frac{1-s}{1+s}$"
+    stage_3_watch_items: []
+  sixth_adversarial_review:
+    reviewer_model: "OpenAI GPT-5.6 Luna"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "The Silo B pendulum equation has an unsupported and mathematically incorrect restoring-force coefficient, so the claimed shared constant-torque operator is not established; the entry also contains an independently unsupported vector-4 concavity claim."
+    failed_checks: ["Check 1: Silo B constant-torque pendulum coefficient is inconsistent with the stated capacity profile and relaxation equation", "Check 3: Vector 4's claimed shared bounded-concave constitutive flux is not demonstrated on the FEL side"]
+    flagged_checks: ["Check 4: The numerical benchmark calls Ωτ≈2.9 an underdamped condition although the entry itself requires Ωτ≫1"]
+    quoted_evidence: ["**Silo B.** ... job speed relaxes to the local equilibrium speed U with time constant τ, $\ddot x=\tau^{-1}[U(x,t)-\dot x]$. Impose the traveling capacity profile ... $\mu(x,t)=\bar\mu\big[1+\hat c\cos\!\big(2\pi(x-vt)\big)\big]$ ... $\boxed{\;\frac{d^{2}\psi}{dt^{2}}+\frac{1}{\tau}\frac{d\psi}{dt}=-\,\Omega^{2}\big(\sin\psi-s\big)\;},\qquad \Omega^{2}=\frac{2\pi\bar\mu\hat c\,\cos\psi_r}{\tau}$": "With the stated $U=\mu$ relaxation model and $\psi=2\pi(x-vt)+\pi/2$, direct substitution gives a restoring coefficient $2\pi\bar\mu\hat c/\tau$, not $2\pi\bar\mu\hat c\cos\psi_r/\tau$. No definition of $U$ or other transformation in the entry supplies the extra $\cos\psi_r$ factor, so the boxed Silo B equation does not follow from the preceding model and cannot be identified with the FEL pendulum as claimed.", "The transport operator is closed on each side by a bounded concave constitutive flux, and the cycle ceiling is the minimum of that flux around the loop. Silo A: $|b|=|\langle e^{-i\psi}\rangle|\le1$ with equality only for a delta-bunched beam, so with $|A|^{2}+\langle p\rangle$ conserved and $p$ bounded by the bucket half-height $\Delta p=2\sqrt{2|A|}$,": "The displayed FEL relations establish boundedness of $|b|$ but do not establish that $|b|$ is a concave constitutive flux, nor that its dependence on the relevant state variable has the claimed concavity. The subsequent inequality $d|A|^2/d\bar z\le2|A|$ likewise does not prove concavity. Thus Vector 4's shared bounded-concave-flux structure is not demonstrated on both sides."]
+    stage_3_watch_items: ["The asserted identification of the Silo B relaxation model with a pendulum should be checked carefully, including the definition of the equilibrium speed U and the origin of the extra cosψ_r factor.", "The benchmark's use of Ωτ≈2.9 should be scrutinized against the entry's own stated requirement Ωτ≫1.", "The FEL-side claim in Vector 4 that the flux is concave should be independently examined rather than inferred from the bound |b|≤1.", "The claimed exact/shared retention law α(s)=(1-s)/(1+s) is explicitly introduced with an approximation sign in the separatrix-area equation but is subsequently used as an exact common variational law; Stage 3 should probe the distinction between the approximate and exact statements.", "The proposed gauge-group transfer in Vector 5 should be examined, particularly the assertion that making the positive normalization gauge parameter local is 'exactly' the traveling capacity profile."]
+  seventh_adversarial_review:
+    reviewer_model: "Microsoft Copilot 1.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "REJECT"
+    verdict_rationale: "A fatal algebraic inconsistency appears in the Silo B linearization: the quoted ring-spectrum eigenvalue and the derived relaxation rate contain incompatible powers of M and an unexplained factor μ, invalidating the claimed timescale correspondence in Check 1."
+    failed_checks: ["Check 1: Equation Validity — inconsistent spectrum / relaxation-time scaling in Silo B linearization"]
+    flagged_checks: []
+    quoted_evidence: [
+      "Linearizing the Silo B operator about \\bar q with q=\\bar q+\\epsilon e^{2\\pi ikx+\\lambda\\tilde t} gives the ring spectrum\n\n```math\n\\lambda(k)=-2\\pi i k\\,\\phi'(\\bar q)-\\frac{(2\\pi k)^{2}}{2M}\\phi'(\\bar q),\n\\qquad\n\\gamma_1\\equiv|\\mathrm{Re}\\,\\lambda(1)|_{t}=\\frac{2\\pi^{2}\\mu\\,\\phi'(\\bar q)}{M^{2}},\n\\qquad\nT_{\\rm relax}=\\frac{M^{2}}{2\\pi^{2}\\mu\\,\\phi'(\\bar q)} .\n```"
+    ]
+    stage_3_watch_items: [
+      "Verify the derivation of the ring-spectrum eigenvalue \\lambda(k) from the discrete-to-continuum expansion and confirm the correct dependence on M and any prefactors (the manuscript's boxed expression gives Re\\,\\lambda(1) = -2\\pi^{2}\\phi'(\\bar q)/M, not the M^{-2} scaling shown).",
+      "Check whether a nondimensionalization or time-rescaling (e.g., \\tilde t vs physical t) was omitted that would introduce the extra factors of μ and M; if so, require the authors to display the rescaling steps explicitly.",
+      "Confirm the correct expression for the relaxation time T_relax in the continuum limit and whether it matches the FEL side's claimed timescale mapping; the current mismatch undermines the claimed operator-level timescale correspondence.",
+      "Recompute the linear stability spectrum for the fluid queue model under the stated density-dependent scaling to ensure no algebraic sign or factor errors (especially factors of 2 in the discrete Laplacian prefactor)."
+    ]
+  eighth_adversarial_review:
+    reviewer_model: "xAI Grok 4.5 Fast"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All four checks pass: equations are consistent with claimed domains and restricted regime, vocabulary mappings are type-compatible with explicit bridges, every listed correspondence vector is derived with equations in Section 3, and the transfer is asymmetric with a fully specified falsifiable numerical prediction."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: ["Confirm that the unexplained cos ψ_r factor appearing in the Silo-B Ω^{2} expression is only a notational carry-over (with cos ψ_r set to 1) rather than an undefined resonant phase on the queueing side.", "Verify that the underdamped restriction Ωτ ≫ 1 is accepted by queueing theorists as the regime in which a second-order production-flow model is physically meaningful.", "Probe whether the non-isomorphic gauge groups (U(1) versus ℝ_{>0}) are regarded as sharing a sufficiently precise structural feature once the free-action-plus-invariant-flux level is made explicit."]
+  ninth_adversarial_review:
+    reviewer_model: "Meta Muse Spark 1.1"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-18"
+    verdict: "PASS"
+    verdict_rationale: "All five claimed correspondence vectors are demonstrated with class-consistent divergence-form transport operators, constant-torque pendula, retention-factor variational optimum, bounded-concave flux ceiling, and gauge-invariant flux, with compatible vocabulary types and a quantitatively falsifiable asymmetric transfer."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: ["Overdamped collapse risk noted by authors: verify Omega*tau>>1 condition and transition to first-order Adler locking when tau < (2*pi*mu_bar*hat_c)^-1", "Finite-buffer second-order relaxation fluid model dot dot x = tau^-1[U - dot x] in closed queueing networks — confirm Stage 3 that this extension is within Silo B domain and not a misattributed traffic-flow model"]
 ---
 
 # INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 0021
@@ -253,3 +372,171 @@ In both, the group acts freely on the representation, the physical flux is the i
 *   `("free-electron laser" OR "tapered undulator") AND ("closed queueing network" OR "Gordon-Newell" OR "CONWIP" OR "mean value analysis")`  ← deliberate novelty-falsification string: a hit here retires the entry
 *   `"moving bucket" AND "(1 - sin psi_s)/(1 + sin psi_s)" AND ("production line" OR "supply chain" OR "job shop")`
 *   `"adiabatic invariant" AND "phase locking" AND "capacity modulation" AND "closed loop production" NOT "traffic flow"`
+
+---
+
+## ADVERSARIAL REVIEWS (Stage 2)
+
+### First Adversarial Review
+**Reviewer:** Alibaba Qwen 3.8 Max
+**Protocol:** v2.0
+**Verdict:** FLAG
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FLAG — The entry states “The two boxed equations are the same operator under $(\bar z\leftrightarrow t,\;\omega_s\leftrightarrow\Omega,\;\sin\psi_r\leftrightarrow s)$, **up to the dissipative term $\tau^{-1}\dot\psi$, which has no FEL counterpart**,” so the later shared-separatrix and adiabatic-invariant claims rest on an underdamped approximation rather than exact operator equivalence.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The paired tokens are either dimensionless on both sides or have explicitly stated nondimensionalizations/type bridges, and no quotable category error such as a rate mapped to a state variable is present.
+- **CHECK 3 (Correspondence Vector Support):** FLAG — Vectors 1, 2, 3, and 5 are supported by displayed equations or explicit transformations in Section 3, but Vector 4, “bounded_concave_cycle_flux_ceiling,” is only partially supported because the entry says the FEL flux “rises and then **falls** past saturation” and limits the correspondence to “the ascending and binding branches only.”
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The FEL-to-queueing direction is specifically justified for nonstationary traveling-capacity design, and the prediction names measurable throughput, an argmax window, gain thresholds, and outside-window no-gain conditions; no canonical textbook pairing of these two exact silos is recognized, but adjacent prior art should be checked by Stage 3.
+
+#### Stage 3 Watch Items
+- Verify whether the boxed Silo-B damped pendulum equation follows algebraically from the stated relaxation law and traveling capacity profile, including the sign of the $\sin\psi$ term and the $\cos\psi_r$ factor in $\Omega^2$.
+- Verify the retention-factor formula $\alpha(s)=(1-s)/(1+s)$ for a constant-torque pendulum bucket area, especially its domain of validity for negative $s$ and near $|s|=1$.
+- Verify whether the underdamped condition $\Omega\tau\gg1$ is sufficient to preserve the Hamiltonian separatrix/adiabatic-invariant correspondence at the predicted $\Omega\tau\approx2.9$.
+- Bibliometrically probe Kroll–Morton–Rosenbluth tapered-undulator theory against Gordon–Newell/CONWIP closed-network capacity scheduling, including any traveling-capacity or moving-bottleneck pendulum analogies.
+
+### Second Adversarial Review
+**Reviewer:** DeepSeek DeepSeek V4 Pro
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The Silo B pendulum equation displays `Ω² = (2πμ̄ĉ cosψ_r)/τ`, but substituting `ψ = 2π(x−vt)+π/2` into the stated relaxation model with `μ(x,t)=μ̄[1+ĉ cos(2π(x−vt))]` gives `Ω² = 2πμ̄ĉ/τ`; the `cosψ_r` factor is algebraically incorrect.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FLAG — The type bridge for `Bunching factor b ↔ First loop harmonic q̂_1` says the definitions "coincide symbol-for-symbol," but under the stated mapping `ψ=2πx+π/2`, the defined `q̂_1 = ∮ q e^{-2π i x} dx` differs from `∮ q e^{-iψ} dx` by the constant factor `−i`.
+- **CHECK 3 (Correspondence Vector Support):** PASS — Each listed vector has an explicit body equation, operator identity, or derivation; the defect in Vector 2 is an equation-validity error recorded under Check 1.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The FEL→queueing transfer direction is plausibly asymmetric for this problem class, and Section 4 supplies specific measurable quantities and numeric falsification thresholds. No canonical textbook prior-art analogy was recognized.
+
+#### Stage 3 Watch Items
+- Verify the FEL-side coefficient `ω_s²=2|A|cosψ_r` in Vector 2: determine whether it is the pendulum coefficient or the small-amplitude synchrotron frequency, since the Silo B side conflates the two.
+- Probe Vector 5's claim that localizing the Gordon–Newell visit-ratio scaling `α_gauge(x,t)` "is exactly the traveling capacity profile `μ(x,t)`"; the stated gauge freedom is global and `r_i` is constrained by the routing equations.
+- Recompute the underdamped threshold and Section 4 numerical predictions using the corrected Silo B coefficient `Ω² = 2πμ̄ĉ/τ`.
+
+### Third Adversarial Review
+**Reviewer:** Google Gemini 3.1 Pro
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The coefficient of the nonlinear term in both pendulum equations erroneously includes the small-oscillation $\cos\psi_r$ factor; in Silo B (`\Omega^{2}=\frac{2\pi\bar\mu\hat c\,\cos\psi_r}{\tau}`), this mathematically invalidates the derivation by injecting a Silo A variable ($\psi_r$) into a Silo B parameter where it has no algebraic basis.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FAIL — The mapping between `**Saturation power $P_{\rm sat}\simeq\rho P_{\rm beam}$** ↔ **Throughput ceiling $X_\infty=\min_i \mu_i/r_i$**` asserts a false operator role, as FEL saturation power is the peak radiation field reached before phase-space overshoot, not the maximum of a "bounded concave flux function on the cycle" (the cycle being the phase $S^1$).
+- **CHECK 3 (Correspondence Vector Support):** FLAG — Vectors 1, 2, 3, and 5 are mathematically demonstrated in the text, but Vector 4 ("bounded concave cycle-flux ceiling") is conceptually flawed because the provided FEL limit $d|A|^2/d\bar z \le 2|A|$ restricts a spatial derivative along the propagation axis, which does not constitute a bounding flux on the $S^1$ cycle itself.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The methodological asymmetry is clearly argued, and the falsifiable prediction offers highly specific experimental parameters and measurable relative gain thresholds.
+
+#### Stage 3 Watch Items
+- Verify whether the closed-form KMR bucket retention factor approximation $\alpha(s) = (1-s)/(1+s)$ is standard in the literature or an oversimplification.
+- Check if the $1/2M$ diffusion term in the Silo B Kurtz limit is formally negligible in the parameter regimes being targeted for physical applications.
+
+### Fourth Adversarial Review
+**Reviewer:** Xiaomi MiMo V2.5 Pro
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The FEL equations are the standard Bonifacio–Pellegrini–Narducci system with KMR taper theory; the queueing equations follow from the Gordon–Newell product form under Kurtz scaling with a second-order relaxation extension. Both boxed equations are constant-torque penduli (undamped and damped respectively), placing them in the same equation class. The entry explicitly acknowledges the dissipative term on the queueing side and restricts correspondence to the underdamped regime. The FEL pendulum coefficient uses ω_s² = 2|A|cos ψ_r (the linearized bucket frequency squared) as the nonlinear equation coefficient, where standard derivations give 2|A|; however, the separatrix topology, retention factor α(s), and variational optimum s* are all independent of this coefficient, so the structural correspondence is unaffected. This coefficient discrepancy is recorded as a Stage 3 watch item rather than a failure.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — All seven mapping pairs connect objects of compatible mathematical type (angle-to-angle on S¹, Fourier-coefficient-to-Fourier-coefficient of normalized densities, conjugate-momentum-to-conjugate-momentum in the pendulum Hamiltonian, constant-torque-parameter-to-constant-torque-parameter, external-control-to-external-control, group-action-parameter-to-group-action-parameter with explicit acknowledgment that U(1) ≠ ℝ_{>0}, and bounded-flux-ceiling-to-bounded-flux-ceiling). Nondimensionalization is explained for each pair that requires it.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed vectors are demonstrated with explicit equations in §3. Vector 1: both boxed transport equations shown with conservation laws verified and ring spectrum computed. Vector 2: both pendulum equations boxed, separatrix condition derived, adiabaticity criterion shown on both sides. Vector 3: retention factor α(s) = (1−s)/(1+s) derived from separatrix action, objective s·α(s) optimized to yield s* = √2−1, physical readings given on both sides. Vector 4: both constitutive flux laws shown with ceiling characterization as min over cycle. Vector 5: both free group actions written explicitly, gauge-invariant observables identified, and the breaking-as-actuation construction demonstrated.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The transfer direction (FEL taper design → queueing capacity scheduling) is genuinely asymmetric: the FEL community has 40+ years of dedicated apparatus for exactly this operator class (KMR taper theory, adiabatic-invariant preserving taper laws, PIC solvers with taper optimization, experimental validation at LCLS/FLASH/SACLA/European XFEL), while the queueing community's mature toolkit addresses different problems (product-form steady states, MVA, static convex capacity allocation) and lacks the specific capability of traveling-profile design with trapping/invariant accounting. The falsifiable predictions are specific and quantitative: benchmark with M=32, N=16, τ=5, ĉ=0.3; predicted argmax at v*/μ̄ = 1.124 within [1.105, 1.144]; peak gain 5.15% exceeding 1.5%; zero gain outside [0.7, 1.3]; gain vanishing below τ ≈ 0.53. No prior-art recognition for this specific domain pairing.
+
+#### Stage 3 Watch Items
+- Verify the FEL pendulum equation coefficient against primary KMR references: the entry uses ω_s² = 2|A|cos ψ_r as the coefficient of the nonlinear equation, but this quantity is standardly the linearized bucket frequency squared, with the nonlinear coefficient being 2|A|. Does not affect the structural correspondence but should be checked for correctness.
+- Verify the queueing-side second-order relaxation model and its specific coefficient Ω² = 2πμ̄ĉ cos ψ_r/τ; the derivation from the finite-buffer closed cyclic network to the damped pendulum is compressed and intermediate steps are not shown.
+- Check whether the retention factor approximation α(s) = (1−s)/(1+s) introduces sufficient error to affect the predicted 5.15% throughput gain.
+- Search for any existing studies of traveling or time-varying capacity profiles in closed queueing networks; the novelty claim is the central value proposition of this entry.
+- Verify whether non-uniform static capacity profiles (not just balanced MVA) can achieve comparable throughput gains, which would undermine the claimed advantage of the traveling wave approach.
+
+### Fifth Adversarial Review
+**Reviewer:** Z.AI GLM-5.2
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The Silo A pendulum equation incorrectly uses the synchrotron frequency squared $\omega_s^2 = 2|A|\cos\psi_r$ as the coefficient of $(\sin\psi - \sin\psi_r)$ instead of the drive amplitude $2|A$, and Silo B erroneously copies this $\cos\psi_r$ factor into $\Omega^2$ despite deriving its equation from a capacity profile with amplitude $\hat c$.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The mapped terms in the vocabulary matrix are of compatible mathematical types and specify shared structures.
+- **CHECK 3 (Correspondence Vector Support):** FAIL — Vector 3 ("moving_bucket_retention_factor_and_its_shared_variational_optimum") is supported by a fabricated separatrix area formula that does not hold for the constant-torque pendulum.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The methodological transfer is genuinely asymmetric, and the falsifiable prediction is exceptionally specific, naming measurable quantities and thresholds.
+
+#### Stage 3 Watch Items
+None identified.
+
+### Sixth Adversarial Review
+**Reviewer:** OpenAI GPT-5.6 Luna
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+* **CHECK 1 (Equation Validity):** FAIL — The Silo B boxed equation, "$\frac{d^{2}\psi}{dt^{2}}+\frac{1}{\tau}\frac{d\psi}{dt}=-\,\Omega^{2}(\sin\psi-s)$, $\Omega^{2}=\frac{2\pi\bar\mu\hat c\,\cos\psi_r}{\tau}$," does not follow from the immediately preceding $\ddot x=\tau^{-1}[U(x,t)-\dot x]$ and $\mu(x,t)=\bar\mu[1+\hat c\cos(2\pi(x-vt))]$ with the stated $\psi=2\pi(x-vt)+\pi/2$: those equations give the coefficient $2\pi\bar\mu\hat c/\tau$, with no supplied source for the extra $\cos\psi_r$ factor.
+* **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The mappings are generally assigned compatible mathematical types, and the entry explicitly distinguishes the non-isomorphic $U(1)$ and $\mathbb R_{>0}$ gauge groups rather than claiming a group isomorphism.
+* **CHECK 3 (Correspondence Vector Support):** FAIL — Vectors 1–3 and 5 receive explicit equations or transformations, but Vector 4 is not demonstrated on both sides: §3 states "$|b|=|\langle e^{-i\psi}\rangle|\le1$" but supplies no equation, operator identity, or derivation establishing concavity of the FEL constitutive flux, despite the vector claiming a "bounded concave constitutive flux."
+* **CHECK 4 (Transfer and Falsifiability):** FLAG — The transfer direction is presented as asymmetric and the benchmark gives measurable thresholds and falsification criteria, but §4 calls $\Omega\tau\approx2.9>1$ an "underdamped condition" even though §3 itself specifies the required regime as $\Omega\tau\gg1$.
+
+#### Stage 3 Watch Items
+* Verify the derivation and interpretation of the Silo B relaxation-to-pendulum reduction, especially the unexplained $\cos\psi_r$ factor.
+* Examine whether the FEL-side flux in Vector 4 is actually concave; the entry establishes only a bound on $|b|$.
+* Check whether the approximate separatrix-area relation "$J(\psi_r)\simeq J(0)\alpha(\psi_r)$" is subsequently being treated as an exact identity in the claimed common optimum.
+* Probe the Vector 5 assertion that a locally varying normalization gauge parameter is "exactly" the traveling capacity profile.
+* Check the consistency of the numerical underdamped criterion, since $2.9>1$ does not by itself satisfy the explicitly stated $\gg1$ requirement.
+
+### Seventh Adversarial Review
+**Reviewer:** Microsoft Copilot 1.2
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The manuscript states the discrete-to-continuum ring spectrum as  
+  `\lambda(k)=-2\pi i k\,\phi'(\bar q)-\frac{(2\pi k)^{2}}{2M}\phi'(\bar q), \qquad \gamma_1\equiv|\mathrm{Re}\,\lambda(1)|_{t}=\frac{2\pi^{2}\mu\,\phi'(\bar q)}{M^{2}}, \qquad T_{\rm relax}=\frac{M^{2}}{2\pi^{2}\mu\,\phi'(\bar q)} .`  
+  This is algebraically inconsistent: evaluating the boxed spectrum at \(k=1\) gives \(\mathrm{Re}\,\lambda(1)=-2\pi^{2}\phi'(\bar q)/M\) (scaling \(\propto M^{-1}\)), not the stated \(\propto \mu\,\phi'(\bar q)/M^{2}\). The extra factor of \(\mu\) and the extra power of \(M\) are unexplained and contradict the displayed eigenvalue, invalidating the claimed relaxation timescale mapping.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The paired tokens are consistently typed (angles ↔ co-moving phase; Fourier harmonic ↔ first loop harmonic; momentum ↔ normalized slip rate; control parameters ↔ speed/taper), and operator-role statements specify shared mathematical structure rather than hedged analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — Each `triple_correspondence_vectors` item is demonstrated in the body with equations or derivations:  
+  - *periodic_divergence_form_transport_operator_with_conserved_zero_mode* — shown by the two divergence-form continuity equations and conserved integrals in §3.  
+  - *constant_torque_pendulum_separatrix_and_shared_adiabaticity_criterion* — shown by the boxed pendulum equations and adiabatic invariance conditions.  
+  - *moving_bucket_retention_factor_and_its_shared_variational_optimum* — shown by the separatrix action, definition of \(\alpha(s)\), and optimization yielding \(s^\star\).  
+  - *bounded_concave_cycle_flux_ceiling* — shown by the bounded concave flux arguments and the min-ceiling expressions.  
+  - *phase_normalization_gauge_group_with_gauge_invariant_flux_observable* — shown by the free group actions and invariant flux observables on both sides.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The manuscript states an asymmetric transfer direction (FEL → queueing under prescribed exogenous drive) and restricts applicability (adiabatic, underdamped regime), and it gives a concrete, testable prediction (optimal torque \(s^\star=\sqrt2-1\) and corresponding optimal speed \(v^\star\) and flux \(\Delta X_{\max}\)), which are falsifiable measurements in both domains.
+
+#### Stage 3 Watch Items
+- Re-derive the discrete linearization and continuum limit for the queue ring to confirm the correct prefactors and scaling with \(M\) and any time-rescaling that could introduce \(\mu\); the current manuscript contains a clear algebraic mismatch that must be corrected or justified.
+- Request the authors to display the nondimensionalization steps for \(\tilde t\) and any rescaling that would produce the extra \(\mu\) and \(M\) factors in \(\gamma_1\) and \(T_{\rm relax}\).
+- Verify that the relaxation timescale claimed to map between FEL and queueing models is not an artifact of inconsistent time units or omitted Jacobian factors in the continuum limit.
+- Check the derivation of the discrete Laplacian prefactor (the \(1/(2M)\) term) and whether a different finite-difference convention or Taylor expansion coefficient was intended; small numeric prefactor errors here change the scaling of the relaxation time.
+- Confirm experimental or simulation protocols that could test the predicted \(s^\star\) optimum in the queueing model and the FEL taper window mapping, as these are concrete Stage 3 validation targets.
+
+### Eighth Adversarial Review
+**Reviewer:** xAI Grok 4.5 Fast
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The displayed transport operators, conserved-zero-mode identities, constant-torque pendula (with the damping term and underdamped restriction explicitly stated), retention-factor integral, and flux-ceiling bounds all match the domains and structural claims made for each silo.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — Every paired token is of compatible mathematical type (angle on S¹, Fourier coefficient, conjugate momentum, dimensionless torque parameter, external control, gauge parameter, bounded flux ceiling) and the Operator Role statements name a shared structure rather than a hedged analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All five listed vectors are demonstrated by explicit operator identities or derivations in Section 3 (Vector 1: boxed continuity equations and telescoping flux; Vector 2: boxed pendula, separatrix condition and adiabatic criterion; Vector 3: separatrix-area formula for α(s) and the subsequent variational maximisation; Vector 4: |b| \le 1 / min(q,1) ceilings with subgradient collapse; Vector 5: free gauge actions and invariant fluxes).
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The claimed direction is genuinely asymmetric (FEL possesses a mature adiabatic-torque design apparatus that cyclic-queueing theory lacks for traveling capacity profiles); the prediction supplies concrete numerical thresholds (v*/μ̄, peak relative gain, trapping window, overdamped collapse) that can be measured in discrete-event simulation and can falsify the hypothesis.
+
+#### Stage 3 Watch Items
+- Confirm that the unexplained cos ψ_r factor appearing in the Silo-B Ω^{2} expression is only a notational carry-over (with cos ψ_r set to 1) rather than an undefined resonant phase on the queueing side.
+- Verify that the underdamped restriction Ωτ ≫ 1 is accepted by queueing theorists as the regime in which a second-order production-flow model is physically meaningful.
+- Probe whether the non-isomorphic gauge groups (U(1) versus ℝ_{>0}) are regarded as sharing a sufficiently precise structural feature once the free-action-plus-invariant-flux level is made explicit.
+
+### Ninth Adversarial Review
+**Reviewer:** Meta Muse Spark 1.1
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-18
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — Silo A Bonifacio-Pellegrini-Narducci system dψ_j/d\bar z=p_j, dp_j/d\bar z=-(Ae^{iψ_j}+c.c.), dA/d\bar z=<e^{-iψ}> and Vlasov→continuity ∂_{\bar z}n+∂_ψ(n u)=0 and invariant d/d\bar z(|A|^2+<p>)=0, and Silo B generator (A f)(n)=Σμ_i(n_i)[f(n-e_i+e_{i+1})-f(n)], product-form π(n)=G(N)^{-1}∏x_i^{n_i}/β_i(n_i), and Kurtz limit ∂_{\tilde t}q+∂_xφ(q)= (2M)^{-1}∂_x^2φ(q) all model claimed domains, and boxed pendula d^2ψ/d\bar z^2=-ω_s^2(sinψ-sinψ_r) and d^2ψ/dt^2+τ^{-1}dψ/dt=-Ω^2(sinψ-s) share second-order constant-torque class with explicit underdamped restriction Ωτ≫1, no elliptic/parabolic or linear/nonlinear class mismatch.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — Seven pairs are type-compatible: angle coordinate on S^1→angle on S^1, complex order parameter b=<e^{-iψ}>→complex first harmonic \hat q_1, dimensionless momentum p→dimensionless slip \hat p=\dotψ/Ω, dimensionless torque sinψ_r→dimensionless speed mismatch s, control dK/dz→control v with both entering only via dimensionless s, gauge parameters arg A→α_gauge, and flux ceiling P_sat→X_∞, each Operator Role cites shared operator (divergence-form transport, pendulum Hamiltonian H=½\hat p^2-cosψ-sψ, separatrix |s|≤1, gauge-invariant flux) not hedged analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All listed vectors demonstrated in §3: periodic_divergence_form_transport_operator_with_conserved_zero_mode via ∂_{\bar z}n+∂_ψ(n u)=0, ∂_{\tilde t}q+∂_xφ(q) and ∮n dψ, ∮q dx conservation; constant_torque_pendulum_separatrix_and_shared_adiabaticity_criterion via boxed pendula, condition |sinψ_r|≤1↔|s|≤1 and adiabatic condition |Ω^{-2}dΩ/dt|≪1; moving_bucket_retention_factor_and_its_shared_variational_optimum via J(ψ_r), α(s)=(1-s)/(1+s), and d/ds[s(1-s)/(1+s)]=0→s*=√2-1; bounded_concave_cycle_flux_ceiling via |b|≤1, d|A|^2/d\bar z≤2|A| and X(N)=G(N-1)/G(N)→X_∞=min_i μ_i/r_i; phase_normalization_gauge_group_with_gauge_invariant_flux_observable via ψ→ψ+ψ_0, A→Ae^{-iψ_0} and r_i→α_gauge r_i with invariants |A|, X_i.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Asymmetric: FEL KMR taper theory, adiabatic invariant J=∮\hat p dψ, trapped-fraction accounting, GENESIS-type optimization as source for traveling-capacity design, while Silo B maturity is static product-form/Buzen/MVA/heavy-traffic/SIPP which lacks trapping/retention/optimum-speed primitive; falsifiable: predicts time-averaged throughput \bar X(v) in M=32,N=16 CONWIP loop with \bar μ=1,\hat c=0.3,τ=5, argmax at v*/\bar μ=1+\hat c(√2-1)=1.124 within [1.105,1.144], peak gain (3-2√2)\hat c=5.15% must exceed 1.5%, zero gain outside [0.7,1.3] and vanishing gain when τ<0.53, no canonical prior-art pairing recognized.
+
+#### Stage 3 Watch Items
+- Overdamped relaxation collapse risk self-identified as primary failure risk: probe whether finite-buffer second-order fluid model \ddot x=τ^{-1}[U-\dot x] with underdamped condition Ωτ≫1 is standard in closed cyclic queueing theory or borrowed from traffic/production-flow literature, and whether retention factor α(s) survives discrete-event back-reaction.
+- Verify that no textbook FEL↔queueing traveling-wave analogy exists that would make this a known interdisciplinary analogy, and confirm novelty-falsification string search yields no hit.
+- None identified for equation misattribution or category error.
