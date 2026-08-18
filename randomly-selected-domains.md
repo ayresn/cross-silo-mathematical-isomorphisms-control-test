@@ -1,21 +1,25 @@
-# seed=20260728  n=20  pool=100 domains
-GPT-5.5: 001     continuum-damage-mechanics      nuclear-criticality-transport
-GPT-5.5: 002     nonlinear-fiber-optics  computational-aeroelasticity
-Gemini: 003     semiconductor-laser-dynamics    cortical-spiking-neural-field
-Gemini: 004     power-grid-cascading-failure-analysis   spatial-epidemiology
-Grok: 005     nonlocal-damage-mechanics       transformation-optics
-Grok: 006     population-viability-analysis   opinion-dynamics-on-weighted-social-networks
-Copilot: 007     power-system-voltage-stability-analysis wall-bounded-turbulent-boundary-layer
-Copilot: 008     information-cascade-fronts-on-complex-networks  variational-phase-field-fracture
-Muse: 009     computational-elastoplasticity  microstructural-polymer-dynamics
-Muse: 010     topological-structural-mechanics        wall-bounded-turbulent-boundary-layer
-DeepSeek: 011     artificial-spin-ice     continuum-damage-mechanics
-DeepSeek: 012     fluid-dynamics  electromagnetic-theory
-GLM-5.2: 013     gene-family-evolution   computational-elastoplasticity
-GLM-5.2: 014     dislocation-dynamics-in-crystalline-solids      electromagnetic-theory
-Sonnet 5: 015     actuarial-ruin-theory   plasma-physics
-Sonnet 5: 016     traffic-flow-theory     topological-structural-mechanics
-Qwen 3.8: 017     computational-aeroelasticity    fisheries-bioeconomic-collapse-modeling
-Qwen 3.8: 018     gene-family-evolution   hypogene-karst-conduit-enlargement
-Nova: 019     cortical-spiking-neural-field   adaptive-social-network-dynamics
-Nova: 020     collisionless-plasma-kinetics   artificial-spin-ice
+# seed=20260817  n=24  pool=117 domains
+Nova: 001     athermal-amorphous-plasticity   glaciological-subglacial-hydrology
+Nova: 002     carbonate-acidization-reactive-wormholing       robust-control-structured-singular-value-theory
+Muse: 003     autothermal-reactive-transport-in-porous-catalysts      nonlinear-optics
+Muse: 004     current-filamentation-in-s-type-ndc-semiconductor-devices       particulate-process-engineering-population-balance-modeling
+Copilot: 005     elastohydrodynamic-lubrication-and-rough-surface-contact-tribology      semiconductor-device-transport-numerics
+Copilot: 006     deformable-porous-media-flow    viscous-thin-film-lubrication
+Grok: 007     pulmonary-airway-thin-film-mechanics    quantum-mechanics
+Grok: 008     single-molecule-motor-biophysics        deep-learning-optimization-theory
+GPT: 009     tumor-biomechanics-biphasic-growth      dendritic-metal-solidification
+GPT: 010     deformable-porous-media-flow    nonlocal-continuum-mechanics
+Gemini: 011     viscous-thin-film-lubrication   petroleum-reservoir-fractional-flow
+Gemini: 012     marine-glaciology       mems-nems-compliant-mechanisms
+Qwen: 013     clinical-neurophysiology-cortical-spreading-depolarization      quantum-mechanics
+Qwen: 014     financial-market-microstructure stdp-synaptic-weight-distribution
+DeepSeek: 015     nematic-liquid-crystal-director-dynamics        neural-field-pattern-formation
+DeepSeek: 016     complex-fluid-dynamics  polymer-melt-extrusion
+GLM: 017     fluid-dynamics  chromatographic-equilibrium-theory
+GLM: 018     Hele-Shaw-viscous-fingering-dynamics    electrodeposition-dendrite-growth
+Sonnet: 019     semiconductor-device-transport-numerics variational-phase-field-fracture
+Sonnet: 020     collisionless-electrostatic-plasma-kinetics     clinical-neurophysiology-cortical-spreading-depolarization
+Opus: 021     single-pass-free-electron-laser-physics closed-cyclic-queueing-network-theory
+Opus: 022     chromatographic-equilibrium-theory      carbonate-acidization-reactive-wormholing
+MiMo: 023     polycrystalline-grain-growth    stochastic-finance
+MiMo: 024     early-universe-cosmology        computational-micromagnetics
