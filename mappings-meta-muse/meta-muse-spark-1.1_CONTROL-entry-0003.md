@@ -2,7 +2,7 @@
 sid_metadata:
   entry_id: "CONTROL-SID-0003"
   schema_version: "2.0-control"
-  maturity_stage: "candidate"
+  maturity_stage: "adversarial-rejected"
 provenance:
   company: "Meta"
   model_family: "Muse"
