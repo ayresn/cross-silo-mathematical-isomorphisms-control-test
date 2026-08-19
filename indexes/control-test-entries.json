@@ -1,1387 +1,1959 @@
 {
-  "generated": "2026-08-12",
+  "generated": "2026-08-19",
   "entries": [
     {
-      "entry_id": "SID-001",
+      "entry_id": "CONTROL-SID-0001",
       "number": 1,
-      "path": "mappings-openai-chatgpt/gpt-5.5_entry-001.md",
+      "path": "mappings-amazon-nova/amazon-nova-pro_CONTROL-entry-0001.md",
       "maturity_stage": "adversarial-rejected",
-      "company": "OpenAI",
-      "model_family": "GPT",
-      "model_version": "5.5",
-      "generated": "2026-07-28",
-      "domain_a": "continuum-damage-mechanics",
-      "domain_b": "nuclear-criticality-transport",
-      "structural_family": "reaction-diffusion-threshold-systems",
+      "company": "Amazon",
+      "model_family": "Nova",
+      "model_version": "Pro",
+      "generated": "2026-08-17",
+      "domain_a": "athermal-amorphous-plasticity",
+      "domain_b": "glaciological-subglacial-hydrology",
+      "structural_family": "nonlinear-diffusion-operators",
       "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "variational_and_numerical_solution_family"
+        "nonlinear_diffusion_operator",
+        "stress-dependent_viscosity_function",
+        "subglacial_channel_formation_analogy"
       ],
       "reviews": [
         {
           "reviewer": "Anthropic Claude Sonnet 5",
           "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Section 1 and Section 3 claim Silo A and Silo B share 'the governing differential operator' and are both 'elliptic reaction-diffusion systems,' yet the displayed Silo A equation is a time-dependent parabolic PDE while Silo B's is a static elliptic eigenvalue problem with no derivation bridging the two, and this gap \u2014 combined with the wholly undemonstrated 'variational_and_numerical_solution_family' vector \u2014 leaves fewer than three of the three listed correspondence vectors actually demonstrated in the body."
+          "timestamp": "2026-08-18",
+          "rationale": "Section 2's vocabulary matrix contradicts Section 3's own equations (shear stress is paired with hydraulic gradient, not pressure), and the YAML-listed correspondence vector 'subglacial_channel_formation_analogy' is never demonstrated by any equation, operator identity, or derivation in the body."
         },
         {
-          "reviewer": "Google Gemini 3.1 Pro",
+          "reviewer": "Alibaba Qwen 3.8 Max",
           "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Fatal equation-class mismatch pairing a parabolic rate equation with an elliptic eigenvalue equation, alongside category errors and undemonstrated correspondence vectors."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Equation-class mismatch (parabolic damage evolution paired with elliptic neutron eigenvalue problem, both claimed elliptic) and an undemonstrated correspondence vector for variational/numerical solution family."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry claims an elliptic reaction-diffusion operator identity while pairing a parabolic damage evolution with an elliptic k-eigenvalue problem, maps a local damage field to a global k_eff-controlled quantity, and does not demonstrate the variational/numerical solution vector."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "Equations are correctly attributed to gradient-enhanced damage and k-eigenvalue neutron diffusion, vocabulary mappings specify shared eigenmode and feedback structure without category error, all three correspondence vectors are demonstrated in Section 3 and Section 4, and transfer is asymmetric with a specific falsifiable prediction."
+          "timestamp": "2026-08-18",
+          "rationale": "The entry fails because the vocabulary matrix maps shear stress to hydraulic gradient, an incompatible mathematical type, and the listed subglacial_channel_formation_analogy vector is not demonstrated by any equation, operator identity, or derivation."
         },
         {
           "reviewer": "DeepSeek DeepSeek V4 Pro",
           "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Equation-class mismatch (damage equation is parabolic, not elliptic) and undemonstrated correspondence vector 'variational_and_numerical_solution_family'."
+          "timestamp": "2026-08-18",
+          "rationale": "The entry relabels generic scalar nonlinear diffusion equations as domain-specific governing equations and lists a correspondence vector that is never mathematically demonstrated."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry presents physically fabricated equations, maps incompatible mathematical types, and fails to demonstrate required correspondence vectors."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Only two of three listed correspondence vectors are mathematically demonstrated; the 'subglacial_channel_formation_analogy' vector is asserted but never derived or supported by equation on either side."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a category error in the vocabulary matrix by mapping a scalar state variable to a vector spatial derivative, and fails to mathematically demonstrate one of its three listed correspondence vectors."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a category-error vocabulary mapping and lists a third correspondence vector that is not demonstrated by an equation, operator identity, or derivation."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "A category-error vocabulary mapping (shear stress \u2194 hydraulic gradient) creates a fatal type mismatch between the stated tokens and the PDEs, invalidating the claimed operator-level isomorphism."
         },
         {
           "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Vocabulary mapping pairs a local continuum state field with a k_eff-scaled quantity whose global/local status is inconsistent, and the variational component of the third correspondence vector is asserted without supporting derivation or operator identity in the body."
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Category-error vocabulary mapping of state variable to gradient plus undemonstrated correspondence vector for channel formation."
         }
       ],
       "synthesis": "",
       "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Continuum Damage Mechanics & Nuclear Criticality Transport",
-      "model_label": "OpenAI GPT 5.5"
+      "reject_share": 1.0,
+      "n_reject": 9,
+      "n_reviews": 9,
+      "title": "Athermal Amorphous Plasticity & Glaciological Subglacial Hydrology",
+      "model_label": "Amazon Nova Pro"
     },
     {
-      "entry_id": "SID-002",
+      "entry_id": "CONTROL-SID-0002",
       "number": 2,
-      "path": "mappings-openai-chatgpt/gpt-5.5_entry-002.md",
+      "path": "mappings-amazon-nova/amazon-nova-pro_CONTROL-entry-0002.md",
       "maturity_stage": "adversarial-rejected",
+      "company": "Amazon",
+      "model_family": "Nova",
+      "model_version": "Pro",
+      "generated": "2026-08-17",
+      "domain_a": "carbonate-acidization-reactive-wormholing",
+      "domain_b": "robust-control-structured-singular-value-theory",
+      "structural_family": "pattern-formation-instabilities / robust-optimization-criteria",
+      "vectors": [
+        "pattern_formation_bifurcation_threshold",
+        "robust_stability_mu_bound",
+        "reaction-diffusion_operator_spectral_radius"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 1's claim that the wormhole-formation PDE and the structured-singular-value robust-stability condition are 'both governed by a reaction-diffusion-like operator' is contradicted by Section 3's own description of the latter as an optimization criterion over a transfer-function matrix, and two of the three listed correspondence vectors are never derived or computed anywhere in the body."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry pairs a parabolic reaction-diffusion PDE with a structured singular-value inequality, maps a dimensional diffusion coefficient to \u03bc, and does not demonstrate the claimed threshold/spectral-radius correspondences."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry pairs a parabolic reaction-diffusion PDE with a finite-dimensional structured-singular-value inequality while claiming a shared reaction-diffusion operator, and it maps a dimensional diffusion coefficient to the dimensionless \u03bc with a false shared role."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry claims a shared differential operator structure between a parabolic PDE and an algebraic transfer function inequality, resulting in severe equation-class mismatches and vocabulary category errors."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry pairs a parabolic PDE with an algebraic stability criterion while claiming both are governed by a reaction-diffusion-like operator \u2014 a fundamental equation-class mismatch \u2014 and the vocabulary matrix incorrectly identifies the structured singular value \u03bc as a diffusion rate."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry pairs a parabolic reaction-diffusion PDE with an algebraic frequency-domain inequality and falsely claims both are governed by the spectral radius of a reaction-diffusion-like operator, which does not exist on the robust-control side."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains fatal mathematical mismatches: the two displayed equations do not share the claimed reaction-diffusion/spectral-radius structure, and the listed correspondence vectors are not all demonstrated in the body."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry asserts an operator-level isomorphism but exhibits an equation-class mismatch and category errors: the parabolic reaction-diffusion PDE is paired with an algebraic \u03bc-inequality without any operator identity or derivation, and a scalar diffusion coefficient is misidentified as the structured singular value."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Equation-class mismatch between a linear parabolic reaction-diffusion PDE and a non-differential structured singular value inequality, plus category-error vocabulary mappings that assert nonexistent shared structures."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 1.0,
+      "n_reject": 9,
+      "n_reviews": 9,
+      "title": "Carbonate Acidization Reactive Wormholing & Robust Control Structured Singular Value Theory",
+      "model_label": "Amazon Nova Pro"
+    },
+    {
+      "entry_id": "CONTROL-SID-0003",
+      "number": 3,
+      "path": "mappings-meta-muse/meta-muse-spark-1.1_CONTROL-entry-0003.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Meta",
+      "model_family": "Muse",
+      "model_version": "Spark 1.1",
+      "generated": "2026-08-17",
+      "domain_a": "autothermal-reactive-transport-in-porous-catalysts",
+      "domain_b": "nonlinear-optics",
+      "structural_family": "cusp_bifurcation_parabolic_activator_inhibitor_systems",
+      "vectors": [
+        "shared_parabolic_activator_inhibitor_operator_pair",
+        "shared_cusp_catastrophe_S_shaped_steady_state_normal_form",
+        "shared_finite_wavenumber_modulational_instability_dispersion_threshold"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 3 contains a misattributed classical constant and two derivation errors \u2014 one in each Silo's Correspondence-2/3 analysis, both verified by re-deriving them from the entry's own stated equations \u2014 so the quantitative demonstrations of two of the three claimed correspondences do not establish what they say they establish."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains internal mathematical contradictions in the claimed cusp correspondence and does not demonstrate the claimed shared parabolic operator from the displayed complex-envelope equation."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Multiple mathematical failures: the claimed parabolic isomorphism is an equation-class mismatch, the Silo B cusp condition is algebraically false, and the modulational-instability threshold contradicts the displayed dispersion relation."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry commits a fatal equation-class mismatch by attempting to map a dispersive Schr\u00f6dinger-class spatial operator (diffraction) to a real parabolic reaction-diffusion operator."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The cusp catastrophe location for Silo B is derived incorrectly (\u03b8\u2080,c = \u221a3(1+\u03ba_th) instead of the correct \u03b8\u2080,c = \u221a3), though the qualitative correspondence of shared cusp structure remains valid."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed operator identity for the intensity variable I=|\u03c8|\u00b2 is mathematically incorrect \u2014 the LLE's dispersive i\u2207\u00b2\u03c8 term produces phase-gradient advection in the intensity equation, not the diffusive \u2207\u00b2I claimed, and the supporting formula evaluates to a local quantity with no spatial differential operator."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed shared parabolic activator-inhibitor structure is mathematically unsupported because Silo B is a complex Lugiato-Lefever-type dispersive field coupled to a thermal diffusion equation rather than the same two-real-scalar reaction-diffusion operator, and the listed correspondence vectors consequently are not demonstrated."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry asserts an operator-level isomorphism between a genuinely parabolic reaction\u2013diffusion system and a dispersive complex Lugiato\u2013Lefever type equation after an unsupported reduction; this is an equation-class/category error that invalidates the claimed operator equivalence."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Equation-class mismatch: claimed shared two-component parabolic activator-inhibitor operator is not supported by the displayed equations, which pair a real parabolic reaction-diffusion system against a dispersive complex Lugiato-Lefever system whose intensity reduction is asserted but not shown to recover an identical real-diffusion parabolic form."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.8888888888888888,
+      "n_reject": 8,
+      "n_reviews": 9,
+      "title": "Autothermal Reactive Transport In Porous Catalysts & Nonlinear Optics",
+      "model_label": "Meta Muse Spark 1.1"
+    },
+    {
+      "entry_id": "CONTROL-SID-0004",
+      "number": 4,
+      "path": "mappings-meta-muse/meta-muse-spark-1.1_CONTROL-entry-0004.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Meta",
+      "model_family": "Muse",
+      "model_version": "Spark 1.1",
+      "generated": "2026-08-17",
+      "domain_a": "current-filamentation-in-s-type-ndc-semiconductor-devices",
+      "domain_b": "particulate-process-engineering-population-balance-modeling",
+      "structural_family": "nonlocal-bistable-reaction-diffusion-systems",
+      "vectors": [
+        "shared_nonlocal_global_coupling_parabolic_operator",
+        "bistable_S_nullcline_Maxwell_equal_area_coexistence",
+        "long_wave_transversal_instability_dispersion_threshold"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 2's vocabulary matrix asserts an incorrect conservation law for the shared aggregation/coalescence operator (claims the zeroth moment is conserved when the Smoluchowski form given conserves only the first moment/mass), and separately leaves S and n dimensionally inconsistent with their own defining equations, so the claimed shared mathematical structure is not established as written."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry fails because the bistable/Maxwell correspondence vector is not demonstrated for Silo B and the vocabulary matrix asserts an incorrect unweighted conservation law for Smoluchowski aggregation."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry's central bistability claim is contradicted by its explicit Silo A reaction term, and two of the three listed correspondence vectors rely on invalid or undefined mathematical constructions."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry hallucinates mathematical equivalence by committing fundamental category errors, including evaluating a mass-dependent macroscopic function at a microscopic volume variable, and invalidly applying Smoluchowski additive convolutions to spatial coordinates."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Vector 2 (bistable_S_nullcline_Maxwell_equal_area_coexistence) has a mathematical formulation issue: the function H is defined as H(M) (mass-dependent supersaturation) but then evaluated at particle volumes v\u2081, v\u2082 in the Silo B Maxwell integral, and the variational derivation claim does not hold for PBE with Smoluchowski aggregation, which is not a gradient flow."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains multiple fatal mathematical inconsistencies, including falsifying the operator class for Silo A, confusing global mass with an internal coordinate in the Maxwell construction, deriving an invalid dispersion relation using plane waves on a variable-coefficient operator, and proposing a methodologically incoherent QMOM transfer."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains multiple substantive mathematical inconsistencies: the stated S-shaped bistable nullcline is not supported by the specified reaction law, several vocabulary/operator identifications are mathematically mismatched, the claimed Maxwell and dispersion correspondences are not demonstrated, and the numerical holding-voltage prediction contradicts its own formula."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry is largely coherent but contains two non-fatal technical weaknesses: (1) an inconsistency in the linear dispersion/critical-wavenumber presentation for Silo A that omits the global time-delayed coupling term when quoting \\(q_c\\), and (2) a vocabulary mapping that equates a purely local activator field to a particle number density with an extra internal coordinate without a demonstrated reduction or projection."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated via explicit operators and Maxwell constructions, equations are of matching parabolic integro-differential class, and the transfer prediction is quantitative and falsifiable, but vocabulary mappings introduce type and dimensional inconsistencies that require Stage-3 scrutiny."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.6666666666666666,
+      "n_reject": 6,
+      "n_reviews": 9,
+      "title": "Current Filamentation In S Type Ndc Semiconductor Devices & Particulate Process Engineering Population Balance Modeling",
+      "model_label": "Meta Muse Spark 1.1"
+    },
+    {
+      "entry_id": "CONTROL-SID-0005",
+      "number": 5,
+      "path": "mappings-microsoft-copilot/microsoft-copilot-1.2_CONTROL-entry-0005.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Microsoft",
+      "model_family": "Copilot",
+      "model_version": "1.2",
+      "generated": "2026-08-17",
+      "domain_a": "elastohydrodynamic-lubrication-and-rough-surface-contact-tribology",
+      "domain_b": "semiconductor-device-transport-numerics",
+      "structural_family": "nonlinear-coupled-parabolic-elliptic-transport-with-free-boundary-and-contact-constraints",
+      "vectors": [
+        "lubrication_reynolds_operator_vs_drift_diffusion_operator",
+        "film_thickness_elastic_coupling_vs_poisson_potential_coupling",
+        "contact_sealing_robin_like_boundary_vs_surface_recombination_robin_boundary"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Check 1 fails on independent, internally-verifiable grounds: the Silo A steady-form equation in Section 3 does not follow from its own preceding equation (a sign error on the entrainment term), and the nondimensional group Pi is not actually dimensionless as claimed."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains an algebraically inconsistent Reynolds equation and does not demonstrate the third listed correspondence vector, leaving fewer than three supported vectors."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Rejected for a displayed Reynolds-equation sign error contradicting the entry's own continuity equation and for an asserted but underived boundary-correspondence vector."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry relies on mathematically contradictory variable mappings between the two domains and pairs fundamentally incompatible equation classes (domain-wide complementarity vs. fixed linear boundary conditions)."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Core operator-equivalence structure is mathematically sound, but the entry contains a sign error in the rearranged Reynolds equation, dimensionally incorrect nondimensional groups, and an internally conflicted vocabulary mapping for the film-thickness field."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The two displayed EHL equations are mutually inconsistent in the sign of the Couette/entrainment term \u2014 a convention-independent internal error \u2014 and the claimed operator equivalence additionally conflates a governing operator with a drift-flux divergence."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a concrete sign error in its derived Reynolds operator equation and a category-error alternative in the vocabulary mapping."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Core operator and convolutional correspondences are supported by matching divergence-form and linear elliptic kernel structures, but the boundary-constraint vector relies on an incomplete limit mapping that is only partially demonstrated, and the vocabulary entry for film thickness versus density/potential response mixes object types."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated with compatible nonlinear parabolic-elliptic divergence operators, symmetric convolution kernels, and complementarity-to-Robin boundary mapping, with a quantitatively falsifiable transfer prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.6666666666666666,
+      "n_reject": 6,
+      "n_reviews": 9,
+      "title": "Elastohydrodynamic Lubrication And Rough Surface Contact Tribology & Semiconductor Device Transport Numerics",
+      "model_label": "Microsoft Copilot 1.2"
+    },
+    {
+      "entry_id": "CONTROL-SID-0006",
+      "number": 6,
+      "path": "mappings-microsoft-copilot/microsoft-copilot-1.2_CONTROL-entry-0006.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Microsoft",
+      "model_family": "Copilot",
+      "model_version": "1.2",
+      "generated": "2026-08-17",
+      "domain_a": "deformable-porous-media-flow",
+      "domain_b": "viscous-thin-film-lubrication",
+      "structural_family": "coupled-pressure-elastic_free-surface_and_substrate_coupling",
+      "vectors": [
+        "coupled_pressure_elastic_operator",
+        "mass_conservation_flux_height_operator",
+        "quartic_dispersion_relation_instability"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 3's poroelastic dispersion derivation, using the entry's own stated substitution \u00ca\u207b\u00b9(k) ~ 1/(\u03ba_e k^2), yields \u03c3(k) \u221d k^2 with no k^4 term, and the entry's claim that a k^-2 factor multiplying k^2 is 'algebraically equivalent to adding a k^4 stabilizing term' is a basic exponent error, so only two of the three listed correspondence vectors are soundly demonstrated."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed quartic dispersion/instability vector is not demonstrated: the Silo A dispersion relation as written is a decaying second-order mode and contains no k^4 balance, contradicting the entry's claim of the same k^2/k^4 polynomial dispersion in both silos."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry's derivation of the poroelastic closed pressure evolution contains an ill-typed operator inversion, and its claimed quartic dispersion isomorphism is not established on the poroelastic side."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Equation-class mismatch where a second-order poroelastic diffusion system is invalidly equated to a fourth-order thin-film equation."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The poroelastic dispersion derivation under the stated scalar-reduction equations yields pure k^2 diffusion, contradicting the claimed shared k^2 + k^4 quartic structure, which is the basis of the third correspondence vector."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The thin-film PDE has a sign error contradicting its own stated flux law, the thin-film dispersion relation has a sign error on the disjoining-pressure term inconsistent with the stated pressure decomposition, and the claimed quartic-dispersion correspondence vector is not demonstrated for the poroelastic side because the derived dispersion is purely diffusive and the argument for a k^4 term contains the mathematical error k^{-2} \u00d7 k^2 = k^0 \u2260 k^4."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry's central quartic-dispersion correspondence is mathematically unsupported: the stated poroelastic elimination produces a k^2-only diffusion rate under the supplied scalar reduction, while the thin-film equation does not generically yield the claimed k^2+k^4 structure with the stated elastic operators."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed shared quartic dispersion relation with competing k^{2} (destabilizing) and k^{4} (stabilizing) terms producing finite-bandwidth instability is not supported by the explicit linearizations shown; Silo A reduces to pure diffusion while Silo B can exhibit instability, rendering the third correspondence vector undemonstrated."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Quartic dispersion vector claimed in Section 1 is not demonstrated on poroelastic side; derivation yields only k^2 and contains false algebraic equivalence k^{-2}*k^2 = k^4, leaving fewer than three demonstrated vectors."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.8888888888888888,
+      "n_reject": 8,
+      "n_reviews": 9,
+      "title": "Deformable Porous Media Flow & Viscous Thin Film Lubrication",
+      "model_label": "Microsoft Copilot 1.2"
+    },
+    {
+      "entry_id": "CONTROL-SID-0007",
+      "number": 7,
+      "path": "mappings-xai-grok/xai-grok-4.5-fast_CONTROL-entry-0007.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "xAI",
+      "model_family": "Grok",
+      "model_version": "4.5 Fast",
+      "generated": "2026-08-17",
+      "domain_a": "pulmonary-airway-thin-film-mechanics",
+      "domain_b": "quantum-mechanics",
+      "structural_family": "higher-order-nonlinear-parabolic-evolution-with-curvature-driven-flux",
+      "vectors": [
+        "shared_fourth_order_curvature_flux_operator_under_lubrication_reduction",
+        "identical_linearized_dispersion_relation_for_long-wave_capillary_instability",
+        "common_gradient-flow_structure_of_free-energy_functional_with_surface_energy"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 3's Silo A and Silo B governing PDEs both linearize by direct computation to a pure -k^4 term with no k^2 component, so neither produces its own claimed omega = C*k^2(k_c^2-k^2) dispersion relation stated immediately after it, and Section 3 separately collapses its own admitted two-field (continuity + Euler) Madelung system into one closed PDE using a quantum-potential term that drops the 1/R factor Section 3 itself defines for Q, so the central operator/dispersion identity claimed in Sections 1-2 is not established by the body."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The displayed airway and Madelung equations do not support the claimed Rayleigh\u2013Plateau cutoff dispersion, and the Madelung-side equation replaces the stated quantum potential with an unexplained thin-film-type curvature flux."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The displayed fourth-order equations do not produce the claimed k^2(k_c^2-k^2) dispersion relations, and the capillary-pressure/quantum-potential mapping asserts an operator identity that is not present in the stated nonlinear operator."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry relies on fabricated mathematics, featuring a fatal equation-class mismatch between conservative quantum mechanics and viscous parabolic flow, alongside internal derivations that do not follow from the displayed equations."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The displayed equations in Section 3 linearize to purely stable fourth-order diffusion (omega proportional to -k^4) and cannot produce the Rayleigh-Plateau dispersion relations the entry claims they 'immediately produce,' undermining the core correspondence vectors."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The displayed Silo A equation cannot produce its claimed dispersion relation (missing azimuthal curvature term), the Silo B equation is a relabeled thin-film equation not derivable from the Hamiltonian Schr\u00f6dinger/Madelung system, and the vocabulary matrix falsely claims a linear operator and a nonlinear functional are 'identical' after nondimensionalization."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed shared fourth-order operator and dispersion relation are mathematically inconsistent with the displayed equations, and the quantum-side closure and gradient-flow correspondence are not established by the stated Madelung formulation."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry asserts an operator identity between a genuinely fourth-order degenerate-parabolic thin-film evolution and a Madelung-derived dispersive quantum evolution, but the quoted Madelung closure is a misattribution that changes the equation class and the body fails to demonstrably establish all listed correspondence vectors."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three claimed correspondence vectors are demonstrated with matching fourth-order degenerate parabolic operators, identical linearized dispersion relations, and shared gradient-flow structure, with no class mismatches, misattributions, or category errors."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.8888888888888888,
+      "n_reject": 8,
+      "n_reviews": 9,
+      "title": "Pulmonary Airway Thin Film Mechanics & Quantum Mechanics",
+      "model_label": "xAI Grok 4.5 Fast"
+    },
+    {
+      "entry_id": "CONTROL-SID-0008",
+      "number": 8,
+      "path": "mappings-xai-grok/xai-grok-4.5-fast_CONTROL-entry-0008.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "xAI",
+      "model_family": "Grok",
+      "model_version": "4.5 Fast",
+      "generated": "2026-08-17",
+      "domain_a": "single-molecule-motor-biophysics",
+      "domain_b": "deep-learning-optimization-theory",
+      "structural_family": "overdamped-langevin-fokker-planck-operators-with-load-dependent-drift",
+      "vectors": [
+        "shared_overdamped_langevin_sde_operator_with_additive_white_noise",
+        "identical_fokker-planck_drift-diffusion_structure_for_stationary_density",
+        "shared_force-velocity_or_gradient-noise_tradeoff_via_linear_response_of_mean_drift"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Correspondence vector 3 (force-velocity/gradient-noise linear response) is never demonstrated by an equation anywhere in the body, leaving only 2 of the 3 listed vectors demonstrated, and its supporting vocabulary mapping in Section 2 asserts a specific shared drift structure that Section 3's own Silo B equation does not contain."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-06-18",
+          "rationale": "The entry asserts a stationary Gibbs density for a tilted periodic motor potential, maps a constant scalar load to a state-dependent gradient norm, and does not demonstrate the listed force-velocity/gradient-noise vector with an equation or derivation."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "Check 1 fails because the stated stationary density for the tilted periodic motor potential is nonperiodic and ignores the nonzero stationary current, and Check 2 fails because the load-force-to-gradient-norm mapping is a category error contradicted by the displayed SGLD equation."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry commits a category error by mapping a constant scalar external force to a state-dependent gradient magnitude, and it fails to mathematically demonstrate one of its claimed correspondence vectors."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four equations are valid instances of their stated domains, all vocabulary mappings pair compatible mathematical types with specified shared structures, all three correspondence vectors are demonstrated via the operator identity and explicit FPE/density derivations, and the transfer direction is genuinely asymmetric with a specific falsifiable prediction."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The vocabulary matrix maps an independent external load force to a gradient magnitude that is the derivative of the already-mapped potential, a structural double-mapping; the third correspondence vector relies on a 'load' that is absent from the displayed SGLD equation."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a genuine equilibrium/operator error for the loaded periodic motor system and does not actually demonstrate the claimed shared linear-response correspondence, so multiple required structural claims are unsupported or false."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "A category error in the vocabulary mapping (mapping a local continuum gradient field to a single additive load scalar) invalidates the claimed operator-level isomorphism."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated with same-class parabolic Langevin/Fokker-Planck operators, vocabulary maps are type-compatible with explicit shared structure, and transfer is asymmetric with a quantitatively falsifiable prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.7777777777777778,
+      "n_reject": 7,
+      "n_reviews": 9,
+      "title": "Single Molecule Motor Biophysics & Deep Learning Optimization Theory",
+      "model_label": "xAI Grok 4.5 Fast"
+    },
+    {
+      "entry_id": "CONTROL-SID-0009",
+      "number": 9,
+      "path": "mappings-openai-gpt/openai-gpt-5.6-luna_CONTROL-entry-0009.md",
+      "maturity_stage": "adversarial-flagged",
       "company": "OpenAI",
       "model_family": "GPT",
-      "model_version": "5.5",
-      "generated": "2026-07-28",
-      "domain_a": "nonlinear-fiber-optics",
-      "domain_b": "computational-aeroelasticity",
-      "structural_family": "non-normal-parametrically-coupled-hamiltonian-wave-systems",
+      "model_version": "5.6 Luna",
+      "generated": "2026-08-17",
+      "domain_a": "tumor-biomechanics-biphasic-growth",
+      "domain_b": "dendritic-metal-solidification",
+      "structural_family": "thin-interface-free-boundary-asymptotics / curvature-kinetic-selection",
       "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "variational_structure_and_numerical_solution_family"
+        "gradient-energy_curvature_solvability_operator",
+        "normal-flux_kinematic_free-boundary_operator",
+        "thin-interface_Peclet_curvature_similarity_pair"
       ],
       "reviews": [
         {
           "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Two of the three listed correspondence vectors (instability_mechanism, variational_structure_and_numerical_solution_family) are asserted only in descriptive prose with no supporting equation, operator identity, or derivation anywhere in the entry, leaving fewer than three vectors demonstrated under Check 3."
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "No FAIL-level issue was found in Checks 1-3 or Check 4(a)/(b); the sole finding is a Check 4(c) prior-art flag \u2014 Cahn-Hilliard's classical sharp-interface limit is itself Mullins-Sekerka type, a solidification-originated free-boundary model \u2014 which is advisory only and does not affect the mathematics' internal validity."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry is mathematically rigorous and structurally sound, but flagged under Check 4 because the base isomorphism between diffuse-interface tumor growth and dendritic solidification (both reducing to Mullins-Sekerka/Stefan moving boundary problems) is a canonical analogy in applied mathematics that requires Stage 3 bibliometric verification for the specific thin-interface transfer."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "No fatal equation-class or category errors were found, but two specific non-fatal internal inconsistencies and a prior-art advisory warrant flagging before Stage 3."
         },
         {
           "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry pairs a complex scalar PDE with a real vector ODE without defining a mathematical transformation, and fails to mathematically demonstrate two of its claimed correspondence vectors."
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry successfully identifies a consistent structural correspondence between the inner-solvability operators and kinematic boundary conditions of Cahn-Hilliard tumor models and Allen-Cahn dendritic solidification, fully supporting all claimed mathematical vectors."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are correctly typed and classified, vocabulary mappings pair objects of compatible mathematical type, all three correspondence vectors are demonstrated with explicit equations and derivations on both sides, and the transfer direction is genuinely asymmetric with a highly specific falsifiable prediction."
         },
         {
           "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Only one of three claimed correspondence vectors (governing_differential_operator) is supported by displayed equations; instability_mechanism and variational_structure_and_numerical_solution_family are gestured at with vocabulary and method-name lists but never established with any equation, operator identity, or derivation."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Only governing_differential_operator is supported by displayed equations; instability_mechanism and variational_structure_and_numerical_solution_family are asserted without equations, operator identities, or derivations, leaving fewer than three demonstrated vectors."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
           "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All three claimed correspondence vectors are demonstrated with compatible operator-sum evolution equations and specific spectral/non-normal instability mechanisms, with no category errors or class mismatches."
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are correctly stated and attributed, the equation-class difference (Cahn-Hilliard 4th order vs Allen-Cahn 2nd order) is explicitly acknowledged and the isomorphism correctly restricted to inner-interface asymptotics, all three correspondence vectors are demonstrated with derivations, and the falsifiable prediction names specific measurable quantities with quantitative thresholds."
         },
         {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Two of the three listed correspondence vectors lack equation, operator identity, or derivation support in the body, failing Check 3."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "The governing operator and instability correspondences are supported by the displayed equations and descriptions, but the variational_structure_and_numerical_solution_family vector is only partially established without an explicit shared variational principle or energy functional on both sides."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Nonlinear Fiber Optics & Computational Aeroelasticity",
-      "model_label": "OpenAI GPT 5.5"
-    },
-    {
-      "entry_id": "SID-003",
-      "number": 3,
-      "path": "mappings-google-gemini/gemini-3.1-pro_entry-003.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Google",
-      "model_family": "Gemini",
-      "model_version": "3.1 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "semiconductor-laser-dynamics",
-      "domain_b": "cortical-spiking-neural-field",
-      "structural_family": "slow-fast-complex-lattice-dynamics",
-      "vectors": [
-        "governing_complex_envelope_operator",
-        "modulational_instability_mechanisms",
-        "coupled_supermode_eigenvalue_solutions"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Fewer than three of the listed correspondence vectors are demonstrated with an equation, operator identity, or derivation, and Section 1's claim of 'identical' coupling operators is contradicted by a real coupling term present only in the Silo B equation and left unaddressed throughout the entry."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry asserts an identical governing operator and three demonstrated correspondence vectors, but the displayed coupling operators are not identical and the modulational-instability and supermode-eigenvalue vectors are not actually established by equations, operator identities, or derivations."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The correspondence vector 'coupled_supermode_eigenvalue_solutions' is listed in the YAML but appears in the body only as a falsifiable prediction in Section 4 with no eigenvalue equation, supermode decomposition, or derivation, leaving fewer than three demonstrated vectors."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails Check 2 by mapping a dimensional carrier-density variable to a dimensionless resource fraction without stated nondimensionalization, and fails Check 3 because fewer than three correspondence vectors are demonstrated by equations or derivations."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
+          "reviewer": "Microsoft Copilot 1.2",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All three correspondence vectors are demonstrated by matching semi-discrete complex Ginzburg-Landau operators with consistent equation class and type-compatible vocabulary mapping and a falsifiable PT-symmetry supermode prediction."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Only one of three listed correspondence vectors (governing_complex_envelope_operator) is demonstrated with an equation in the body; modulational_instability_mechanisms and coupled_supermode_eigenvalue_solutions lack any equation, operator identity, or derivation, falling below the minimum of three demonstrated vectors."
+          "timestamp": "2026-08-18",
+          "rationale": "The entry consistently demonstrates three interface-level correspondences via inner-coordinate solvability, normal-flux Stefan-type relations, and thin-interface Pe/Ca bookkeeping while explicitly acknowledging and isolating the bulk-operator class mismatch."
         },
         {
           "reviewer": "xAI Grok 4.5 Fast",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks confirm internal mathematical and semantic consistency of the claimed slow-fast complex lattice isomorphism with no equation-class mismatches, category errors, undemonstrated vectors, or non-falsifiable predictions."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Semiconductor Laser Dynamics & Cortical Spiking Neural Field",
-      "model_label": "Google Gemini 3.1 Pro"
-    },
-    {
-      "entry_id": "SID-004",
-      "number": 4,
-      "path": "mappings-google-gemini/gemini-3.1-pro_entry-004.md",
-      "maturity_stage": "adversarial-flagged",
-      "company": "Google",
-      "model_family": "Gemini",
-      "model_version": "3.1 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "power-grid-cascading-failure-analysis",
-      "domain_b": "spatial-epidemiology",
-      "structural_family": "network-laplacian-resolvents",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "numerical_solution_family"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "Section 3's core resolvent-update equations are independently verified as correctly derived and equation-class-consistent, but the vocabulary matrix (Check 2) and two of the three correspondence vectors (Check 3) carry specific, nameable imprecisions that stop short of full demonstration without amounting to fatal errors."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry contains a mathematically invalid inverse formula for the singular graph Laplacian and lists a governing-differential-operator correspondence that the body does not demonstrate."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry demonstrates strong mathematical consistency and falsifiability, but contains a notational inconsistency in the Sherman-Morrison-Woodbury equations and a misdescription of the Bus Susceptance Matrix's role."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The listed instability_mechanism correspondence is only asserted verbally and is not established by an equation, operator identity, or derivation on both sides, so the entry does not meet the required demonstrated-correspondence ratio."
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks confirm internal mathematical consistency: equations support the claimed interface-asymptotic free-boundary structure, vocabulary pairs are type-compatible with shared operator roles, all three listed vectors are demonstrated by explicit expansions and operator maps, and the transfer prediction is asymmetric and quantitatively falsifiable."
         },
         {
           "reviewer": "Meta Muse Spark 1.1",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All equations are valid Sherman-Morrison-Woodbury rank-1 Laplacian resolvent updates with compatible operator class, vocabulary mappings are type-consistent, all three correspondence vectors are demonstrated with equations/operator identities, and transfer is asymmetric with a quantitatively falsifiable prediction."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The correspondence vector 'governing_differential_operator' is listed but the body provides no differential operator or differential equation; only algebraic resolvent updates appear, leaving fewer than three demonstrated vectors."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks confirm internal mathematical and semantic consistency of the claimed Laplacian-resolvent isomorphism with no equation-class mismatches, category errors, undemonstrated vectors, or non-falsifiable predictions."
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated with inner-expansion equations and operator identities, vocabulary maps are type-compatible, and transfer is asymmetric and quantitatively falsifiable."
         }
       ],
       "synthesis": "",
       "isomorphism": "",
-      "reject_share": 0.42857142857142855,
-      "n_reject": 3,
-      "n_reviews": 7,
-      "title": "Power Grid Cascading Failure Analysis & Spatial Epidemiology",
-      "model_label": "Google Gemini 3.1 Pro"
+      "reject_share": 0.0,
+      "n_reject": 0,
+      "n_reviews": 9,
+      "title": "Tumor Biomechanics Biphasic Growth & Dendritic Metal Solidification",
+      "model_label": "OpenAI GPT 5.6 Luna"
     },
     {
-      "entry_id": "SID-005",
-      "number": 5,
-      "path": "mappings-xai-grok/grok-beta_entry-005.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "xAI",
-      "model_family": "Grok",
-      "model_version": "4",
-      "generated": "2026-07-28",
-      "domain_a": "nonlocal-damage-mechanics",
-      "domain_b": "transformation-optics",
-      "structural_family": "riemannian-metric-modulated-elliptic-operators",
-      "vectors": [
-        "governing_differential_operator",
-        "variational_principles",
-        "numerical_solution_family"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry fails Check 3 because only one of its three listed correspondence vectors (governing_differential_operator) is demonstrated on both sides with an equation or derivation, leaving variational_principles (Silo A only) and numerical_solution_family (unsupported assertion) short of the three-vector floor."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a category-error vocabulary mapping and lists variational-principle and numerical-solution correspondences that are asserted but not demonstrated on both sides."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry commits a category error by mapping a scalar length to a tensor, and fails to demonstrate two of its three claimed correspondence vectors."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "No fatal mathematical errors, but two correspondence vectors are only partially demonstrated and one vocabulary mapping pairs incompatible types."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry asserts identical Green's-function decay for screened-Poisson and Helmholtz equations and does not demonstrate the numerical_solution_family vector with an equation, operator identity, or derivation."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All three correspondence vectors are demonstrated with compatible elliptic divergence-form operators, coherent vocabulary types, and a specific falsifiable transfer prediction."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Vocabulary mapping #1 is a category error: a scalar length scale is paired with a rank-2 metric tensor."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Nonlocal Damage Mechanics & Transformation Optics",
-      "model_label": "xAI Grok 4"
-    },
-    {
-      "entry_id": "SID-006",
-      "number": 6,
-      "path": "mappings-xai-grok/grok-beta_entry-006.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "xAI",
-      "model_family": "Grok",
-      "model_version": "4",
-      "generated": "2026-07-28",
-      "domain_a": "population-viability-analysis",
-      "domain_b": "opinion-dynamics-on-weighted-social-networks",
-      "structural_family": "diffusion-approximations-of-absorbing-markov-processes",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "boundary_conditions"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Silo B's governing equation is never given explicit functional form even though the entry claims its operator 'coincides' with Silo A's, and Section 2's vocabulary matrix independently misassigns carrying capacity K \u2014 a stable equilibrium under the entry's own Section 3 formula \u2014 to the unstable-fixed-point role that only the Allee threshold A actually plays."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a category-error vocabulary mapping and does not demonstrate all three claimed correspondence vectors, while its asserted matching absorbing boundary conditions are not actually matched between the two systems."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Mathematical structures are genuinely compatible (parabolic Fokker-Planck on intervals), but the falsifiable prediction uses an unverified exponential scaling argument and mean-field closure over edge-weight variance is stated without derivation."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry's central claim \u2014 that bounded-confidence opinion dynamics is governed by the same local cubic-bistable Fokker-Planck operator as the strong-Allee birth-death process \u2014 is asserted but never derived, and the stated Silo B mechanism (neighbors inside a confidence radius) is nonlocal, contradicting the local cubic drift that is displayed."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "The operator class and correspondence vectors are internally supported at a minimal level, but the first vocabulary mapping overextends the shared structure by treating carrying capacity as if it were part of the unstable-threshold mechanism."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All four checks pass: identical parabolic Fokker-Planck operators with cubic bistable drift and matching absorbing boundaries demonstrate all three claimed vectors with specific falsifiable exponential scaling prediction."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Vocabulary Matrix erroneously associates carrying capacity with an unstable fixed point (Check 2 FAIL), and the instability_mechanism correspondence vector is asserted without demonstration for Silo B (Check 3 FAIL)."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.5714285714285714,
-      "n_reject": 4,
-      "n_reviews": 7,
-      "title": "Population Viability Analysis & Opinion Dynamics On Weighted Social Networks",
-      "model_label": "xAI Grok 4"
-    },
-    {
-      "entry_id": "SID-007",
-      "number": 7,
-      "path": "mappings-microsoft-copilot/copilot_entry-007.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Microsoft",
-      "model_family": "Copilot",
-      "model_version": "1.2",
-      "generated": "2026-07-28",
-      "domain_a": "power-system-voltage-stability-analysis",
-      "domain_b": "wall-bounded-turbulent-boundary-layer",
-      "structural_family": "saddle-node-and-eigenvalue-instabilities / nonnormal-operator-growth / continuation-operator-framework",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "numerical_solution_family"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Section 3 identifies the power-flow Jacobian J_F (a real-zero-eigenvalue fold operator) with the Orr-Sommerfeld/Squire operator as the same governing differential operator, but the displayed OS/Squire equation retains a general complex eigenvalue whose canonical marginal-stability condition for the cited transition mechanism is a Hopf-type crossing rather than a fold, a distinction Section 4's own falsifiable prediction implicitly concedes by treating the fold curve and the linear TS modal growth threshold as separately measurable, potentially divergent quantities."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The claimed governing-operator isomorphism is mathematically inconsistent because the power-system side is presented as a finite-dimensional algebraic power-flow Jacobian while the boundary-layer side is a differential Orr\u2013Sommerfeld/Squire operator, and the claimed instability-mechanism correspondence is not established for separation/transition."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry fails Checks 1 and 3 due to a fundamental equation-class mismatch, explicitly claiming a shared 'governing differential operator' but pairing a purely algebraic finite-dimensional matrix equation with a spatial differential equation."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Equations are correctly formulated and the bifurcation-theory correspondence is mathematically sound, but the Silo B domain is stated as turbulent while the displayed OS equation and Falkner\u2013Skan test case are laminar, and the asymmetry rationale overstates the absence of continuation tooling in fluid dynamics."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry claims a shared governing differential operator but supports the power-system side with an algebraic power-flow Jacobian singularity condition, while the fluid side is a differential Orr-Sommerfeld eigenvalue problem."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Mathematical consistency is sound, but the domain pairing is a recognizable canonical application of bifurcation/continuation theory; prior\u2011art advisory flagged for Stage 3."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All four checks hold: the displayed residual/Jacobian singularity and Orr\u2013Sommerfeld eigenvalue problem are consistent with the claimed fold detection, the vocabulary pairs share compatible operator and bifurcation types with explicit shared structure, all three listed vectors are demonstrated by equations and operator mappings in Sections 1\u20133, and the transfer is asymmetric with a concrete measurable prediction."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.5714285714285714,
-      "n_reject": 4,
-      "n_reviews": 7,
-      "title": "Power System Voltage Stability Analysis & Wall Bounded Turbulent Boundary Layer",
-      "model_label": "Microsoft Copilot 1.2"
-    },
-    {
-      "entry_id": "SID-008",
-      "number": 8,
-      "path": "mappings-microsoft-copilot/copilot_entry-008.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Microsoft",
-      "model_family": "Copilot",
-      "model_version": "1.2",
-      "generated": "2026-07-28",
-      "domain_a": "information-cascade-fronts-on-complex-networks",
-      "domain_b": "variational-phase-field-fracture",
-      "structural_family": "free-boundary-fronts-via-gradient-flows",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "variational_principle_and_numerical_solution_family"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The Silo B evolution equation in Section 3 carries the wrong sign and normalization on its crack-energy term relative to the variational derivative of its own stated energy functional, so it is not actually the claimed gradient flow and its Laplacian term enters with an ill-posed, anti-diffusive sign."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The phase-field fracture evolution equation is inconsistent with the total energy displayed immediately below it, with the fracture-energy contribution carrying the wrong sign and omitted normalization, so the claimed gradient-flow correspondence is not mathematically supported as written."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a sign error yielding an ill-posed anti-diffusion equation, invents a multiplicative susceptibility function in the vocabulary mapping that is absent from the equations, and fails to demonstrate three complete correspondence vectors."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The Silo B phase-field evolution equation contains a sign error on the fracture toughness term that makes it inconsistent with the stated energy functional, so the claimed gradient-flow correspondence is not mathematically supported."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The displayed Silo B phase-field evolution equation is sign-inconsistent with the stated Silo B energy and is therefore not the claimed energy-gradient-flow."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Check 3 FAIL: correspondence vector 'instability_mechanism' is asserted but not demonstrated with an equation, operator identity, or derivation; the claimed Griffith-like mapping is merely stated, leaving the vector unsupported by the body's mathematics."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All four checks pass: equations are consistent gradient flows of matching energy structures, vocabulary mappings are type-compatible with shared operator roles, all three listed vectors are demonstrated by explicit equations and derivations in the body, and the transfer is asymmetric with specific falsifiable scaling and error-reduction predictions."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.8571428571428571,
-      "n_reject": 6,
-      "n_reviews": 7,
-      "title": "Information Cascade Fronts On Complex Networks & Variational Phase Field Fracture",
-      "model_label": "Microsoft Copilot 1.2"
-    },
-    {
-      "entry_id": "SID-009",
-      "number": 9,
-      "path": "mappings-meta-muse/muse-spark-1-1_entry-009.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Meta",
-      "model_family": "Muse",
-      "model_version": "Spark 1.1",
-      "generated": "2026-07-28",
-      "domain_a": "computational-elastoplasticity",
-      "domain_b": "microstructural-polymer-dynamics",
-      "structural_family": "variational-inequalities-with-moving-convex-constraints-on-SL3",
-      "vectors": [
-        "governing_differential_operator",
-        "variational_principle",
-        "instability_mechanism",
-        "numerical_solution_family"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Section 1's claim that both systems are gradient flows on the unimodular Lie group SL(3) is contradicted by Silo B's own Section 3 equation, and the same category error recurs in two vocabulary-matrix pairings (\u03b1\u2194S 'trace-free' claim; \u0394\u03b3\u2194\u03b2 'Lagrange multiplier' claim)."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains multiple fatal mathematical category errors and claims four correspondence vectors that are not demonstrated by equations, operators, or derivations on both sides."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains fatal mathematical category errors, contradicts its own Lie algebra claims with its equations, and fails to mathematically demonstrate multiple correspondence vectors listed in the YAML."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains fatal mathematical inconsistencies including a disconnected Kuhn-Tucker multiplier, category errors in the vocabulary matrix mapping, and an undemonstrated governing operator."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains category/dimensional vocabulary errors and a Silo B constraint equation that does not enforce the claimed Kuhn-Tucker finite-extensibility condition."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Vocabulary matrix contains multiple category errors: mapping a constant material parameter as a Lagrange multiplier, misrepresenting a unit\u2011trace tensor as trace\u2011free, and conflating a survival probability with a geometric integrator."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Max",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All four checks are satisfied: equations are class-compatible and support the claimed shared structure, vocabulary pairs are type-compatible with explicit shared operators, every listed correspondence vector is demonstrated by equations or operator identities in the body, and the transfer is asymmetric with a specific measurable prediction."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.8571428571428571,
-      "n_reject": 6,
-      "n_reviews": 7,
-      "title": "Computational Elastoplasticity & Microstructural Polymer Dynamics",
-      "model_label": "Meta Muse Spark 1.1"
-    },
-    {
-      "entry_id": "SID-010",
+      "entry_id": "CONTROL-SID-0010",
       "number": 10,
-      "path": "mappings-meta-muse/muse-spark-1-1_entry-010.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Meta",
-      "model_family": "Muse",
-      "model_version": "Spark 1.1",
-      "generated": "2026-07-28",
-      "domain_a": "topological-structural-mechanics",
-      "domain_b": "wall-bounded-turbulent-boundary-layer",
-      "structural_family": "non-hermitian-topological-localization",
-      "vectors": [
-        "governing_differential_operator",
-        "boundary_conditions",
-        "instability_mechanism"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "H_mech(k) as displayed in Section 3 is Hermitian by construction (Q(k) paired with its own conjugate transpose Q^\u2020(k) in the standard chiral block form), directly contradicting the entry's repeated central claim of a non-Hermitian chiral Hamiltonian exhibiting non-Hermitian skin-effect localization, and the boundary_conditions correspondence vector is never demonstrated with an equation or derivation on either side, leaving only two of three listed vectors actually supported."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains fatal mathematical mismatches: the displayed mechanical Hamiltonian is Hermitian rather than the claimed non-Hermitian Hamiltonian, the vocabulary matrix contains incompatible object types, and the three listed correspondence vectors are not all demonstrated by equations or derivations."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry relies on an invalid equation-class equivalence between a chiral operator and a block lower-triangular operator, and maps a linear null-vector to a fluid forcing term."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry falsely claims a chiral Hamiltonian structure for the lower-triangular Orr-Sommerfeld-Squire operator and contains a category error mapping a discrete dimensionless topological invariant to a continuous dimensional physical gradient."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-07-28",
-          "rationale": "The entry's claimed non-Hermitian chiral operator correspondence is contradicted by its own displayed Hermitian mechanical Hamiltonian and triangular Orr-Sommerfeld/Squire operator, and the listed boundary-condition correspondence is not demonstrated."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Entry falsely claims a shared chiral block structure between the chiral mechanical Hamiltonian and the block-triangular Orr-Sommerfeld-Squire operator, and fails to demonstrate the listed correspondence vector 'boundary_conditions'."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Section 3 equations display an off-diagonal chiral block structure for H_mech but a block-triangular structure with non-zero diagonal blocks for L, contradicting the explicit claim of shared non-Hermitian chiral block structure."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 1.0,
-      "n_reject": 7,
-      "n_reviews": 7,
-      "title": "Topological Structural Mechanics & Wall Bounded Turbulent Boundary Layer",
-      "model_label": "Meta Muse Spark 1.1"
-    },
-    {
-      "entry_id": "SID-011",
-      "number": 11,
-      "path": "mappings-deepseek-deepseek/deepseek_entry-011.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "DeepSeek",
-      "model_family": "DeepSeek",
-      "model_version": "V4 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "artificial-spin-ice",
-      "domain_b": "continuum-damage-mechanics",
-      "structural_family": "reaction-diffusion-avalanche-systems",
-      "vectors": [
-        "governing_differential_operator: screened-Poisson/Laplacian-driven scalar potential",
-        "instability_mechanism: threshold\u2011activated rate\u2011dependent bifurcation (monopole avalanche \u2194 damage localization)",
-        "numerical_solution_family: rejection\u2011free kinetic Monte\u2011Carlo (ASI) \u2192 stochastic discrete defect evolution (CDM)"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Three checks each surface a specific, quotable error: a misattributed 2D log-Coulomb-gas Hamiltonian in Section 3, a vocabulary-matrix mapping in Section 2 that misdescribes its own cited equation, and a correspondence vector (numerical_solution_family) unsupported by any equation, operator identity, or derivation, which drops demonstrated vectors below the required floor of three."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a substantive equation/operator mismatch in the CDM construction and does not demonstrate all three listed correspondence vectors with equations, operator identities, or derivations."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry conflates incompatible continuum damage formulations and fails to demonstrate two of its three claimed correspondence vectors with any mathematical equations."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry maps magnetic charge density \u03c1_m (a source term in a Poisson equation) to the damage variable d (a field variable governed by a Helmholtz equation), incorrectly claiming both are source terms \u2014 a category error in the vocabulary mapping."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry fails because the claimed CDM Helmholtz operator equivalence is misattributed/incoherent as written and the listed numerical-solution vector is not demonstrated by any equation, operator identity, or derivation."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All three vectors are demonstrated with elliptic Poisson/Helmholtz identities and threshold rate laws, equations are correctly attributed to ASI and CDM with no class mismatch, vocabulary mappings are compatible scalar fields with explicit operator roles, and transfer is asymmetric with a quantitative falsifiable prediction."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Vocabulary matrix asserts identical source-term roles for the paired order parameters while the accompanying equations and elaborations assign asymmetric roles; the numerical-solution vector is named but lacks supporting equation, operator identity or derivation on both sides."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Artificial Spin Ice & Continuum Damage Mechanics",
-      "model_label": "DeepSeek DeepSeek V4 Pro"
-    },
-    {
-      "entry_id": "SID-012",
-      "number": 12,
-      "path": "mappings-deepseek-deepseek/deepseek_entry-012.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "DeepSeek",
-      "model_family": "DeepSeek",
-      "model_version": "V4 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "fluid-dynamics",
-      "domain_b": "electromagnetic-theory",
-      "structural_family": "free-boundary-instabilities",
-      "vectors": [
-        "governing_differential_operator: Laplace operator for the scalar potential in the insulating phase (velocity potential vs. electric potential)",
-        "instability_mechanism: critical nucleus phenomenon driven by a field exceeding a threshold, balanced by surface tension and dissipation",
-        "numerical_solution_family: moving-boundary tracking / front-capturing methods (Volume of Fluid in cavitation, analogous potential field tracking in dielectric breakdown)"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The Silo B streamer-growth equation in Section 3 is presented as established, derivable domain physics yet is directly contradicted by Section 4's own account of the field's actual non-continuum, non-inertial models, and two of the three YAML-listed correspondence vectors (governing_differential_operator and numerical_solution_family) have no supporting equation, derivation, or even mention anywhere in the body, leaving only one of three vectors demonstrated."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a fatal vocabulary category error by mapping a scalar threshold field to a pressure constant while also claiming an unsupported Laplace-governed correspondence."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry fails multiple checks by hallucinating a relabeled Rayleigh-Plesset equation for dielectric breakdown and failing to demonstrate a claimed correspondence vector in the body text."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The Silo B equation is constructed with a spherical-geometry coefficient (3/2) while claiming cylindrical geometry, the entry's own metadata admits it has not been rigorously derived, the stated parameter mapping contains incorrect scaling factors, and two of three listed correspondence vectors are undemonstrated in the body."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Only the critical-nucleus ODE vector is demonstrated; the listed Laplace-operator and numerical-method vectors are not established by any equation, operator identity, or derivation, leaving fewer than three demonstrated correspondence vectors."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "YAML claims Laplace operator as governing correspondence but body contains only second-order Rayleigh-Plesset-type ODEs with no Laplace equation, leaving fewer than three demonstrated vectors."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Fewer than three correspondence vectors are demonstrated by equations, operator identities, or derivations in the body text."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 1.0,
-      "n_reject": 7,
-      "n_reviews": 7,
-      "title": "Fluid Dynamics & Electromagnetic Theory",
-      "model_label": "DeepSeek DeepSeek V4 Pro"
-    },
-    {
-      "entry_id": "SID-013",
-      "number": 13,
-      "path": "mappings-zai-glm/glm-5-2_entry-013.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Z.AI",
-      "model_family": "GLM",
-      "model_version": "5.2",
-      "generated": "2026-07-28",
-      "domain_a": "gene-family-evolution",
-      "domain_b": "computational-elastoplasticity",
-      "structural_family": "constrained-gradient-flows / variational-inequalities",
-      "vectors": [
-        "governing_differential_operator: Continuous Complementarity System (Kuhn-Tucker conditions) governing constrained flow",
-        "variational_principles: Closest-point projection of mutational load / trial stress onto admissible manifold under metric",
-        "instability_mechanism: Mutational meltdown / loss of robustness vs. Strain localization / shear banding"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "Only two of the three listed correspondence vectors are supported by any equation, operator identity, or derivation in Section 3, and the Silo A equation itself is introduced by relabeling the Silo B equation rather than independent derivation, so the claimed isomorphism is stipulated, not demonstrated."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a genuine inconsistency between its stated metric projection and biological flow equation, and its instability correspondence is asserted without mathematical support."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry fails to mathematically demonstrate the claimed instability mechanism correspondence vector."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains genuine mathematical errors in the governing equations, including internal inconsistencies between continuous and discrete forms, incorrect use of the covariance matrix instead of its inverse in the projection metric, and the use of the stiffness tensor instead of the compliance tensor for stress-space projection."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All three correspondence vectors are demonstrated with matching complementarity systems and metric projections, with compatible operator types and a specific falsifiable asymmetric transfer."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry's triple_correspondence_vectors list includes an instability mechanism correspondence that is not demonstrated in the body with an equation, operator identity, or derivation, leaving fewer than three vectors fully supported."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "The instability_mechanism correspondence vector is only partially supported by descriptive assertion in the vocabulary matrix without an equation, operator identity, or derivation establishing the parallel on both sides."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Gene Family Evolution & Computational Elastoplasticity",
-      "model_label": "Z.AI GLM 5.2"
-    },
-    {
-      "entry_id": "SID-014",
-      "number": 14,
-      "path": "mappings-zai-glm/glm-5-2_entry-014.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Z.AI",
-      "model_family": "GLM",
-      "model_version": "5.2",
-      "generated": "2026-07-28",
-      "domain_a": "dislocation-dynamics-in-crystalline-solids",
-      "domain_b": "electromagnetic-theory",
-      "structural_family": "topological-field-transport / induction-operators",
-      "vectors": [
-        "governing_differential_operator (curl of cross-product advection + diffusion)",
-        "conserved_quantities (Burgers vector circulation \u2194 magnetic flux freezing)",
-        "instability_mechanisms (dislocation cell formation \u2194 kinematic dynamo alpha-effect)"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-12",
-          "rationale": "Both Section 3 governing equations carry a sign-inverted (anti-diffusive) resistive/diffusive term that contradicts the entry's own description of that term, and only one of the three listed correspondence vectors is demonstrated in the body with equation-level support."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The entry contains a category-error vocabulary mapping and, independently, fails to demonstrate the listed instability-mechanism correspondence with an equation, operator identity, or derivation."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "REJECT due to backward-parabolic sign errors in the equations and an undemonstrated correspondence vector."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "The governing differential equations contain a fatal sign error in the diffusion terms, rendering them mathematically ill-posed backward-diffusion equations rather than the claimed physical transport models."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-11",
-          "rationale": "Identical curl cross-product plus diffusive operator and conserved-quantity correspondence are fully demonstrated, but instability-mechanisms vector lacks equation/operator derivation."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-11",
-          "rationale": "One listed correspondence vector ('instability_mechanisms') is not demonstrated in the body with an equation or derivation, violating Check 3."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-11",
-          "rationale": "All four checks pass with equations of matching class supporting the claimed operator identity, type-compatible vocabulary mappings with explicit shared structure, every listed correspondence vector demonstrated by equations or derivation in the body, and an asymmetric transfer with a specific measurable falsifiable prediction."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Dislocation Dynamics In Crystalline Solids & Electromagnetic Theory",
-      "model_label": "Z.AI GLM 5.2"
-    },
-    {
-      "entry_id": "SID-015",
-      "number": 15,
-      "path": "mappings-anthropic-claude/claude-sonnet-5_entry-015.md",
+      "path": "mappings-openai-gpt/openai-gpt-5.6-luna_CONTROL-entry-0010.md",
       "maturity_stage": "adversarial-flagged",
-      "company": "Anthropic",
-      "model_family": "Claude",
-      "model_version": "Sonnet 5",
-      "generated": "2026-07-28",
-      "domain_a": "actuarial-ruin-theory",
-      "domain_b": "plasma-physics",
-      "structural_family": "integro-differential-characteristic-equations / complex-root-spectral-theory",
+      "company": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.6 Luna",
+      "generated": "2026-08-17",
+      "domain_a": "deformable-porous-media-flow",
+      "domain_b": "nonlocal-continuum-mechanics",
+      "structural_family": "loss-of-ellipticity-regularized-localization",
       "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "numerical_solution_family",
-        "dimensionless_similarity_parameter"
-      ],
-      "reviews": [
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry contains a false unconditional existence claim for the Lundberg root and lists correspondences that the body does not mathematically demonstrate, including a scalar safety-loading parameter mapped to the Penrose criterion and an asserted shared differential-operator structure without an operator identity."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails Check 2 by mapping a purely dimensionless quantity to a dimensional integral without nondimensionalization, and fails Check 3 because three of the four listed correspondence vectors lack equation or derivation support."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry successfully maps the characteristic equations and root-finding machinery of ruin theory and plasma physics, but contains a non-fatal mathematical error regarding the resolution of unbounded MGFs via analytic continuation."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 MaX",
-          "verdict": "REJECT",
-          "timestamp": "2026-07-28",
-          "rationale": "The body mathematically demonstrates only the governing characteristic-equation vector; the instability, numerical-root-counting, and dimensionless-parameter vectors are asserted without equations, operator identities, or derivations on both sides, leaving fewer than three demonstrated vectors."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four correspondence vectors are demonstrated with correctly attributed, class-compatible integro-differential characteristic equations and no vocabulary category errors or equation-class mismatches."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "One correspondence vector (dimensionless_similarity_parameter) is not demonstrated with an equation or derivation on the plasma side, despite being listed."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks pass: equations are of matching integro-differential characteristic class supporting the claimed shared structure, vocabulary mappings are type-compatible with explicit shared operator roles, all listed vectors are demonstrated in the body text, and transfer/falsifiability criteria are met without fatal defects."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.42857142857142855,
-      "n_reject": 3,
-      "n_reviews": 7,
-      "title": "Actuarial Ruin Theory & Plasma Physics",
-      "model_label": "Anthropic Claude Sonnet 5"
-    },
-    {
-      "entry_id": "SID-016",
-      "number": 16,
-      "path": "mappings-anthropic-claude/claude-sonnet-5_entry-016.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Anthropic",
-      "model_family": "Claude",
-      "model_version": "Sonnet 5",
-      "generated": "2026-07-28",
-      "domain_a": "traffic-flow-theory",
-      "domain_b": "topological-structural-mechanics",
-      "structural_family": "non-reciprocal-lattice-topology",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "dimensionless_similarity_parameter"
-      ],
-      "reviews": [
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry contains a dimensional category error in the claimed parameter correspondence and does not demonstrate the claimed instability-mechanism isomorphism on both sides."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry contains severe mathematical mischaracterizations of its variables and an equation-class mismatch mapping a classical PDE to a quantum second-quantized Hamiltonian."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The vocabulary matrix maps V'(h) (a coupling-strength scalar) to g (a directional-asymmetry parameter), claiming V'(h) sets the directional bias of the coupling \u2014 but the OVM's directional bias is structurally fixed at maximum (look-ahead only), so the claimed correspondence is mathematically incorrect, leaving the dimensionless_similarity_parameter vector undemonstrated and the entry below the three-vector floor."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry does not demonstrate the listed dimensionless_similarity_parameter vector, and the traffic-side instability-envelope claim is asserted without an equation or derivation, leaving fewer than three demonstrated correspondence vectors."
-        },
-        {
-          "reviewer": "Meta Muse Spark 1.1",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "Equations are correctly attributed and class-consistent, vocabulary mappings are type-compatible with explicit operator roles, all three correspondence vectors are demonstrated with equations, and transfer is asymmetric with a falsifiable N-dependent envelope prediction."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The correspondence vector 'dimensionless_similarity_parameter' is listed but not demonstrated with an equation, operator identity, or derivation in the body text."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks confirm internal mathematical and semantic consistency of the claimed non-reciprocal nearest-neighbor coupling, skin-effect localization, and bias-parameter transition with no equation-class, type, or support failures."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.7142857142857143,
-      "n_reject": 5,
-      "n_reviews": 7,
-      "title": "Traffic Flow Theory & Topological Structural Mechanics",
-      "model_label": "Anthropic Claude Sonnet 5"
-    },
-    {
-      "entry_id": "SID-017",
-      "number": 17,
-      "path": "mappings-alibaba-qwen/qwen3.8_entry-017.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Alibaba",
-      "model_family": "Qwen",
-      "model_version": "3.8 Max",
-      "generated": "2026-07-28",
-      "domain_a": "computational-aeroelasticity",
-      "domain_b": "fisheries-bioeconomic-collapse-modeling",
-      "structural_family": "non-self-adjoint-delay-oscillators",
-      "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "numerical_solution_family"
+        "coupled_force-balance_and_mass-balance_operator_pair",
+        "variational_energy-dissipation_stationarity_pair",
+        "localization_threshold_regularized_by_nonlocal_interaction_length"
       ],
       "reviews": [
         {
           "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Two of the three listed correspondence vectors are demonstrated with explicit equations in Section 3, but 'numerical_solution_family' is only named as a list of technique labels in Section 4 with no equation, operator identity, or derivation connecting it to either system, leaving the entry below the required floor of three demonstrated vectors."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry claims a shared delayed Li\u00e9nard/operator structure and three demonstrated correspondence vectors, but the body neither derives the claimed reduction nor demonstrates the governing-operator and numerical-solution correspondences on both sides."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails Check 3 because `numerical_solution_family` is listed as a correspondence vector but is not demonstrated on both sides, leaving only two valid demonstrated vectors."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "The shared Hopf normal form is mathematically valid for both systems, but the intermediate Li\u00e9nard-type reduction for the fisheries DDE is asserted without demonstration and may not follow straightforwardly from the stated algebraic elimination."
-        },
-        {
-          "reviewer": "MetaMuse Spark 1.1",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All equations are domain-appropriate non-self-adjoint delayed oscillators with compatible class, vocabulary mappings are type-compatible with explicit shared operators, all three correspondence vectors are demonstrated with governing equations and normal-form derivation, and transfer is asymmetric and quantitatively falsifiable."
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks are satisfied: the local (Biot) and nonlocal (peridynamic) operator pairs are individually well-formed and connected by an explicit local-limit relation rather than a claimed identity across mismatched classes, the three vocabulary mappings each specify a genuine shared structure, all three listed correspondence vectors are demonstrated with explicit equations in Section 3, and the transfer direction and falsification criterion in Section 4 meet the required specificity."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry demonstrates rigorous mathematical consistency, with all three correspondence vectors fully supported by explicit equations and derivations, and a highly specific, falsifiable transfer hypothesis."
         },
         {
           "reviewer": "DeepSeek DeepSeek V4 Pro",
           "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Correspondence vector 'numerical_solution_family' is not demonstrated in the body with any equation, operator identity, or derivation, violating Check 3."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "All equations and vocabulary mappings are internally consistent with the claimed non-self-adjoint delayed Hopf structure, and transfer/falsifiability criteria are met, but the listed numerical_solution_family vector is only partially demonstrated."
-        }
-      ],
-      "synthesis": "",
-      "isomorphism": "",
-      "reject_share": 0.5714285714285714,
-      "n_reject": 4,
-      "n_reviews": 7,
-      "title": "Computational Aeroelasticity & Fisheries Bioeconomic Collapse Modeling",
-      "model_label": "Alibaba Qwen 3.8 Max"
-    },
-    {
-      "entry_id": "SID-018",
-      "number": 18,
-      "path": "mappings-alibaba-qwen/qwen3.8_entry-018.md",
-      "maturity_stage": "adversarial-flagged",
-      "company": "Alibaba",
-      "model_family": "Qwen",
-      "model_version": "3.8 Max",
-      "generated": "2026-07-28",
-      "domain_a": "gene-family-evolution",
-      "domain_b": "hypogene-karst-conduit-enlargement",
-      "structural_family": "state-dependent-population-fokker-planck-operators",
-      "vectors": [
-        "governing_differential_operator",
-        "boundary_conditions",
-        "instability_mechanism"
-      ],
-      "reviews": [
-        {
-          "reviewer": "Anthropic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The Section 4 prediction that karst aperture distributions collapse onto a gamma/negative-binomial quasi-stationary family does not actually solve the entry's own logistic drift equation from Section 3, which is a wrong-equation FAIL under Check 1."
-        },
-        {
-          "reviewer": "OpenAI GPT-5.6 Luna",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The displayed gene-family master equation is internally inconsistent with the rate convention used immediately afterward, because its transition terms omit the copy-number factors required by the stated birth/death process and by the subsequent drift and diffusion coefficients."
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a sign error in the displayed nonlocal local-limit bridge and a vocabulary category error pairing a vector Darcy flux with a scalar nonlocal operator."
         },
         {
           "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains fatal mathematical errors regarding the formulation of a local model's second variation and the kinematic derivative relationship for stress, alongside a vocabulary category error."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry establishes a mathematically consistent correspondence between one-dimensional state-dependent Fokker-Planck population operators in gene-family evolution and karst conduit widening, supported by explicit differential operators, compatible vocabulary types, and concrete falsifiable scaling laws."
+          "timestamp": "2026-08-19",
+          "rationale": "All three correspondence vectors are demonstrated with explicit equations on both sides; the coupled operator pair, energy\u2013dissipation structure, and localization-threshold regularization are each shown with matching mathematical formulations that are internally consistent and class-compatible."
         },
         {
           "reviewer": "Z.AI GLM-5.2",
-          "verdict": "FLAG",
-          "timestamp": "2026-08-09",
-          "rationale": "Core Fokker-Planck isomorphism in Section 3 is mathematically sound across all three correspondence vectors, but the gamma quasi-stationary distribution predicted in Section 4 is inconsistent with the logistic drift dynamics stated in Section 3."
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are valid and correctly attributed, vocabulary mappings pair compatible types with named shared structure, all three correspondence vectors are demonstrated with equations, and the transfer is genuinely asymmetric with a quantitatively falsifiable prediction."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry's equations, operator mappings, and demonstrated correspondences are mathematically consistent and each of the three listed correspondence vectors is supported by explicit equations or operator identities in the body."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass with equations matching claimed domains and structures, coherent type-compatible vocabulary mappings that name shared operators, all three listed vectors fully demonstrated by explicit operator identities and Fourier analysis in Section 3, and an asymmetric transfer supported by a concrete measurable falsification criterion."
         },
         {
           "reviewer": "Meta Muse Spark 1.1",
           "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All equations are consistently parabolic Fokker-Planck class with matching drift-diffusion structure, vocabulary mappings are type-compatible with explicit operator-role statements, all three correspondence vectors are demonstrated with equations and threshold derivations, and transfer is asymmetric with specific quantitative falsifiable predictions."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks pass; the equations are valid and support the claimed Fokker\u2011Planck operator correspondence, the vocabulary matrix has no category errors, all three correspondence vectors are demonstrated, and the transfer prediction is asymmetric and falsifiable."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "PASS",
-          "timestamp": "2026-08-09",
-          "rationale": "All four checks pass: equations are class-consistent Fokker-Planck operators with matching logistic drift structure, vocabulary mappings are type-compatible with explicit shared operator roles, all three listed vectors are demonstrated by the body equations and boundary analysis, and the transfer direction plus falsifiable predictions are specific and asymmetric."
+          "timestamp": "2026-08-18",
+          "rationale": "All three claimed correspondence vectors are demonstrated with explicit operators and local-limit identities, equations are correctly attributed to Biot poromechanics and state-based peridynamics with no class mismatch, vocabulary mappings are type-compatible with shared operator roles, and Section 4 provides asymmetric transfer with measurable falsification thresholds."
         }
       ],
       "synthesis": "",
       "isomorphism": "",
-      "reject_share": 0.2857142857142857,
+      "reject_share": 0.2222222222222222,
       "n_reject": 2,
-      "n_reviews": 7,
-      "title": "Gene Family Evolution & Hypogene Karst Conduit Enlargement",
-      "model_label": "Alibaba Qwen 3.8 Max"
+      "n_reviews": 9,
+      "title": "Deformable Porous Media Flow & Nonlocal Continuum Mechanics",
+      "model_label": "OpenAI GPT 5.6 Luna"
     },
     {
-      "entry_id": "SID-019",
-      "number": 19,
-      "path": "mappings-amazon-nova/1.0_entry-019.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Amazon",
-      "model_family": "Nova",
-      "model_version": "1.0 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "cortical-spiking-neural-field",
-      "domain_b": "adaptive-social-network-dynamics",
-      "structural_family": "diffusion-operators",
+      "entry_id": "CONTROL-SID-0011",
+      "number": 11,
+      "path": "mappings-google-gemini/google-gemini-3.1-pro_CONTROL-entry-0011.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.1 Pro",
+      "generated": "2026-08-17",
+      "domain_a": "viscous-thin-film-lubrication",
+      "domain_b": "petroleum-reservoir-fractional-flow",
+      "structural_family": "degenerate-fourth-order-parabolic-flows",
       "vectors": [
-        "governing_differential_operator",
-        "boundary_conditions",
-        "numerical_solution_family"
+        "degenerate_fourth_order_parabolic_operator",
+        "lyapunov_free_energy_functional",
+        "nonlinear_convective_flux_tensor"
       ],
       "reviews": [
         {
-          "reviewer": "Antrhopic Claude Sonnet 5",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Fewer than three of the entry's declared correspondence vectors are demonstrated in the body (Check 3), and Section 4's falsifiable prediction is a non-measurable template statement (Check 4), each an independent FAIL-level defect."
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Equation validity, vocabulary-matrix coherence, and the transfer/falsifiability claims all hold up, but one of the three listed correspondence vectors \u2014 the shared Lyapunov free-energy dissipation property \u2014 is asserted rather than derived and does not actually hold for the full convective PDEs as written, which is a real, non-fatal gap rather than a wrong or misattributed equation."
         },
         {
-          "reviewer": "OpenAI GPT-5.6 Luna",
+          "reviewer": "Alibaba Qwen 3.8 Max",
           "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails because two claimed correspondence vectors are not demonstrated in the body, and its stated falsifiable prediction is a non-prediction that supplies no measurable outcome or discriminating test."
-        },
-        {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry lists correspondence vectors that are never demonstrated in the mathematical body and features a template non-prediction that lacks falsifiability."
-        },
-        {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Only one of three listed correspondence vectors is demonstrated in the body, and the falsifiable prediction is a template non-prediction."
-        },
-        {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails because the listed boundary_conditions correspondence is absent from the body and the stated falsifiable prediction is a non-prediction with no measurable outcome."
+          "timestamp": "2026-08-18",
+          "rationale": "The lyapunov_free_energy_functional vector is not demonstrated for the full governing equations because the quoted dissipation claim ignores the non-gradient convective fluxes and the displayed energies omit the required gravitational/advective potentials."
         },
         {
           "reviewer": "DeepSeek DeepSeek V4 Pro",
           "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Two FAIL-level issues: undemonstrated correspondence vectors (boundary_conditions, numerical_solution_family) and a non-falsifiable prediction."
+          "timestamp": "2026-08-18",
+          "rationale": "The entry falsely asserts that the displayed capillary/intermolecular free-energy functionals are Lyapunov functionals for the stated PDEs, even though each PDE contains a convective term whose external work is not included in the displayed functional."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated with explicit equations of compatible class (degenerate fourth-order parabolic), the vocabulary mappings are mathematically type-consistent with a stated nondimensionalization, and the transfer is genuinely asymmetric with a specific falsifiable prediction."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The lyapunov_free_energy_functional vector is partially demonstrated: energy functionals are correctly written and structurally identical, but the claimed dissipation inequality dE/dt \u2264 0 does not hold for the full PDEs as written because the convective terms in both equations can inject energy."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry contains a genuine gradient-flow inconsistency, a sign inconsistency in the vocabulary-to-equation mapping, and correspondence claims that are not established as the stated strict operator identity."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry incorrectly asserts that the VTFL PDE with an explicit nonlinear convective flux is a mass\u2011conserving gradient flow that monotonically dissipates the stated energy functional, which is mathematically inconsistent."
         },
         {
           "reviewer": "xAI Grok 4.5 Fast",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Undemonstrated correspondence vectors (boundary_conditions and numerical_solution_family) and a non-falsifiable template prediction."
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks confirm internal mathematical consistency: matching degenerate fourth-order parabolic structure with shared energy dissipation and convective flux, type-compatible vocabulary mappings with explicit shared operators, full demonstration of the three listed correspondence vectors, and a genuinely asymmetric transfer with a concrete falsifiable numerical prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All equations share degenerate fourth-order parabolic class with nonlinear convective flux and gradient-flow energy structure, vocabulary maps are type-compatible with explicit structure, and all three correspondence vectors are demonstrated with equations and falsifiable transfer."
         }
       ],
       "synthesis": "",
       "isomorphism": "",
-      "reject_share": 1.0,
-      "n_reject": 7,
-      "n_reviews": 7,
-      "title": "Cortical Spiking Neural Field & Adaptive Social Network Dynamics",
-      "model_label": "Amazon Nova 1.0 Pro"
+      "reject_share": 0.4444444444444444,
+      "n_reject": 4,
+      "n_reviews": 9,
+      "title": "Viscous Thin Film Lubrication & Petroleum Reservoir Fractional Flow",
+      "model_label": "Google Gemini 3.1 Pro"
     },
     {
-      "entry_id": "SID-020",
-      "number": 20,
-      "path": "mappings-amazon-nova/1.0_entry-020.md",
-      "maturity_stage": "adversarial-rejected",
-      "company": "Amazon",
-      "model_family": "Nova",
-      "model_version": "1.0 Pro",
-      "generated": "2026-07-28",
-      "domain_a": "collisionless-plasma-kinetics",
-      "domain_b": "artificial-spin-ice",
-      "structural_family": "hamiltonian-systems",
+      "entry_id": "CONTROL-SID-0012",
+      "number": 12,
+      "path": "mappings-google-gemini/google-gemini-3.1-pro_CONTROL-entry-0012.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.1 Pro",
+      "generated": "2026-08-17",
+      "domain_a": "marine-glaciology",
+      "domain_b": "mems-nems-compliant-mechanisms",
+      "structural_family": "free-boundary-variational-inequalities",
       "vectors": [
-        "governing_differential_operator",
-        "instability_mechanism",
-        "symmetry_groups"
+        "biharmonic_variational_inequality_functional",
+        "signorini_complementarity_conditions",
+        "moving_boundary_kinematic_continuity_classes"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "Section 3's equations model each domain's stated physics correctly as genuinely matched 4th-order elliptic obstacle problems, Section 2's vocabulary pairings show no category errors, all three YAML-listed correspondence vectors are explicitly demonstrated with equations, and Section 4's transfer claim is asymmetric with a concretely falsifiable prediction."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry consistently formulates both silos as fourth-order unilateral-constraint beam/plate variational problems, maps compatible mathematical objects, demonstrates all three claimed correspondence vectors in Section 3, and provides an asymmetric, falsifiable transfer hypothesis."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Two non-fatal mathematical consistency issues in the variational derivation and vocabulary matrix prevent an unqualified PASS, but no equation-class mismatch or undemonstrated correspondence vector was found."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three correspondence vectors are demonstrated with explicit equations of the same class (biharmonic variational inequalities), the vocabulary mappings are between objects of compatible mathematical type, and the transfer proposal is genuinely asymmetric with a specific falsifiable prediction."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "Both systems are genuinely 4th-order biharmonic variational inequalities with identical Signorini complementarity structure, all three correspondence vectors are demonstrated with explicit equations, and the falsifiable prediction names a specific benchmark with quantitative thresholds."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The three core correspondence vectors are explicitly demonstrated and the falsifiable prediction is specific, but the claimed one-way methodological maturity advantage is asserted rather than established by the entry itself."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry consistently demonstrates three 4th-order variational-inequality correspondences with matching operator classes, explicit complementarity conditions, and moving-boundary jump conditions; no category errors or missing correspondence vectors were found."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks confirm internal mathematical consistency: equations are compatible biharmonic obstacle problems, vocabulary mappings are type-consistent with shared operator roles, all three listed vectors are explicitly demonstrated by functionals/equations/jump conditions, and the transfer is asymmetric with a quantifiable falsifiable prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All three vectors are demonstrated with matching fourth-order biharmonic variational-inequality structure, compatible vocabulary types, and a quantitatively falsifiable asymmetric transfer."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.0,
+      "n_reject": 0,
+      "n_reviews": 9,
+      "title": "Marine Glaciology & Mems Nems Compliant Mechanisms",
+      "model_label": "Google Gemini 3.1 Pro"
+    },
+    {
+      "entry_id": "CONTROL-SID-0013",
+      "number": 13,
+      "path": "mappings-alibaba-qwen/alibaba-qwen-3.8-max_CONTROL-entry-0013.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.8 Max",
+      "generated": "2026-08-17",
+      "domain_a": "clinical-neurophysiology-cortical-spreading-depolarization",
+      "domain_b": "quantum-mechanics",
+      "structural_family": "front-stability-spectral-operators",
+      "vectors": [
+        "self_adjoint_csd_front_stability_to_stationary_schrodinger_operator",
+        "translational_zero_mode_to_susy_zero_energy_bound_state",
+        "far_field_radiation_dispersion_to_free_particle_scattering_continuum",
+        "fredholm_zero_mode_solvability_source_projection"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "No check produced a FAIL-level finding (no equation-class mismatch, category-error mapping, undemonstrated vector, or backwards/template prediction), but Section 3's vector-4 speed formula introduces an undemonstrated baseline term and Section 4's dose calculation contains a verifiable arithmetic error that overstates the predicted dose-sparing factor by roughly 50%."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The Section 4 falsifiable dose-sparing prediction contains a clear integration error for the zero-mode-shaped inhibition, so its quantitative claim does not follow from the stated profile."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a direct calculus error in Section 4, evaluating the integral of sech^2(x) as 4/3 instead of 2, which mathematically invalidates the stated quantitative predictions of the falsifiable hypothesis."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The core isomorphism (Sections 1\u20133) is mathematically sound with all four correspondence vectors rigorously demonstrated, but the falsifiable prediction in Section 4 contains a specific integral computation error that inflates the dose-sparing factor from \u22482.01 to \u22483.015."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "Core isomorphism in Section 3 is mathematically correct and all four correspondence vectors are demonstrated, but Section 4 contains a computational error in the integrated dose calculation and the domain pairing is recognizable as canonical prior art."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The core Section 3 operator correspondence is internally consistent, but Section 4 contains a concrete mathematical error in the zero-mode-shaped intervention dose calculation, invalidating the stated quantitative falsification benchmark."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "A demonstrable arithmetic/integral error in Section 4 produces incorrect critical-dose expressions (M_{P,c} and the dose-sparing ratio R), invalidating the falsifiable prediction."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are class-consistent and support the claimed operator correspondence, vocabulary mappings are type-compatible with explicit shared structures, all listed vectors are fully demonstrated by derivation, and the transfer prediction is asymmetric with a concrete measurable falsifier."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are correctly derived self-adjoint Schr\u00f6dinger operators with matching continua, vocabulary mappings are type-compatible with explicit structure, all four listed correspondence vectors are demonstrated with derivations, and transfer is asymmetric with quantitative falsifiable dose-sparing predictions."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.4444444444444444,
+      "n_reject": 4,
+      "n_reviews": 9,
+      "title": "Clinical Neurophysiology Cortical Spreading Depolarization & Quantum Mechanics",
+      "model_label": "Alibaba Qwen 3.8 Max"
+    },
+    {
+      "entry_id": "CONTROL-SID-0014",
+      "number": 14,
+      "path": "mappings-alibaba-qwen/alibaba-qwen-3.8-max_CONTROL-entry-0014.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.8 Max",
+      "generated": "2026-02-17",
+      "domain_a": "financial-market-microstructure",
+      "domain_b": "stdp-synaptic-weight-distribution",
+      "structural_family": "first-passage-reflected-diffusions",
+      "vectors": [
+        "mixed_dirichlet_neumann_probability_flux_operator",
+        "backward_first_passage_generator_and_closed_form_mfpt",
+        "absorbing_flux_hazard_and_principal_eigenvalue_identity"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "Every equation-class, vocabulary-type, and correspondence-vector check passes on its structural merits, but a reused numerical threshold (Pe_c) does not solve the entry's own defining equation and a benchmark calculation depends on an unstated assumption."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a sign-inconsistent operator identity in Section 3 and an underdetermined numerical benchmark in Section 4."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "Initial logic and parameters are validated, confirming exact structural isomorphism across all mathematically defined operators and boundary conditions without category or class mismatch."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: both governing equations are constant-coefficient parabolic Fokker-Planck equations of the same class, all vocabulary mappings pair objects of identical mathematical type, all three listed correspondence vectors are demonstrated with explicit equations for both silos, and the transfer is genuinely asymmetric with a specific falsifiable prediction including numerical thresholds."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry misattributes the backward generator to the forward Fokker-Planck operator, resulting in a sign error on the drift term."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The core diffusion/first-passage correspondence is mathematically coherent, but the Section 4 algebraic benchmark asserts Pe_B=3.20 without specifying the required relation between tau_+ and tau_-, so the stated numerical prediction does not follow from the parameters actually given."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "A fatal mathematical inconsistency: the entry mixes forward and backward operator sign conventions and then asserts an identity between the forward Fokker\u2013Planck operator and a dimensionless operator with the opposite advective sign."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks are satisfied: equations are of matching class and correctly support the claimed shared generator and boundaries, vocabulary mappings are type-compatible with explicit shared structure, all three listed correspondence vectors are fully demonstrated by equations and derivations in Section 3, and the transfer is asymmetric with a specific measurable falsifiable prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All three correspondence vectors are demonstrated with shared parabolic drift-diffusion operators, compatible vocabulary types, and a specific falsifiable Pe_c threshold; no equation-class mismatch or category error found."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.4444444444444444,
+      "n_reject": 4,
+      "n_reviews": 9,
+      "title": "Financial Market Microstructure & Stdp Synaptic Weight Distribution",
+      "model_label": "Alibaba Qwen 3.8 Max"
+    },
+    {
+      "entry_id": "CONTROL-SID-0015",
+      "number": 15,
+      "path": "mappings-deepseek-deepseek/deepseek-deepseek-v4-pro_CONTROL-entry-0015.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "V4 Pro",
+      "generated": "2026-08-17",
+      "domain_a": "nematic-liquid-crystal-director-dynamics",
+      "domain_b": "neural-field-pattern-formation",
+      "structural_family": "nonconvex-gradient-flow-pattern-formation",
+      "vectors": [
+        "shared_nonconvex_lyapunov_gradient_descent",
+        "shared_typeI_finite_wavenumber_bifurcation_threshold",
+        "shared_boundary_quantized_mode_spectrum"
       ],
       "reviews": [
         {
           "reviewer": "Anthropic Claude Sonnet 5",
           "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Two of the three listed correspondence vectors are never demonstrated anywhere in the body, the vocabulary matrix relies on hedged category-assertions naming no shared structure, and the falsifiability check fails against the protocol's own disqualified template \u2014 three independent FAIL-level issues."
+          "timestamp": "2026-08-19",
+          "rationale": "Section 4's falsifiable-prediction worked example asserts the homogeneous state is u0=0 (f'(0)=1), but the entry's own fixed-point equation combined with the stated kernel (W0=1) and I=0 forces u0=f(u0), and since f(0)=0.5\u22600, u0\u22600, so the claimed instability \u03c4\u03bb(k_c)=0.1906>0 is computed at the wrong linearization point and does not follow from the entry's own mathematics."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The Section 4 prediction evaluates the neural homogeneous state at u=0 with I=0 for a logistic f, contradicting the entry's own equilibrium condition u0=W0 f(u0)+I and making the claimed growth rate and explicit-Euler amplification unsupported."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry correctly identifies and mathematically derives the shared nonconvex gradient flow structure between nematic director dynamics and Amari neural fields, verifying all claims with correct equations and a concrete falsifiable prediction."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The gradient-flow equivalence claim for the neural field is inconsistent with the stated Amari equation when I\u22600, though the remainder of the mathematical analysis is sound."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are correctly derived and attributed, vocabulary mappings are type-compatible with stated shared structure, all three correspondence vectors are demonstrated with explicit derivations, and the falsifiable prediction contains specific numerical thresholds with clear falsification criteria."
         },
         {
           "reviewer": "OpenAI GPT-5.6 Luna",
           "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry fails because its listed correspondence vectors are not demonstrated, its vocabulary matrix contains a mathematical category mismatch, and its Section 4 falsifiable prediction is a non-prediction."
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a genuine Lyapunov-functional error for the stated neural-field equation with nonzero input and does not demonstrate the listed Type-I finite-wavenumber bifurcation correspondence beyond a linear zero-crossing calculation."
         },
         {
-          "reviewer": "Google Gemini 3.1 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "The entry critically fails all four checks by conflating single-particle ODEs with field operators, making category errors in vocabulary mappings, failing to demonstrate any of its claimed correspondence vectors, and utilizing a forbidden non-falsifiable prediction template."
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry's equations, linearizations, operator classes, and three listed correspondence vectors are mathematically consistent and each claimed vector is demonstrated in the body."
         },
         {
-          "reviewer": "Z.AI GLM-5.2",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Multiple FAIL-level issues: two of three correspondence vectors are undemonstrated in the body, the vocabulary matrix contains a category error, and the falsifiability prediction is a template non-prediction."
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass with no mathematical inconsistencies, category errors, undemonstrated vectors, or non-falsifiable predictions identifiable from the entry text alone."
         },
         {
-          "reviewer": "Alibaba Qwen3.8 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-07-28",
-          "rationale": "The entry fails Check 3 because instability_mechanism and symmetry_groups are not demonstrated in the body, and it fails Check 4 because the stated prediction is a non-falsifiable template claim."
-        },
-        {
-          "reviewer": "DeepSeek DeepSeek V4 Pro",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Multiple fatal flaws: equations do not support a shared differential operator, a vocabulary mapping is a category error, none of the three correspondence vectors are demonstrated, and the falsifiable prediction is a non-prediction template."
-        },
-        {
-          "reviewer": "xAI Grok 4.5 Max",
-          "verdict": "REJECT",
-          "timestamp": "2026-08-09",
-          "rationale": "Undemonstrated correspondence vectors for instability_mechanism and symmetry_groups, plus a non-falsifiable template-style prediction."
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are domain-correct and class-matched as nonconvex parabolic gradient flows, vocabulary pairs are type-compatible with shared operator structure stated, all three correspondence vectors are demonstrated with explicit derivations and mode spectra, and transfer prediction is asymmetric and quantitatively falsifiable."
         }
       ],
       "synthesis": "",
       "isomorphism": "",
-      "reject_share": 1.0,
+      "reject_share": 0.3333333333333333,
+      "n_reject": 3,
+      "n_reviews": 9,
+      "title": "Nematic Liquid Crystal Director Dynamics & Neural Field Pattern Formation",
+      "model_label": "DeepSeek DeepSeek V4 Pro"
+    },
+    {
+      "entry_id": "CONTROL-SID-0016",
+      "number": 16,
+      "path": "mappings-deepseek-deepseek/deepseek-deepseek-v4-pro_CONTROL-entry-0016.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "V4 Pro",
+      "generated": "2026-08-17",
+      "domain_a": "complex-fluid-dynamics",
+      "domain_b": "polymer-melt-extrusion",
+      "structural_family": "upper-convected-viscoelastic-instabilities",
+      "vectors": [
+        "shared_upper_convected_tensor_advection_operator",
+        "curvature_hoop_stress_onset_criterion_pakdel_mckinley_vs_recoverable_shear",
+        "planar_extensional_stagnation_point_coil_stretch_singularity",
+        "dimensionless_weissenberg_deborah_threshold_identity"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "No wrong or misattributed equations, equation-class mismatches, category-error mappings, or undemonstrated correspondence vectors were found, but three specific, non-fatal issues \u2014 an overstated 'identical'/'same threshold' claim for M vs. S_R given their differing Wi-scaling, an under-supported 'Deborah' component of one correspondence vector, and an internally inconsistent falsification-interval width \u2014 keep this from a clean PASS."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The core operator and extensional-singularity correspondences are equation-supported, but the Weissenberg/Deborah threshold vector is not demonstrated and the Pakdel-McKinley/recoverable-shear functional identity is overclaimed."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All mathematical equations, structural mappings, and correspondence vectors are internally consistent, accurately deployed, and culminate in a mathematically rigorous and explicitly falsifiable prediction."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four correspondence vectors are demonstrated with explicit equations in both silos, the constitutive models belong to the same equation class (upper-convected differential viscoelastic), all vocabulary mappings are between compatible mathematical types, and the transfer direction is asymmetric with a specific falsifiable prediction including numerical values and experimental protocol."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "FLAG",
+          "timestamp": "2025-01-24",
+          "rationale": "The entry's mathematics is internally consistent and all four correspondence vectors are demonstrated, but the Pakdel\u2013McKinley criterion appears to be written without the square root on the curvature term that the standard formulation requires."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry lists a dimensionless Weissenberg\u2013Deborah threshold identity as a demonstrated correspondence, but the body never defines, derives, or otherwise establishes any Deborah-number correspondence."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "A category-error vocabulary mapping equates the geometry-dependent Pakdel\u2013McKinley curvature parameter with the purely local recoverable-shear scalar, and the listed correspondence vector relying on that mapping is not demonstrated."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks confirm internal mathematical consistency: equations match claimed domains and support the stated operator identities, vocabulary mappings share compatible types and explicit structures, every listed correspondence vector is demonstrated by equations in Section 3, and the transfer direction plus falsifiable prediction satisfy the criteria."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are correctly attributed Oldroyd-B/PTT with identical upper-convected operator, vocabulary mappings are type-compatible with explicit shared structure, all four correspondence vectors are demonstrated with derivations, and transfer is asymmetric with quantitative falsifiable prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.2222222222222222,
+      "n_reject": 2,
+      "n_reviews": 9,
+      "title": "Complex Fluid Dynamics & Polymer Melt Extrusion",
+      "model_label": "DeepSeek DeepSeek V4 Pro"
+    },
+    {
+      "entry_id": "CONTROL-SID-0017",
+      "number": 17,
+      "path": "mappings-zai-glm/zai-glm-5.2_CONTROL-entry-0017.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Z.AI",
+      "model_family": "GLM",
+      "model_version": "5.2",
+      "generated": "2026-08-17",
+      "domain_a": "fluid-dynamics",
+      "domain_b": "chromatographic-equilibrium-theory",
+      "structural_family": "viscous-shock-profile-instabilities",
+      "vectors": [
+        "viscous_shock_profile_heteroclinic_orbit_system",
+        "linearized_spectral_evans_function_operator",
+        "hyperbolic_jacobian_eigenstructure_and_riemann_invariants"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Correspondence 2's linearized Evans-function operator omits the wave-speed term that the entry's own Correspondence 1 correctly carries, and Correspondence 3 compares flux-Jacobian eigenstructures of mismatched dimension against the entry's own state-vector definitions; both are Check 1 equation errors, not judgment calls."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry provides a 2D isothermal Jacobian formula for a 3D non-isothermal state vector, constituting a fatal equation-class/dimension mismatch that invalidates the third correspondence vector."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The displayed linearized spectral operators and hyperbolic eigenstructure claims contain concrete mathematical errors, and key correspondence vectors therefore lack valid demonstration."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The linearized spectral Evans function operators contain a mathematically fatal error by omitting the Galilean wave speed translation term."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The structural correspondence between parabolic-hyperbolic conservation laws is sound and all three vectors are demonstrated, but the linearized spectral operator equations in Section 3 are missing the convective shift term and the chromatography Jacobian eigenvalue count is inconsistent with the stated state-vector dimension."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a dimensionally and structurally ill-typed chromatographic equation and vocabulary mapping, and its third listed correspondence is not fully demonstrated."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "A concrete mathematical inconsistency appears in the hyperbolic eigenstructure section: the chromatography Jacobian is stated for a three-component state but only two eigenvalues are listed, which is a direct, demonstrable error in the entry's equations."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations match the claimed parabolic-hyperbolic structure with consistent operators, vocabulary mappings are type-compatible with shared operator roles, all three correspondence vectors are demonstrated by explicit parallel equations and reductions, and the transfer is asymmetrically justified with a concrete falsifiable spectral prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All three correspondence vectors are demonstrated with matching parabolic-hyperbolic operator structure and no equation-class or vocabulary category errors."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.6666666666666666,
+      "n_reject": 6,
+      "n_reviews": 9,
+      "title": "Fluid Dynamics & Chromatographic Equilibrium Theory",
+      "model_label": "Z.AI GLM 5.2"
+    },
+    {
+      "entry_id": "CONTROL-SID-0018",
+      "number": 18,
+      "path": "mappings-zai-glm/zai-glm-5.2_CONTROL-entry-0018.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Z.AI",
+      "model_family": "GLM",
+      "model_version": "5.2",
+      "generated": "2026-08-17",
+      "domain_a": "hele-shaw-viscous-fingering-dynamics",
+      "domain_b": "electrodeposition-dendrite-growth",
+      "structural_family": "laplacian-free-boundary-with-robin-kinetic-regularization",
+      "vectors": [
+        "laplacian_governing_equation_with_gradient_driven_kinematic_boundary_condition",
+        "robin_dynamic_boundary_condition_kinetic_undercooling_butler_volmer",
+        "kinetic_regularized_dispersion_relation_shared_form",
+        "dimensionless_kinetic_parameter_delta_controlling_regime_transition"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Section 3's own equations for the Silo B kinematic condition and Robin boundary condition are restated with reversed signs in the Structural Bridge summary relative to their original derivation, and this is never reconciled with the same paragraph's (and Section 2's) claim of a direct, unflipped p\u2194\u03c6 identification."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Check 1 fails due to a mathematical contradiction in the explanation of the Robin boundary condition correspondence, where the text claims a consistent curvature convention absorbs a sign difference that is actually compensated by opposite signs in the kinematic boundary conditions."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The core equations and dispersion relations are internally consistent, but the structural-bridge text asserts a same-sign curvature term contradicted by the displayed Robin conditions, and the pairing is a recognizable canonical Laplacian-growth analogy requiring Stage 3 bibliometric scrutiny."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a fatal mathematical contradiction in its field mappings and equation signs, undermining the claimed identical operator structure."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations and dispersion relations are mathematically correct and belong to the same class, and all four correspondence vectors are demonstrated; however, the Structural Bridge contains an internal sign-convention inconsistency with Section 3 in how the Silo B kinematic condition and Robin BC curvature term are stated."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a genuine constitutive/equation error in its claimed linearized Butler-Volmer resistance, which makes the Silo B Robin coefficient and the quantitative transfer prediction mathematically unsupported as stated."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "A fatal dimensional/equational inconsistency appears in the Silo B definitions of the critical wavenumber and capillary length, invalidating the claimed one-to-one dispersion correspondence."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "All mathematical correspondences, equations, and vectors are internally consistent, but the domain pairing is a recognized canonical analogy in interfacial pattern-formation literature, triggering an advisory prior-art FLAG under Check 4c."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are correctly attributed elliptic Laplacian free-boundary problems with matching Robin BCs and identical dispersion form; vocabulary mappings are type-consistent with shared operator structure; all four claimed correspondence vectors are demonstrated with derivations; transfer is asymmetric with a quantitative falsifiable prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.5555555555555556,
+      "n_reject": 5,
+      "n_reviews": 9,
+      "title": "Hele Shaw Viscous Fingering Dynamics & Electrodeposition Dendrite Growth",
+      "model_label": "Z.AI GLM 5.2"
+    },
+    {
+      "entry_id": "CONTROL-SID-0019",
+      "number": 19,
+      "path": "mappings-anthropic-claude/anthropic-claude-sonnet-5_CONTROL-entry-0019.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "Sonnet 5",
+      "generated": "2026-08-17",
+      "domain_a": "semiconductor-device-transport-numerics",
+      "domain_b": "variational-phase-field-fracture",
+      "structural_family": "screened-elliptic-singular-perturbation-systems",
+      "vectors": [
+        "shared_screened_poisson_yukawa_operator_for_boundary_interior_layer_profile",
+        "shared_nondimensional_singular_perturbation_parameter_governing_layer_width_and_mesh_resolution",
+        "gummel_block_gauss_seidel_vs_staggered_alternating_minimization_decoupling_with_matched_convergence_degradation",
+        "natural_neumann_essential_dirichlet_boundary_duality_of_the_frozen_convex_subproblems"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The equation-level and boundary-condition correspondences are internally consistent, but the listed Gummel/staggered-solver correspondence is only qualitatively asserted rather than demonstrated by an equation, operator identity, or derivation."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Section 3's rescaling claim that both equations become the identical singular-perturbation form \\varepsilon^2\\Delta_{\\tilde x}y-y=O(\\varepsilon^2) is false for the stated Domain B damage equation with nonzero \\psi^+ (the RHS is O(\\varepsilon), not O(\\varepsilon^2))."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "The mathematical mapping is exceptionally well-constructed, correctly equating the linearized Poisson equation with the AT2 damage subproblem as identically structured screened-Poisson/singularly-perturbed elliptic operators."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four equations are correctly derived and internally consistent, all vocabulary mappings are well-typed with explicit shared structure, all four correspondence vectors are demonstrated with equations or operator identities in the body, and the transfer direction with its falsifiable prediction satisfies asymmetry and specificity requirements."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are correctly derived and belong to the same elliptic screened-Poisson operator class; vocabulary mappings are type-compatible with specified shared structure; all four correspondence vectors are demonstrated with equations or derivations; the transfer is genuinely asymmetric and the prediction is specific and falsifiable."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry makes a false shared-solver claim: it characterizes Gummel iteration and staggered fracture minimization as block-coordinate descent methods that both monotonically decrease a common energy/Lyapunov functional, but the entry provides no valid mathematical basis for treating the semiconductor Gummel map as such an energy descent scheme."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry consistently demonstrates an elliptic screened-Poisson operator correspondence, coherent vocabulary mappings, all listed correspondence vectors are supported by equations or derivations, and the proposed transfer is asymmetric and falsifiable."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations are valid and class-matched, vocabulary mappings are type-compatible with explicit shared structure, every listed correspondence vector is demonstrated by operator identity or derivation in the body, and the transfer is asymmetric with a specific measurable falsifiable prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: screened-Poisson elliptic identity holds in both domains, vocabulary pairs are type-consistent with shared operator slots, all four listed correspondence vectors are demonstrated in Section 3, and transfer is asymmetric with specific falsifiable SENT benchmark prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.2222222222222222,
+      "n_reject": 2,
+      "n_reviews": 9,
+      "title": "Semiconductor Device Transport Numerics & Variational Phase Field Fracture",
+      "model_label": "Anthropic Claude Sonnet 5"
+    },
+    {
+      "entry_id": "CONTROL-SID-0020",
+      "number": 20,
+      "path": "mappings-anthropic-claude/anthropic-claude-sonnet-5_CONTROL-entry-0020.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "Sonnet 5",
+      "generated": "2026-08-18",
+      "domain_a": "collisionless-electrostatic-plasma-kinetics",
+      "domain_b": "clinical-neurophysiology-cortical-spreading-depolarization",
+      "structural_family": "pseudopotential-eigenvalue-selected-connecting-orbits",
+      "vectors": [
+        "quadrature_built_potential_ode_reduction",
+        "connecting_orbit_boundary_condition_classification",
+        "sign_definite_solvability_eigenvalue_condition"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The core Sagdeev-potential block is internally sign-inconsistent: the displayed Poisson equation and the defined V(\u03c6) imply d\u00b2\u03c6/d\u03be\u00b2 = +dV/d\u03c6, contradicting the displayed d\u00b2\u03c6/d\u03be\u00b2 = -dV/d\u03c6; related sign errors appear in the claimed particle-energy invariant and the FitzHugh\u2013Nagumo potential."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Core displayed equations in Silo A have sign errors, and the Silo B potential definition does not produce the claimed mechanical-form reduction."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains fatal mathematical sign errors in the definition of the potentials for both silos, breaking the claimed structural operator equivalence and contradicting its own existence conditions."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations are correct and verified by re-derivation, vocabulary mappings pair compatible mathematical types with specified shared structure, all three correspondence vectors are demonstrated with equations and derivations, and the transfer is genuinely asymmetric with a specific falsifiable prediction."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-19",
+          "rationale": "The vocabulary matrix contains an internal inconsistency in the \u2130\u2194w=a mapping where the claimed shared curvature condition is applied at \u03c6=0 in Silo A, not at \u2130=0, undermining the stated operator-role correspondence."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a genuine sign error in the Sagdeev pseudopotential equation and an incorrect single-particle invariant for a traveling wave, so its core Silo A reduction is mathematically inconsistent as written."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Section 3 asserts an exact closed-form traveling-wave solution for the FitzHugh\u2013Nagumo fast-subsystem and specific formulas for k and c that are mathematically inconsistent with the stated ODE; this is a fatal equation-level error."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations are class-consistent with claimed domains and support the stated operator identity; vocabulary mappings are type-compatible with shared structures; every listed correspondence vector is demonstrated by explicit equations or derivations in the body; transfer is asymmetrically motivated and the prediction is quantitatively falsifiable."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All equations are correctly attributed and class-compatible, vocabulary mappings are type-consistent, all three correspondence vectors are explicitly demonstrated with derivations, and transfer is asymmetric with a quantitatively falsifiable prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.5555555555555556,
+      "n_reject": 5,
+      "n_reviews": 9,
+      "title": "Collisionless Electrostatic Plasma Kinetics & Clinical Neurophysiology Cortical Spreading Depolarization",
+      "model_label": "Anthropic Claude Sonnet 5"
+    },
+    {
+      "entry_id": "CONTROL-SID-0021",
+      "number": 21,
+      "path": "mappings-anthropic-claude/anthropic-claude-opus-5_CONTROL-entry-0021.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "Opus 5",
+      "generated": "2026-08-17",
+      "domain_a": "single-pass-free-electron-laser-physics",
+      "domain_b": "closed-cyclic-queueing-network-theory",
+      "structural_family": "periodic-transport-with-constant-torque-trapping-and-conserved-population",
+      "vectors": [
+        "periodic_divergence_form_transport_operator_with_conserved_zero_mode",
+        "constant_torque_pendulum_separatrix_and_shared_adiabaticity_criterion",
+        "moving_bucket_retention_factor_and_its_shared_variational_optimum",
+        "bounded_concave_cycle_flux_ceiling",
+        "phase_normalization_gauge_group_with_gauge_invariant_flux_observable"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "No fatal equation-class or category error is demonstrable, but the damped Silo-B pendulum/separatrix claim and the FEL-side bounded-concave flux ceiling are only partially supported."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The Silo B constant-torque pendulum equation in Vector 2 has an algebraically wrong coefficient: the displayed \u03a9\u00b2 contains an extraneous cos\u03c8_r factor."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The mathematical derivations contain clear errors: confounding the small-oscillation frequency with the nonlinear pendulum coefficient, which causes a Silo A variable to be erroneously injected into a Silo B parameter definition."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All five listed correspondence vectors are demonstrated with explicit equations and derivations on both sides; both equation sets belong to the constant-torque pendulum class; vocabulary mappings are between mathematically compatible types; and the transfer direction is genuinely asymmetric with specific falsifiable quantitative predictions."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed operator identity in Vector 2 uses an incorrect pendulum coefficient, and Vector 3 relies on a fabricated separatrix area formula that is mathematically false for the constant-torque pendulum."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The Silo B pendulum equation has an unsupported and mathematically incorrect restoring-force coefficient, so the claimed shared constant-torque operator is not established; the entry also contains an independently unsupported vector-4 concavity claim."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "A fatal algebraic inconsistency appears in the Silo B linearization: the quoted ring-spectrum eigenvalue and the derived relaxation rate contain incompatible powers of M and an unexplained factor \u03bc, invalidating the claimed timescale correspondence in Check 1."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are consistent with claimed domains and restricted regime, vocabulary mappings are type-compatible with explicit bridges, every listed correspondence vector is derived with equations in Section 3, and the transfer is asymmetric with a fully specified falsifiable numerical prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All five claimed correspondence vectors are demonstrated with class-consistent divergence-form transport operators, constant-torque pendula, retention-factor variational optimum, bounded-concave flux ceiling, and gauge-invariant flux, with compatible vocabulary types and a quantitatively falsifiable asymmetric transfer."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.5555555555555556,
+      "n_reject": 5,
+      "n_reviews": 9,
+      "title": "Single Pass Free Electron Laser Physics & Closed Cyclic Queueing Network Theory",
+      "model_label": "Anthropic Claude Opus 5"
+    },
+    {
+      "entry_id": "CONTROL-SID-0022",
+      "number": 22,
+      "path": "mappings-anthropic-claude/anthropic-claude-opus-5_CONTROL-entry-0022.md",
+      "maturity_stage": "adversarial-flagged",
+      "company": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "Opus 5",
+      "generated": "2026-08-17",
+      "domain_a": "chromatographic-equilibrium-theory",
+      "domain_b": "carbonate-acidization-reactive-wormholing",
+      "structural_family": "constant-pattern-travelling-waves-in-retarded-hyperbolic-transport",
+      "vectors": [
+        "rankine_hugoniot_shock_speed_with_retention_factor_equal_to_inverse_acid_capacity_number",
+        "bohart_adams_bilinear_capacity_closure_and_shared_logistic_travelling_wave_ode",
+        "length_of_unused_bed_integral_invariant_and_its_length_independence",
+        "harmonic_mean_series_resistance_closure_from_leading_graetz_eigenvalue",
+        "danckwerts_robin_inlet_zero_gradient_outlet_boundary_pair"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "All five claimed vectors are supported by equations in the body, but the k_ov\u2194\u03ba vocabulary entry overstates the shared series-resistance structure by asserting each constituent conductance is a Sherwood/Graetz eigenvalue conductance, whereas the entry's own \u03ba closure includes the kinetic conductance k_s."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed exact retention-factor identity k\u2032=N_ac\u207b\u00b9 is algebraically inconsistent with the displayed Silo A and Silo B front-speed formulas, and the harmonic-mean mapping misattributes the Silo B surface-reaction rate k_s as a Graetz eigenvalue."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "FLAG",
+          "timestamp": "2026-08-18",
+          "rationale": "The mathematical mapping is exceptionally rigorous and internally consistent, but the vocabulary matrix slightly overgeneralizes the harmonic-mean conductances by describing a chemical reaction rate constant as a diffusion eigenvalue."
+        },
+        {
+          "reviewer": "Xiaomi MiMo V2.5 Pro",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four equations in Section 3 are correctly typed, belong to the same parabolic/hyperbolic class on both sides, and the bridge derivation eliminating the pore-scale sink via flux matching to recover the EDM term-for-term is algebraically valid; all vocabulary mappings reconcile type mismatches explicitly; all five correspondence vectors are demonstrated with full equations in the body; the transfer direction is genuinely asymmetric and the falsifiable prediction names specific measurable quantities with quantitative thresholds."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All mathematical derivations are internally consistent, equations correctly match their stated physical domains, vocabulary mappings are mathematically coherent, and all listed correspondence vectors are explicitly demonstrated with supporting equations."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-18",
+          "rationale": "The claimed exact shared front dynamics fail internally: the reduced Bohart\u2013Adams/acid reaction system used for the logistic correspondence omits mobile-phase accumulation and therefore implies a different front speed from the Rankine\u2013Hugoniot speed asserted as exact."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "The entry's equations, operator identifications, and correspondence vectors are internally consistent and each listed correspondence is demonstrated in the body."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All four checks pass: equations are class-consistent and support the claimed operator identities, vocabulary mappings are type-compatible with explicit shared structures, every listed correspondence vector is demonstrated by derivation in Section 3, and the transfer is asymmetric with a specific measurable falsifiable prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-18",
+          "rationale": "All five claimed correspondence vectors are demonstrated with matching governing operators, Robin-Neumann boundary pair, and Graetz-eigenvalue harmonic-mean closure under explicitly stated \u03b2=1 and 1-D constant-flux restrictions, with no equation-class mismatch or vocabulary category error."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.2222222222222222,
+      "n_reject": 2,
+      "n_reviews": 9,
+      "title": "Chromatographic Equilibrium Theory & Carbonate Acidization Reactive Wormholing",
+      "model_label": "Anthropic Claude Opus 5"
+    },
+    {
+      "entry_id": "CONTROL-SID-0023",
+      "number": 23,
+      "path": "mappings-xiaomi-mimo/xiaomi-mimo-v2.5-pro_CONTROL-entry-0023.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Xiaomi",
+      "model_family": "MiMo",
+      "model_version": "V2.5 Pro",
+      "generated": "2026-08-17",
+      "domain_a": "polycrystalline-grain-growth",
+      "domain_b": "stochastic-finance",
+      "structural_family": "simplex-constrained-selection-dynamics-with-mean-field-threshold",
+      "vectors": [
+        "simplex_constrained_fokker_planck_density_evolution_with_conservation_closure",
+        "self_consistent_mean_field_selection_drift_with_sign_changing_threshold",
+        "rank_topology_dependent_linear_excess_growth_rate_n6_kkstar",
+        "self_similar_attractor_distribution_determined_by_selection_to_noise_ratio"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Check 1 contains a sign-flipped dimensionless drift equation that contradicts the entry's own correct derivation and stated physics, and Check 2 pairs a size-space threshold (R*) with a rate-space threshold (b\u0304) in the vocabulary matrix, each independently a FAIL-level defect under the stated verdict logic."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The dimensionless grain-growth drift is written with the opposite sign to the stated Hillert growth law, so the central sign-changing selection correspondence is mathematically inconsistent."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "Rejected on equation-validity and vocabulary-category errors that are quotable and fatal."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The vocabulary matrix contains a category error by explicitly claiming volume fraction acts as the state variable in the grain growth Fokker-Planck equation, contradicting the provided mathematical formulation which uses absolute radius."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The dimensionless grain growth drift equation is derived with the incorrect sign, contradicting the entry's own stated physics."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a genuine mathematical attribution/equation error in Section 3 and does not establish the claimed common divergence-free Fokker-Planck structure; the correspondence claims therefore cannot advance as internally consistent."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry pairs a scalar one-dimensional Fokker-Planck formulation for grain radii with a multi-dimensional simplex Fokker-Planck for market weights but then writes a scalar Fokker-Planck for \u03bc, producing an equation-class and operator-type mismatch that invalidates the claimed operator identity."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations are domain-consistent and support the claimed shared FP structure with mean-field selection and affine discrete excess rates; vocabulary mappings preserve mathematical type and shared operator roles; all four listed correspondence vectors are demonstrated by explicit equations and derivations in Section 3; transfer is asymmetric with a specific, quantitative, falsifiable CV prediction."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: Fokker-Planck and rank-linear equations are correctly typed and attributed, vocabulary mappings are type-compatible with explicit nondimensionalization, all four listed correspondence vectors are demonstrated with operator equations in Section 3, and transfer is asymmetric with a quantitative falsifiable CV prediction."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.7777777777777778,
       "n_reject": 7,
-      "n_reviews": 7,
-      "title": "Collisionless Plasma Kinetics & Artificial Spin Ice",
-      "model_label": "Amazon Nova 1.0 Pro"
+      "n_reviews": 9,
+      "title": "Polycrystalline Grain Growth & Stochastic Finance",
+      "model_label": "Xiaomi MiMo V2.5 Pro"
+    },
+    {
+      "entry_id": "CONTROL-SID-0024",
+      "number": 24,
+      "path": "mappings-xiaomi-mimo/xiaomi-mimo-v2.5-pro_CONTROL-entry-0024.md",
+      "maturity_stage": "adversarial-rejected",
+      "company": "Xiaomi",
+      "model_family": "MiMo",
+      "model_version": "V2.5 Pro",
+      "generated": "2026-08-18",
+      "domain_a": "early-universe-cosmology",
+      "domain_b": "computational-micromagnetics",
+      "structural_family": "bogomolny-bps-domain-walls-and-poschl-teller-fluctuation-spectra",
+      "vectors": [
+        "bps_first_order_equation_from_superpotential_factorization",
+        "topological_bps_energy_bound_via_bogomolny_completion",
+        "poschl_teller_fluctuation_spectrum_depth_parameter_from_wall_profile",
+        "topological_charge_winding_number_of_order_parameter_map"
+      ],
+      "reviews": [
+        {
+          "reviewer": "Anthropic Claude Sonnet 5",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The general superpotential relation V(u) = (W\u2032)\u00b2/(2\u03b1) stated in Section 2 and restated as Vector 1's premise is algebraically wrong (the entry's own cosmological and magnetic equations both demonstrate V(u) = (W\u2032)\u00b2/(4\u03b1) instead), and the vocabulary matrix gives two mutually contradictory, dimensionally-incompatible values for the magnon continuum threshold (K/A in Section 2 versus the correctly-derived K in Section 3/Vector 3)."
+        },
+        {
+          "reviewer": "Alibaba Qwen 3.8 Max",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains an algebraically false BPS verification and a factor-of-two error in its quantitative BPS energy-bound prediction."
+        },
+        {
+          "reviewer": "DeepSeek DeepSeek V4 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains a false displayed BPS verification equation, dimensionally inconsistent micromagnetic continuum-threshold and mass-gap equalities, and a dimensionally invalid frequency prediction."
+        },
+        {
+          "reviewer": "Google Gemini 3.1 Pro",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains fundamentally incorrect superpotential equations and hallucinates algebraic steps to force a false verification of those equations."
+        },
+        {
+          "reviewer": "Z.AI GLM-5.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains fatal algebraic and dimensional errors in the derivation of the micromagnetic fluctuation spectrum, resulting in a mathematically incorrect depth parameter and an invalid core correspondence."
+        },
+        {
+          "reviewer": "OpenAI GPT-5.6 Luna",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "The entry contains fatal mathematical errors in the stated superpotential factorization and in the quantitative falsifiable prediction, including an incorrect BPS energy bound."
+        },
+        {
+          "reviewer": "Microsoft Copilot 1.2",
+          "verdict": "REJECT",
+          "timestamp": "2026-08-19",
+          "rationale": "A fatal vocabulary/dimensionality error: the entry equates the magnetic mass-gap to 2K = 2/\u0394\u00b2, which is inconsistent with the defined \u0394\u00b2 = A/K and the linearized operator used."
+        },
+        {
+          "reviewer": "xAI Grok 4.5 Fast",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: equations are valid and class-consistent within the claimed static BPS + linearized sector, vocabulary mappings are type-compatible with shared operator structure, all four listed vectors are fully demonstrated by explicit equations and derivations, and the transfer is asymmetric with concrete measurable falsifiable predictions."
+        },
+        {
+          "reviewer": "Meta Muse Spark 1.1",
+          "verdict": "PASS",
+          "timestamp": "2026-08-19",
+          "rationale": "All four checks pass: static BPS equations and P\u00f6schl-Teller fluctuation spectra are correctly attributed and dimensionally reconciled, vocabulary mappings are type-compatible with explicit transformation, all four claimed correspondence vectors are demonstrated with derivations, and transfer is asymmetric with quantitative falsifiable predictions."
+        }
+      ],
+      "synthesis": "",
+      "isomorphism": "",
+      "reject_share": 0.7777777777777778,
+      "n_reject": 7,
+      "n_reviews": 9,
+      "title": "Early Universe Cosmology & Computational Micromagnetics",
+      "model_label": "Xiaomi MiMo V2.5 Pro"
     }
   ]
 }
