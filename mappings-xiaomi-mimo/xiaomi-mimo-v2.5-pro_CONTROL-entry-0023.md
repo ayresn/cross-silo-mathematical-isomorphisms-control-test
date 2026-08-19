@@ -2,7 +2,7 @@
 sid_metadata:
   entry_id: "CONTROL-SID-0023"
   schema_version: "2.0-control"
-  maturity_stage: "candidate"
+  maturity_stage: "adversarial-rejected"
 provenance:
   company: "Xiaomi"
   model_family: "MiMo"
@@ -36,6 +36,150 @@ validation_status:
   constitutive_equivalence_confidence: "medium"
   primary_failure_risk: "constitutive_law_mismatch — the grain growth drift G(R) contains a 1/R curvature singularity absent from the SPT drift a(μ), limiting the correspondence to shared structural features (simplex constraint, mean-field selection, self-similar attractor) rather than exact operator identity"
   bibliometric_validation: "pending"
+  first_adversarial_review:
+    reviewer_model: "Anthropic Claude Sonnet 5"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "Check 1 contains a sign-flipped dimensionless drift equation that contradicts the entry's own correct derivation and stated physics, and Check 2 pairs a size-space threshold (R*) with a rate-space threshold (b̄) in the vocabulary matrix, each independently a FAIL-level defect under the stated verdict logic."
+    failed_checks:
+      - "Check 1: sign-flipped drift equation G̃(ρ)=1/ρ−1 contradicts entry's own derivation and stated growth condition"
+      - "Check 2: R*(t) ↔ b̄(t) vocabulary pairing maps a size-space threshold to a rate-space threshold"
+    flagged_checks:
+      - "Check 2: ρ↔m pairing normalizes grain size by a dynamic threshold (R*(t)) but market weight by a static constant (1/N)"
+      - "Check 3: Vector 2's dimensionless restatement is the erroneous equation identified in Check 1"
+      - "Check 3: Vector 4 is derived for grain growth but only asserted (not derived) for SPT, and reuses the Check-1 error"
+    quoted_evidence:
+      - |
+        Correspondence 2 states: "\widetilde{G}(\rho) = \frac{1}{\rho} - 1" labeled "(grain growth, dimensionless)". But the entry's own immediately preceding line states "G(R,R^{*}) = M\gamma\left(\frac{1}{R^{*}} - \frac{1}{R}\right) = \frac{M\gamma}{R^{*}}\left(1 - \frac{R^{*}}{R}\right)" with cases "> 0 & R > R^{*}". Since R*/R = 1/ρ under the entry's own definition "ρ = R/R*(t)", this correct expression equals (1 − 1/ρ), not (1/ρ − 1). Numeric check: R*=10, Mγ=1, R=20 (so ρ=2, R>R*) gives G(20,10)=1(1/10−1/20)=+0.05, i.e. G̃=+0.5 — but the entry's stated formula gives 1/ρ−1 = 1/2−1 = −0.5, the wrong sign. This contradicts the entry's own separate statement "Grains with R > R* grow (G > 0)".
+      - |
+        Section 2 pairs "Critical grain radius R*(t)" with "Market-weighted average drift b̄(t)", stating "Both appear in the drift as the threshold that separates growing from shrinking entities." But R* is compared directly against the state variable R in G(R,R*)=Mγ(1/R*−1/R), whereas b̄ is compared against the drift parameter b̃ — not against the state variable μ — in a(μ)=μ(b̃−b̄). Growth in grain growth is thus self-referential in the state variable R; growth in SPT as written is not self-referential in μ. The two "thresholds" act on different kinds of quantities (a size versus a rate), matching the rate-mapped-to-a-position category error.
+    stage_3_watch_items:
+      - "Verify whether the 'linear rank model' a_(k)=c₀(k*−k) is genuinely Fernholz's canonical rank-based example, or whether the standard named example (the Atlas model) has a materially different, piecewise structure."
+      - "Verify the cited CV statistics (CV_Hillert=0.50; κ≈0.4±0.1; CV_observed=0.58±0.03) against Anderson et al. 1984 and Holm et al. 2001."
+      - "Check whether grain growth's closer mathematical siblings (Ostwald ripening/LSW coarsening, foam/soap-froth coarsening) have already been linked to rank-based or portfolio-theoretic frameworks, bearing on the entry's novelty and 'no cross-citation history' claims."
+      - "The Section 4 mapping c₀→Mγπ/3, σ²_base→D_topo pairs a 1/time quantity with an area/time quantity with no stated reconciliation; confirm the rank-Hillert derivation holds beyond the (dimensionally self-contained) final CV formula."
+      - "Several SPT-side results in Section 3 (e.g. ã(m)=m−1, 'log-linearized near m=1') are asserted without a shown derivation, unlike the parallel grain-growth steps; worth independent confirmation."
+  second_adversarial_review:
+    reviewer_model: "Alibaba Qwen 3.8 Max"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "The dimensionless grain-growth drift is written with the opposite sign to the stated Hillert growth law, so the central sign-changing selection correspondence is mathematically inconsistent."
+    failed_checks: ["Check 1: dimensionless grain drift sign contradicts stated growth direction"]
+    flagged_checks: ["Check 2: R* is mapped to b̄ without reconciling length threshold and drift-rate threshold", "Check 3: vector self_similar_attractor_distribution_determined_by_selection_to_noise_ratio is only partially supported on the grain side"]
+    quoted_evidence:
+      - 'Grains with R > R\* grow (G > 0); grains with R < R\* shrink (G < 0).'
+      - '\widetilde{G}(\rho) = \frac{1}{\rho} - 1'
+    stage_3_watch_items:
+      - 'Search for prior art connecting Hillert/von Neumann-Mullins grain growth models with Fernholz stochastic portfolio theory'
+      - 'Verify sources for reducing the N-dimensional simplex market-weight SDE to the one-dimensional Fokker-Planck equation used in Section 3'
+      - 'Check whether the closure expression R*(t)=f^{-1}(integral constraint) and the prefactor (4π/3)R_i^d are notation errors or have literature support'
+  third_adversarial_review:
+    reviewer_model: "DeepSeek DeepSeek V4 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "Rejected on equation-validity and vocabulary-category errors that are quotable and fatal."
+    failed_checks:
+      - "Check 1: Equation validity — the R* closure equation is malformed, and the self-similar transformation drops the diffusion term from the original Fokker-Planck equation."
+      - "Check 2: Vocabulary matrix coherence — R*(t), a length/position threshold, is paired with b̄(t), a drift rate."
+    flagged_checks:
+      - "Check 3: Vector 4 support is partial because the displayed self-similar equation omits the diffusion term."
+    quoted_evidence:
+      - |
+        "```math
+        \sum_{i} v_{i} = 1,\qquad
+        v_{i} = \frac{V_{i}}{V_{\text{tot}}} = \frac{\tfrac{4\pi}{3}R_{i}^{d}}{V_{\text{tot}}}
+        \qquad\Longrightarrow\qquad
+        R^{*}\!(t) = f^{-1}\!\Big(\!\int_{0}^{\infty}\! R^{d}\,f(R,t)\,dR = \text{const}\Big)
+        ```"
+      - |
+        "```math
+        \frac{\partial f}{\partial t} + \frac{\partial}{\partial R}\!\Big[G(R,\,R^{*}\!(t))\;f(R,t)\Big]
+        \;=\;
+        \frac{1}{2}\frac{\partial^{2}}{\partial R^{2}}\!\Big[\mathcal{D}_{\text{topo}}(R)\;f\Big]
+        \;+\;\mathcal{S}[f]
+        ```"
+      - |
+        "```math
+        \frac{\partial\widetilde{f}}{\partial\tau}
+        + \frac{\partial}{\partial\rho}\!\left[\left(\frac{1}{\rho} - 1 - \alpha_{\rho}\rho\right)\widetilde{f}\right]
+        = \widetilde{\mathcal{S}}[\widetilde{f}]
+        ```"
+      - |
+        "*   **Critical grain radius R\*(t)** ↔ **Market-weighted average drift b̄(t)**"
+    stage_3_watch_items:
+      - "Probe whether the scalar market-weight Fokker-Planck equation in Section 3 is a legitimate reduction of Fernholz SPT or an unsupported one-dimensional simplification."
+      - "Check whether the stated normalization actually yields the claimed SPT drift \tilde a(m)=m-1 from a(μ)=μ(b̃−b̄); no derivation is provided."
+      - "Query prior art for Hillert–Fernholz or curvature-driven selection vs rank-based portfolio analogies before novelty determination."
+  fourth_adversarial_review:
+    reviewer_model: "Google Gemini 3.1 Pro"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "The vocabulary matrix contains a category error by explicitly claiming volume fraction acts as the state variable in the grain growth Fokker-Planck equation, contradicting the provided mathematical formulation which uses absolute radius."
+    failed_checks: ["Check 2: Category error in state variable mapping"]
+    flagged_checks: []
+    quoted_evidence: ["Grain volume fraction vᵢ ↔ Market capitalization weight μᵢ\n    *   Operator Role: Both are components of a probability vector constrained to the (N−1)-simplex by Σᵢvᵢ = 1 and Σᵢμᵢ = 1 respectively. Both enter the Fokker-Planck equation as the state variable whose density evolves"]
+    stage_3_watch_items: ["Assess whether the affine correspondence between absolute area growth (von Neumann-Mullins) and logarithmic relative growth (SPT) holds sufficient structural weight despite the absolute vs. log rate mismatch."]
+  fifth_adversarial_review:
+    reviewer_model: "Z.AI GLM-5.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "The dimensionless grain growth drift equation is derived with the incorrect sign, contradicting the entry's own stated physics."
+    failed_checks: ["CHECK 1: The dimensionless grain growth drift equation is derived with the incorrect sign, contradicting the stated physics."]
+    flagged_checks: ["CHECK 3: The 'self_similar_attractor_distribution_determined_by_selection_to_noise_ratio' vector is not demonstrated because the self-similar equation drops the diffusion term and misattributes the source/sink term as noise."]
+    quoted_evidence: ["\\widetilde{G}(\\rho) = \\frac{1}{\\rho} - 1 \\qquad\\text{(grain growth, dimensionless)}"]
+    stage_3_watch_items: ["Check if the sign error in the dimensionless drift propagates into the proposed 'rank-Hillert' variance transfer model in Section 4."]
+  sixth_adversarial_review:
+    reviewer_model: "OpenAI GPT-5.6 Luna"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "The entry contains a genuine mathematical attribution/equation error in Section 3 and does not establish the claimed common divergence-free Fokker-Planck structure; the correspondence claims therefore cannot advance as internally consistent."
+    failed_checks: ["Check 1: The equation attributed to the Hillert mean-field model is augmented with stochastic diffusion and T1/T2 source terms that the displayed deterministic Hillert growth law does not establish as part of that model.", "Check 3: Correspondence 1 is not demonstrated as stated because the claimed divergence-free Fokker-Planck structure is asserted but not established, and the grain-side closure is not a valid demonstrated operator identity for R*."]
+    flagged_checks: ["Check 3: The self-similar-attractor correspondence is asserted through parameter-ratio language, but the body does not derive that the attractor is uniquely determined by the stated single selection-to-noise ratio on both sides.", "Check 4: The proposed transfer is directionally motivated but its asserted maturity asymmetry is not mathematically established by the entry itself; the falsifiable prediction is nevertheless specific and measurable."]
+    quoted_evidence: ["In polycrystalline grain growth, the grain size distribution f(R,t) evolves via a Fokker-Planck-type equation incorporating curvature-driven boundary drift, stochastic topological noise, and source/sink terms from topological rearrangements (T1 neighbor switches, T2 grain collapses). The Hillert (1965) mean-field model gives:", "The dynamics respect the simplex constraint identically: the drift and diffusion in both Fokker-Planck equations are divergence-free with respect to the simplex.", "R^{*}\!(t) = f^{-1}\!\Big(\!\int_{0}^{\infty}\! R^{d}\,f(R,t)\,dR = \text{const}\Big)"]
+    stage_3_watch_items: ["Probe whether the claimed grain-growth Fokker-Planck formulation with stochastic topological diffusion and T1/T2 source terms is actually attributable to Hillert's mean-field model or is a hybrid construction.", "Probe the claimed SPT rank-law and stationary-distribution correspondence, especially the assertion that a single c₀/σ² ratio determines the attractor.", "Probe the proposed CV formula and its stated derivation from Var(log X) = σ²_eff/(2c₀), since the entry does not supply the mathematical step connecting log-variance to the asserted CV multiplier."]
+  seventh_adversarial_review:
+    reviewer_model: "Microsoft Copilot 1.2"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "REJECT"
+    verdict_rationale: "The entry pairs a scalar one-dimensional Fokker-Planck formulation for grain radii with a multi-dimensional simplex Fokker-Planck for market weights but then writes a scalar Fokker-Planck for μ, producing an equation-class and operator-type mismatch that invalidates the claimed operator identity."
+    failed_checks: ["Check 1: Equation Validity — scalar Fokker-Planck for μ (single-variable derivatives) misrepresents the true multi-dimensional simplex Fokker-Planck; equation-class/operator-type mismatch"]
+    flagged_checks: []
+    quoted_evidence:
+      - "The Fokker-Planck equation for the market weight density p(μ,t) is:\n\n```math\n\\frac{\\partial p}{\\partial t} \\;=\\;\n-\\frac{\\partial}{\\partial\\mu}\\!\\Big[a(\\mu)\\,p\\Big]\n\\;+\;\\frac{1}{2}\\frac{\\partial^{2}}{\\partial\\mu^{2}}\\!\\Big[D(\\mu)\\,p\\Big]\n```"
+      - "the dynamics respect the simplex constraint identically: the drift and diffusion in both Fokker-Planck equations are divergence-free with respect to the simplex."
+    stage_3_watch_items:
+      - "Verify that the market-weight Fokker-Planck is treated as a multi-dimensional PDE on the (N-1)-simplex; the entry's scalar ∂/∂μ notation is inconsistent with μ being a vector of components μ_i."
+      - "Check whether the claimed operator identity requires projecting the simplex dynamics onto a single scalar marginal (μ) and, if so, whether that projection preserves the operator class and key spectral properties."
+      - "Confirm the mathematical meaning and derivation of the 'divergence-free with respect to the simplex' claim for both drift and diffusion; request explicit divergence-form operator identities on the simplex."
+      - "Examine the mapping between von Neumann-Mullins area ODEs and SPT log-capitalization SDEs for hidden variable mismatches (area vs log-area) and whether any Jacobian or variable transform was omitted."
+      - "Validate the numerical mapping constants (e.g., c0 ↔ Mγπ/3) and the perturbative derivation of CV_pred; ensure the derivation does not rely on scalar marginalization that breaks the FP operator identity."
+  eighth_adversarial_review:
+    reviewer_model: "xAI Grok 4.5 Fast"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "PASS"
+    verdict_rationale: "All four checks pass: equations are domain-consistent and support the claimed shared FP structure with mean-field selection and affine discrete excess rates; vocabulary mappings preserve mathematical type and shared operator roles; all four listed correspondence vectors are demonstrated by explicit equations and derivations in Section 3; transfer is asymmetric with a specific, quantitative, falsifiable CV prediction."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: []
+  ninth_adversarial_review:
+    reviewer_model: "Meta Muse Spark 1.1"
+    protocol_version: "2.0-production"
+    review_timestamp: "2026-08-19"
+    verdict: "PASS"
+    verdict_rationale: "All four checks pass: Fokker-Planck and rank-linear equations are correctly typed and attributed, vocabulary mappings are type-compatible with explicit nondimensionalization, all four listed correspondence vectors are demonstrated with operator equations in Section 3, and transfer is asymmetric with a quantitative falsifiable CV prediction."
+    failed_checks: []
+    flagged_checks: []
+    quoted_evidence: []
+    stage_3_watch_items: ["Constitutive mismatch acknowledged (1/R curvature singularity in G(R,R*) vs linear a(mu) in SPT) - Stage 3 should verify structural vs exact operator identity remains substantive", "Dimensional difference R*(t) vs b-bar(t) [1/time] both function as sign-changing selection thresholds via 1/R* vs b-bar - verify community acceptance of threshold analogy"]
 ---
 
 # INTERDISCIPLINARY STRUCTURAL MAPPING: ⚠*CONTROL*⚠ ENTRY 0023
@@ -260,3 +404,162 @@ is the ratio of the conditional variance of neighbor number given grain size to 
 *   `"von Neumann-Mullins" AND ("rank" OR "portfolio" OR "finance" OR "market weight")`
 *   `"simplex constraint" AND "mean-field" AND "selection" AND "self-similar attractor" AND ("grain" OR "polycrystal")`
 *   `"grain size distribution" AND "power law tail" AND "rank-dependent"`
+
+---
+
+## ADVERSARIAL REVIEWS (Stage 2)
+
+### First Adversarial Review
+**Reviewer:** Anthropic Claude Sonnet 5
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — Correspondence 2 states "G̃(ρ) = 1/ρ − 1" (grain growth, dimensionless), but the entry's own preceding line "G(R,R*) = Mγ(1/R* − 1/R) = (Mγ/R*)(1 − R*/R)" implies G̃(ρ) = 1 − 1/ρ under its own definition ρ=R/R*, the opposite sign, contradicting the entry's own statement "Grains with R > R* grow (G > 0)".
+- **CHECK 2 (Vocabulary Matrix Coherence):** FAIL — The pairing "Critical grain radius R\*(t) ↔ Market-weighted average drift b̄(t)" claims "Both appear in the drift as the threshold that separates growing from shrinking entities," but R* is compared against the state variable R in G(R,R\*)=Mγ(1/R\*−1/R), while b̄ is compared against the drift parameter b̃ (not the state variable μ) in a(μ)=μ(b̃−b̄) — a rate mapped to a position.
+- **CHECK 3 (Correspondence Vector Support):** FLAG — Vector 1 (Correspondence 1, Section 3) and Vector 3 (Correspondence 3, Section 3) are demonstrated with parallel, correct equations on both sides; Vector 2 (Correspondence 2, Section 3) is conceptually supported by the correct piecewise cases for G(R,R\*) but its dimensionless restatement is the erroneous equation named in Check 1; Vector 4 (Correspondence 4, Section 3) is explicitly derived for grain growth via the self-similar ansatz but only asserted, not derived, for SPT, and its grain-growth PDE reuses the Check-1 error.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The SPT→grain-growth direction is asymmetric and not evidently backwards given grain growth's stated reliance on Monte Carlo simulation rather than analytical distribution theory for non-mean-field effects, and Section 4's prediction (CV_pred = CV_Hillert√(1+κ), with named validation/falsification thresholds) names a specific, measurable, falsifiable outcome. No specific canonical prior-art pairing is recognized for grain growth ↔ SPT itself, though grain growth's more usual analogy partners (Ostwald ripening/LSW coarsening, foam coarsening) are worth a Stage 3 look.
+
+#### Stage 3 Watch Items
+- Verify whether the "linear rank model" a_(k)=c₀(k*−k) is genuinely Fernholz's canonical rank-based example, or whether the standard named example (the Atlas model) has a materially different, piecewise structure.
+- Verify the cited CV statistics (CV_Hillert=0.50; κ≈0.4±0.1; CV_observed=0.58±0.03) against Anderson et al. 1984 and Holm et al. 2001.
+- Check whether grain growth's closer mathematical siblings (Ostwald ripening/LSW coarsening, foam/soap-froth coarsening) have already been linked to rank-based or portfolio-theoretic frameworks, bearing on the entry's novelty and "no cross-citation history" claims.
+- The Section 4 mapping c₀→Mγπ/3, σ²_base→D_topo pairs a 1/time quantity with an area/time quantity with no stated reconciliation; confirm the rank-Hillert derivation holds beyond the (dimensionally self-contained) final CV formula.
+- Several SPT-side results in Section 3 (e.g. ã(m)=m−1, "log-linearized near m=1") are asserted without a shown derivation, unlike the parallel grain-growth steps; worth independent confirmation.
+
+### Second Adversarial Review
+**Reviewer:** Alibaba Qwen 3.8 Max
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The entry says `Grains with R > R\* grow (G > 0); grains with R < R\* shrink (G < 0).` but then defines `\widetilde{G}(\rho) = \frac{1}{\rho} - 1`; for ρ = R/R\* > 1 this dimensionless drift is negative, reversing the stated growth direction.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FLAG — The mapping `Critical grain radius R\*(t) ↔ Market-weighted average drift b̄(t)` pairs a length-scale threshold with a drift-rate threshold without an explicit transformation, although both are described as scalar mean-field thresholds.
+- **CHECK 3 (Correspondence Vector Support):** FLAG — Section 3 Correspondence 1 and 3 demonstrate `simplex_constrained_fokker_planck_density_evolution_with_conservation_closure` and `rank_topology_dependent_linear_excess_growth_rate_n6_kkstar`; Section 3 Correspondence 2 presents `self_consistent_mean_field_selection_drift_with_sign_changing_threshold` but its dimensionless sign error is handled under Check 1; Section 3 Correspondence 4 only partially supports `self_similar_attractor_distribution_determined_by_selection_to_noise_ratio` because the grain-side self-similar equation omits the diffusion/noise term needed to establish the selection-to-noise ratio.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The SPT→grain-growth transfer is argued asymmetrically, and the CV prediction with κ, numeric benchmarks, and explicit validation/falsification thresholds is specific and measurable; no canonical textbook prior-art pairing is recognized.
+
+#### Stage 3 Watch Items
+- Search for prior art connecting Hillert/von Neumann-Mullins grain growth models with Fernholz stochastic portfolio theory.
+- Verify sources for reducing the N-dimensional simplex market-weight SDE to the one-dimensional Fokker-Planck equation used in Section 3.
+- Check whether the closure expression `R^{*}(t) = f^{-1}(...)` and the prefactor `(4π/3)R_i^d` are notation errors or have literature support.
+
+### Third Adversarial Review
+**Reviewer:** DeepSeek DeepSeek V4 Pro
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The closure equation `R^{*}\!(t) = f^{-1}\Big(\int_0^\infty R^d f dR = const\Big)` is not well-defined, and the self-similar transformed equation in Correspondence 4 omits the diffusion term present in the original Fokker-Planck equation.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FAIL — The mapping `Critical grain radius R*(t) ↔ Market-weighted average drift b̄(t)` pairs a length/position threshold with a drift rate, a rate-to-position category error.
+- **CHECK 3 (Correspondence Vector Support):** FLAG — Vector 4 (`self_similar_attractor_distribution_determined_by_selection_to_noise_ratio`) is only partially covered because the displayed self-similar equation in Correspondence 4 drops the diffusion term; vectors 2 and 3 are structurally supported by their sign-change and affine rank/topology equations.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The preferred transfer direction is plausibly asymmetric, and the prediction includes a measurable validation threshold (`|CV_predicted − CV_observed| < 0.05`) with explicit falsification criteria. No prior-art analogy was recognized, but Stage 3 should probe Hillert–Fernholz analogues.
+
+#### Stage 3 Watch Items
+- Probe whether the scalar market-weight Fokker-Planck equation in Section 3 is a legitimate reduction of Fernholz SPT or an unsupported one-dimensional simplification.
+- Check whether the transformation from `a(μ)=μ(b̃−b̄)` to `\tilde a(m)=m−1` follows from the stated normalization; the entry does not derive it.
+- Query prior art for Hillert–Fernholz or curvature-driven selection vs rank-based portfolio analogies before novelty determination.
+
+### Fourth Adversarial Review
+**Reviewer:** Google Gemini 3.1 Pro
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — Initial logic, governing physics, and equation parameters are structurally validated as context.
+- **CHECK 2 (Vocabulary Matrix Coherence):** FAIL — The mapping "Grain volume fraction vᵢ ↔ Market capitalization weight μᵢ" explicitly claims "Both enter the Fokker-Planck equation as the state variable whose density evolves", but the Section 3 equation $\frac{\partial f}{\partial t} + \frac{\partial}{\partial R}\!\Big[G(R,\,R^{*}\!(t))\;f(R,t)\Big]$ evolves over absolute physical radius $R$, not the volume fraction probability component $v_i$.
+- **CHECK 3 (Correspondence Vector Support):** PASS — Standard processing applied; all four vectors are demonstrated mathematically in the text.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Target metrics yield an asymmetric, testable hypothesis.
+
+#### Stage 3 Watch Items
+- Assess whether the affine correspondence between absolute area growth (von Neumann-Mullins) and logarithmic relative growth (SPT) holds sufficient structural weight despite the absolute vs. log rate mismatch.
+
+### Fifth Adversarial Review
+**Reviewer:** Z.AI GLM-5.2
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The dimensionless drift `\widetilde{G}(\rho) = \frac{1}{\rho} - 1` is negative for `\rho > 1`, which contradicts the entry's own statement that `G > 0` for `R > R*` (i.e., `\rho > 1`). The correct nondimensionalization of `G(R, R*) = M\gamma(1/R* - 1/R)` yields `1 - 1/\rho`, not `1/\rho - 1`.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The paired mappings are mathematically coherent and map objects of compatible types (e.g., simplex components to simplex components, discrete topological parameters to discrete ranks).
+- **CHECK 3 (Correspondence Vector Support):** FLAG — The vector `self_similar_attractor_distribution_determined_by_selection_to_noise_ratio` is not demonstrated because the self-similar Hillert equation drops the diffusion term `D_{topo}` and incorrectly identifies the source/sink term `\tilde{S}` as "noise". However, the other three vectors are fully demonstrated.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — The methodological transfer is genuinely asymmetric (SPT's analytical toolkit for rank-dependent dynamics is more developed than grain growth's analytical distribution theory), and the prediction provides specific falsification criteria (`\kappa < 0.15` or `CV_predicted < 0.52`).
+
+#### Stage 3 Watch Items
+- Check if the sign error in the dimensionless drift propagates into the proposed "rank-Hillert" variance transfer model in Section 4.
+- Investigate the claim that the Hillert attractor is controlled by the ratio `M\gamma/D_{topo`, given that the diffusion term was omitted from the self-similar equation in the entry.
+
+### Sixth Adversarial Review
+**Reviewer:** OpenAI GPT-5.6 Luna
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+* **CHECK 1 (Equation Validity):** FAIL — The entry attributes a stochastic Fokker-Planck equation with topological diffusion and T1/T2 source terms to the Hillert mean-field model, specifically: “The Hillert (1965) mean-field model gives:” followed by `\frac{\partial f}{\partial t} + \frac{\partial}{\partial R}[Gf] = \frac12\frac{\partial^2}{\partial R^2}[\mathcal D_{\text{topo}}f]+\mathcal S[f]`; the displayed equation is a hybrid stochastic/source-augmented construction, while the subsequently displayed Hillert drift alone does not establish that this augmented equation is the Hillert model itself.
+* **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The paired scalar/simplex quantities and discrete parameters are mathematically typed compatibly enough for the mappings as stated, although some operator-role claims are stronger than the equations demonstrate.
+* **CHECK 3 (Correspondence Vector Support):** FAIL — Correspondences 2 and 3 receive explicit paired equations, while Correspondence 1 is not demonstrated as claimed because the entry asserts “the drift and diffusion in both Fokker-Planck equations are divergence-free with respect to the simplex” without an operator calculation establishing this, and the displayed `R* = f^{-1}(\int R^d f\,dR = const)` is not a valid demonstrated closure identity; Correspondence 4 has a stationary equation and ratio assertions but does not derive the claimed unique attractor dependence on a single ratio.
+* **CHECK 4 (Transfer and Falsifiability):** PASS — The transfer direction is explicitly stated and the prediction gives a measurable CV, parameter regime, numerical benchmark, validation threshold, and falsification conditions; no prior-art recognition is being used as a rejection ground.
+
+#### Stage 3 Watch Items
+* Verify the attribution of the stochastic/source-augmented grain-growth Fokker-Planck equation to Hillert.
+* Examine whether the claimed divergence-free simplex property is mathematically meaningful and actually follows from the displayed drift/diffusion equations.
+* Examine the asserted one-parameter control of both attractor distributions by `Mγ/D_topo` and `c₀/σ²`.
+* Examine the derivation of the proposed CV formula from the stated log-variance formula, which is asserted rather than derived.
+
+### Seventh Adversarial Review
+**Reviewer:** Microsoft Copilot 1.2
+**Protocol:** v2.0
+**Verdict:** REJECT
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** FAIL — The entry presents a scalar one-dimensional Fokker-Planck for the market-weight density but μ is a vector on the (N−1)-simplex; quote:  
+  `"The Fokker-Planck equation for the market weight density p(μ,t) is:\n\n```math\n\frac{\partial p}{\partial t} \;=\n-\frac{\partial}{\partial\mu}\!\Big[a(\mu)\,p\Big]\n\;+\;\frac{1}{2}\frac{\partial^{2}}{\partial\mu^{2}}\!\Big[D(\mu)\,p\Big]\n```"`  
+  This is a category and operator-type error: a density on the simplex requires a multi-dimensional divergence operator (and typically a matrix-valued diffusion tensor), not scalar ∂/∂μ derivatives. Pairing the scalar grain-radius FP with this scalarized SPT FP is inconsistent with the earlier description of μᵢ as components of an N-dimensional simplex; the claimed shared governing differential operator is therefore not demonstrated.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — The mapped tokens (e.g., grain volume fraction ↔ market weight; critical radius ↔ market-weighted average drift; neighbor count ↔ rank) are mathematically compatible in type (state components, mean-field scalar, discrete index) and the Operator Role entries assert explicit structural roles rather than hedged analogies.
+- **CHECK 3 (Correspondence Vector Support):** FAIL — The YAML lists four correspondence vectors and the body attempts to demonstrate them, but the central operator-level demonstration for the first vector ("simplex_constrained_fokker_planck_density_evolution_with_conservation_closure") is undermined by the scalarization error in the SPT Fokker-Planck (see Check 1). Because the operator identity is not established on the correct function space (multi-dimensional simplex vs scalar positive real line), the first correspondence is not demonstrated at the operator identity level required by the vector claim. The other vectors (mean-field sign-changing threshold; rank/topology affine excess growth; self-similar attractor dependence on selection-to-noise) are argued qualitatively and partially supported by equations, but they rely on the same flawed scalar projection for the SPT side.
+- **CHECK 4 (Transfer and Falsifiability):** FLAG — The transfer direction SPT → Grain Growth is plausibly asymmetric and the entry gives a concrete falsifiable prediction (CV_pred with explicit κ thresholds). However, the falsifiability depends on the correctness of the mapping and perturbative derivation that use the scalarized SPT FP; because that mapping is not demonstrated at operator level, the prediction's theoretical basis is undermined. This is a FLAG (not a FAIL) because the prediction itself is specific and testable, but its derivation requires the corrections noted above. No canonical prior-art rejection is asserted here.
+
+#### Stage 3 Watch Items
+- Verify the correct multi-dimensional Fokker-Planck formulation for market weights on the (N−1)-simplex and require the authors to provide the full divergence-form operator and diffusion tensor rather than a scalar marginalization.
+- Request an explicit derivation showing how the N-dimensional simplex FP reduces (if it does) to a scalar FP in the normalized variable m = Nμ or to a marginal that preserves the operator class; if such a reduction is used, require the projection operator and justification.
+- Check the derivation steps mapping SPT parameters to grain-growth constants (e.g., c₀ ↔ Mγπ/3, σ²_base ↔ D_topo) for missing Jacobians or variable-transform factors.
+- Recompute the perturbative CV_pred derivation under a correct multi-dimensional FP to ensure the κ correction is not an artifact of scalarization.
+- Confirm empirical data provenance for the Potts-model CV_observed numbers cited and ensure the benchmark comparisons use identical measurement definitions and nondimensionalizations.
+
+### Eighth Adversarial Review
+**Reviewer:** xAI Grok 4.5 Fast
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — The Hillert FP equation with curvature drift G(R,R*)=Mγ(1/R*-1/R), the von Neumann–Mullins law dA_n/dt∝(n-6), the SPT market-weight SDE and its FP equation, and the rank-based drift a_{(k)}=c_0(k*-k) are each native to their stated domains, belong to compatible parabolic/selection classes, and jointly support the claimed simplex-constrained mean-field selection structure.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — Each paired mapping (v_i↔μ_i, R*↔b̄, n↔k, ρ↔m, T2↔exit) joins objects of compatible mathematical type (simplex components, self-consistent thresholds, discrete affine parameters, dimensionless size ratios, extinction events) and the Operator Role statements name shared structure rather than mere analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All four vectors are demonstrated by explicit equations and derivations in Section 3: simplex-constrained FP with conservation closure (Corr. 1), sign-changing mean-field selection drift (Corr. 2), rank/topology-dependent linear excess growth (Corr. 3), and self-similar attractor controlled by selection-to-noise ratio (Corr. 4).
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Transfer direction SPT→grain growth is asymmetrically justified by the relative maturity of rank-based analytical tools versus Monte-Carlo reliance for distribution shape; the CV prediction supplies a concrete measurable quantity, numerical benchmark, acceptance threshold (|ΔCV|<0.05) and explicit falsification criteria, satisfying falsifiability.
+
+#### Stage 3 Watch Items
+None identified.
+
+### Ninth Adversarial Review
+**Reviewer:** Meta Muse Spark 1.1
+**Protocol:** v2.0
+**Verdict:** PASS
+**Review Date:** 2026-08-19
+
+#### Results by Check
+- **CHECK 1 (Equation Validity):** PASS — All displayed equations (Hillert Fokker-Planck with G(R,R*)=Mγ(1/R*−1/R), von Neumann-Mullins dA_n/dt=Mγπ/3(n−6), SPT SDE dμ_i=μ_i[tilde b_i−bar b]dt+μ_i[σ_i−bar σ]dW, and rank model a_(k)=c0(k*−k)) are correctly typed as parabolic/stochastic, correctly attributed to their domains, and support the claimed simplex-constrained Fokker-Planck isomorphism without class mismatch.
+- **CHECK 2 (Vocabulary Matrix Coherence):** PASS — All five token pairs are type-compatible (simplex fractions v_i↔μ_i, discrete affine parameters n↔k, dimensionless ratios ρ=R/R*↔m=Nμ_i with explicit nondimensionalization stated, extinction events T2↔delisting as sink terms); operator roles specify shared structure (conservation closure, sign-changing threshold, affine rank law) not hedged analogy.
+- **CHECK 3 (Correspondence Vector Support):** PASS — All four YAML vectors are demonstrated in Section 3: (1) simplex_constrained_fokker_planck_density_evolution_with_conservation_closure via Σv_i=1⇒R* and Σμ_i=1⇒bar b closure equations; (2) self_consistent_mean_field_selection_drift_with_sign_changing_threshold via G and a(μ) sign cases; (3) rank_topology_dependent_linear_excess_growth_rate_n6_kkstar via dA_n/dt=λ(n−6) and d log X_(k)/dt=λ'(k*−k); (4) self_similar_attractor_distribution_determined_by_selection_to_noise_ratio via Hillert self-similar PDE and SPT stationary Fokker-Planck with c0/σ² ratio.
+- **CHECK 4 (Transfer and Falsifiability):** PASS — Transfer SPT→Grain Growth is genuinely asymmetric (SPT rank-based stochastic calculus, functional portfolio theory, Pareto tail analytics has no counterpart in grain growth which uses only Monte Carlo for disorder correction); prediction is falsifiable with specific experiment (2D Potts Q≥256, T=0.8Tc, t/τ0=10³), measurable quantity CV_pred=CV_Hillert√(1+κ), thresholds |CV_pred−CV_obs|<0.05 validation vs κ<0.15 or CV_pred<0.52 falsification. No canonical textbook prior-art pairing recognized.
+
+#### Stage 3 Watch Items
+- Constitutive law mismatch explicitly acknowledged by authors (1/R singularity in grain growth drift vs linear drift in SPT) — Stage 3 should assess whether structural isomorphism claim remains substantive beyond generic Fokker-Planck template.
+- Dimensional mapping R*(t) ↔ b̄(t) functions as threshold via 1/R* ↔ b̄ — Stage 3 should verify this threshold analogy is accepted in both communities.[length][rate]
+- None identified as canonical prior art; Hillert↔SPT pairing not found in standard interdisciplinary reviews.
