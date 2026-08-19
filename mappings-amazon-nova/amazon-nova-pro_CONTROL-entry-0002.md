@@ -4,9 +4,9 @@ sid_metadata:
   schema_version: "2.0-control"
   maturity_stage: "adversarial-rejected"
 provenance:
-  company: "Amazon AI"
-  model_family: "Nova-X"
-  model_version: "3.7-beta"
+  company: "Amazon"
+  model_family: "Nova"
+  model_version: "Pro"
   generation_timestamp: "2026-08-17"
   prompt_type: "unsupervised-structural-isomorphism-discovery"
 isomorphism_metadata:
