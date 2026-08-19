@@ -79,8 +79,8 @@ validation_status:
     flagged_checks:
       - "Check 4: Prior-art advisory — the Silo B equation is the canonical porous-medium/groundwater nonlinear diffusion equation; Stage 3 should check novelty against porous-media/glacier drainage literature."
     quoted_evidence:
-      - "In amorphous plasticity, the evolution of shear stress $\sigma$ is governed by: \frac{\partial \sigma}{\partial t} = \nabla \cdot \left( \eta(\sigma) \nabla \sigma \right) where $\eta(\sigma)$ is the stress-dependent viscosity."
-      - "In subglacial hydrology, the evolution of water pressure $p$ is governed by: \frac{\partial p}{\partial t} = \nabla \cdot \left( k(p) \nabla p \right) where $k(p)$ is the pressure-dependent hydraulic conductivity."
+      - "In amorphous plasticity, the evolution of shear stress $\\sigma$ is governed by: \\frac{\\partial \\sigma}{\\partial t} = \\nabla \\cdot \\left( \\eta(\\sigma) \\nabla \\sigma \\right) where $\\eta(\\sigma)$ is the stress-dependent viscosity."
+      - "In subglacial hydrology, the evolution of water pressure $p$ is governed by: \\frac{\\partial p}{\\partial t} = \\nabla \\cdot \\left( k(p) \\nabla p \\right) where $k(p)$ is the pressure-dependent hydraulic conductivity."
       - "Shear Stress (Amorphous Plasticity) ↔ Hydraulic Gradient (Subglacial Hydrology)"
       - "subglacial_channel_formation_analogy"
     stage_3_watch_items:
@@ -135,7 +135,7 @@ validation_status:
     verdict_rationale: "The entry contains a category-error vocabulary mapping and lists a third correspondence vector that is not demonstrated by an equation, operator identity, or derivation."
     failed_checks: ["Check 2: Shear stress is mapped to hydraulic gradient despite the equations mapping scalar stress to scalar pressure.", "Check 3: subglacial_channel_formation_analogy is not demonstrated in the body, leaving fewer than three demonstrated vectors."]
     flagged_checks: []
-    quoted_evidence: ["**Shear Stress (Amorphous Plasticity)** ↔ **Hydraulic Gradient (Subglacial Hydrology)**", "The correspondence bridges these through a stress-to-pressure and viscosity-to-conductivity mapping, revealing a shared nonlinear diffusion operator structure.", "- "subglacial_channel_formation_analogy""]
+    quoted_evidence: ["**Shear Stress (Amorphous Plasticity)** ↔ **Hydraulic Gradient (Subglacial Hydrology)**", "The correspondence bridges these through a stress-to-pressure and viscosity-to-conductivity mapping, revealing a shared nonlinear diffusion operator structure.", "- \"subglacial_channel_formation_analogy\""]
     stage_3_watch_items: ["Check 4's asymmetric-maturity claim is asserted rather than independently established; Stage 3 should verify the comparative methodological maturity.", "The falsifiable prediction specifies a 0.01 m/m threshold and 20% predictive-accuracy improvement, but Stage 3 should verify the provenance and empirical basis of those numerical targets."]
   eighth_adversarial_review:
     reviewer_model: "Microsoft Copilot 1.2"

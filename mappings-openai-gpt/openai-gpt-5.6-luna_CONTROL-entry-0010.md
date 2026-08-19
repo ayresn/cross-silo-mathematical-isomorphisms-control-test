@@ -88,7 +88,7 @@ validation_status:
       - "Check 2: Vocabulary Matrix Coherence (Category error in mapping and mathematical error in operator description)"
     flagged_checks: []
     quoted_evidence:
-      - "For a local softening model, the second variation has the Fourier-mode form\n\n```math\n\delta^2\Pi\n\sim\n\left[\nH_{\rm tan}+k^2\,\ell_{\rm loc}^2\n\right]|\widehat{\eta}(k)|^2 ,\n```\n\nso the local localization threshold is associated with loss of positive definiteness,\n\n```math\nH_{\rm tan}+k^2\ell_{\rm loc}^2=0 .\n```"
+      - "For a local softening model, the second variation has the Fourier-mode form\\n\\n```math\\n\\delta^2\\Pi\\n\\sim\\n\\left[\\nH_{\\rm tan}+k^2\\,\\ell_{\\rm loc}^2\\n\\right]|\\widehat{\\eta}(k)|^2 ,\\n```\\n\\nso the local localization threshold is associated with loss of positive definiteness,\\n\\n```math\\nH_{\\rm tan}+k^2\\ell_{\\rm loc}^2=0 .\\n```"
       - "Silo A: effective stress / pore-pressure coupling ↔ Silo B: effective force state / nonlocal deformation state"
       - "in Silo A the stress is the displacement derivative of the poromechanical energy"
     stage_3_watch_items:

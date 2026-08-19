@@ -2,7 +2,7 @@
 sid_metadata:
   entry_id: "CONTROL-SID-0020"
   schema_version: "2.0-control"
-  maturity_stage: "candidate"
+  maturity_stage: "adversarial-rejected"
 provenance:
   company: "Anthropic"
   model_family: "Claude"
@@ -105,9 +105,9 @@ validation_status:
     flagged_checks: []
     quoted_evidence: []
     stage_3_watch_items:
-      "The conservative/dissipative class difference between the two ODEs is the structural tension point — a Stage 3 reviewer with domain expertise should verify that the 'operator identity' framing (shared potential-derivative structure despite different overall ODE classes) is not misleading to downstream readers who may conflate structural feature correspondence with full operator equivalence"
-      "The exact solution w(ξ)=½[1+tanh(kξ)] for the FHN fast subsystem requires v̄=0; the entry acknowledges the frozen-recovery-variable assumption but the primary_failure_risk metadata notes this may not hold for recurrent/clustered SD where pump-recovery kinetics are comparable in timescale — Stage 3 should probe whether published CSD data support the adiabatic separation"
-      "The falsifiable prediction c·k = (a−½)/2 depends on the cubic FHN nonlinearity being the correct form; any deviation (e.g. quartic corrections, piecewise-linear models used in some CSD work) would break the exact power-law cancellation — Stage 3 should verify that the cubic form is the standard choice in the CSD literature cited"
+      - "The conservative/dissipative class difference between the two ODEs is the structural tension point — a Stage 3 reviewer with domain expertise should verify that the 'operator identity' framing (shared potential-derivative structure despite different overall ODE classes) is not misleading to downstream readers who may conflate structural feature correspondence with full operator equivalence"
+      - "The exact solution w(ξ)=½[1+tanh(kξ)] for the FHN fast subsystem requires v̄=0; the entry acknowledges the frozen-recovery-variable assumption but the primary_failure_risk metadata notes this may not hold for recurrent/clustered SD where pump-recovery kinetics are comparable in timescale — Stage 3 should probe whether published CSD data support the adiabatic separation"
+      - "The falsifiable prediction c·k = (a−½)/2 depends on the cubic FHN nonlinearity being the correct form; any deviation (e.g. quartic corrections, piecewise-linear models used in some CSD work) would break the exact power-law cancellation — Stage 3 should verify that the cubic form is the standard choice in the CSD literature cited"
   fifth_adversarial_review:
     reviewer_model: "Z.AI GLM-5.2"
     protocol_version: "2.0-production"
@@ -126,7 +126,7 @@ validation_status:
     verdict_rationale: "The entry contains a genuine sign error in the Sagdeev pseudopotential equation and an incorrect single-particle invariant for a traveling wave, so its core Silo A reduction is mathematically inconsistent as written."
     failed_checks: ["Check 1: The Sagdeev pseudopotential equation has the wrong sign, and the stated traveling-wave energy invariant omits the wave-frame velocity shift."]
     flagged_checks: []
-    quoted_evidence: ["A: "\frac{d^2\phi}{d\xi^2} = -\frac{dV}{d\phi}, \qquad V(\phi) = -\int_0^{\phi}\big(n_i - n[\phi']\big)\,d\phi'". With the displayed definition, V'(φ)=n[φ]−n_i, while the preceding Poisson equation gives φ''=n[φ]−n_i=V'(φ), not φ''=−V'(φ).", "A: "Jeans' theorem forces f to depend only on the single-particle energy invariant ℰ=½v²−φ(ξ)". For the displayed Vlasov equation and a traveling profile ξ=x−ct, the conserved energy is based on the wave-frame velocity, ℰ=½(v−c)²−φ (up to a corresponding velocity-variable redefinition); the entry does not make such a redefinition, so the stated invariant is inconsistent with its own equations."]
+    quoted_evidence: ["A: \"\\frac{d^2\\phi}{d\\xi^2} = -\\frac{dV}{d\\phi}, \\qquad V(\\phi) = -\\int_0^{\\phi}\\big(n_i - n[\\phi']\\big)\\,d\\phi'\". With the displayed definition, V'(φ)=n[φ]−n_i, while the preceding Poisson equation gives φ''=n[φ]−n_i=V'(φ), not φ''=−V'(φ).", "A: \"Jeans' theorem forces f to depend only on the single-particle energy invariant ℰ=½v²−φ(ξ)\". For the displayed Vlasov equation and a traveling profile ξ=x−ct, the conserved energy is based on the wave-frame velocity, ℰ=½(v−c)²−φ (up to a corresponding velocity-variable redefinition); the entry does not make such a redefinition, so the stated invariant is inconsistent with its own equations."]
     stage_3_watch_items: ["If the mathematical core is otherwise repaired, the human reviewer should separately probe the claimed plasma-to-CSD methodological novelty and the assertion that no direct Sagdeev/BGK application to spreading depolarization was found; these are Stage 3 bibliometric questions, not grounds for this Stage 2 verdict."]
   seventh_adversarial_review:
     reviewer_model: "Microsoft Copilot 1.2"

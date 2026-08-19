@@ -126,9 +126,9 @@ validation_status:
       - "Check 2: Category error in functional spaces (L1 vs L2 constraint mismatch)"
     flagged_checks: []
     quoted_evidence:
-      - "\partial_t h+\partial_x\Bigl(\frac{h^3}{3\mu}\partial_x(\sigma\partial_{xx}h)\Bigr)=0"
-      - "\omega=\frac{\sigma h_0^3}{3\mu}k^2\bigl(k_c^2-k^2\bigr)"
-      - "closes to \partial_t R+\partial_x\Bigl(\frac{R^3}{3m}\partial_x\bigl(\tfrac{\hbar^2}{2m}\partial_{xx}R\bigr)\Bigr)=0"
+      - "\\partial_t h+\\partial_x\\Bigl(\\frac{h^3}{3\\mu}\\partial_x(\\sigma\\partial_{xx}h)\\Bigr)=0"
+      - "\\omega=\\frac{\\sigma h_0^3}{3\\mu}k^2\\bigl(k_c^2-k^2\\bigr)"
+      - "closes to \\partial_t R+\\partial_x\\Bigl(\\frac{R^3}{3m}\\partial_x\\bigl(\\tfrac{\\hbar^2}{2m}\\partial_{xx}R\\bigr)\\Bigr)=0"
       - "while preserving the \\(L^1\\) mass constraint."
     stage_3_watch_items: []
   fifth_adversarial_review:
@@ -184,11 +184,11 @@ validation_status:
       - "Check 3: The listed identical linearized dispersion-relation vector is contradicted by the displayed equations, and the claimed common gradient-flow vector is not demonstrated for the Madelung/Schrödinger system."
     flagged_checks: []
     quoted_evidence:
-      - "∂*t h+∂*x\Bigl(\frac{h^3}{3\mu}\partial_x(\sigma\partial*{xx}h)\Bigr)=0"
-      - "\omega=\frac{\sigma h_0^3}{3\mu}k^2\bigl(k_c^2-k^2\bigr),\qquad k_c^2=\frac1{a^2}\quad\text{(Rayleigh–Plateau cutoff)}"
-      - "\partial_t R+\partial_x\Bigl(\frac{R^3}{3m}\partial_x\bigl(\tfrac{\hbar^2}{2m}\partial*{xx}R\bigr)\Bigr)=0."
-      - "\omega=\frac{\hbar^2 R_0^3}{6m^2}k^2\bigl(k_c^2-k^2\bigr)"
-      - "Capillary pressure \(-\sigma\partial_{xx}h\) ↔ Quantum potential \(Q=-(\hbar^2/2m)(\partial_{xx}\sqrt{\rho})/\sqrt{\rho}\) (long-wave limit)"
+      - "∂*t h+∂*x\\Bigl(\\frac{h^3}{3\\mu}\\partial_x(\\sigma\\partial*{xx}h)\\Bigr)=0"
+      - "\\omega=\\frac{\\sigma h_0^3}{3\\mu}k^2\\bigl(k_c^2-k^2\\bigr),\\qquad k_c^2=\\frac1{a^2}\\quad\\text{(Rayleigh–Plateau cutoff)}"
+      - "\\partial_t R+\\partial_x\\Bigl(\\frac{R^3}{3m}\\partial_x\\bigl(\\tfrac{\\hbar^2}{2m}\\partial*{xx}R\\bigr)\\Bigr)=0."
+      - "\\omega=\\frac{\\hbar^2 R_0^3}{6m^2}k^2\\bigl(k_c^2-k^2\\bigr)"
+      - "Capillary pressure \\(-\\sigma\\partial_{xx}h\\) ↔ Quantum potential \\(Q=-(\\hbar^2/2m)(\\partial_{xx}\\sqrt{\\rho})/\\sqrt{\\rho}\\) (long-wave limit)"
       - "Both systems are gradient flows of the surface-energy (or quantum-pressure) functional"
     stage_3_watch_items:
       - "Probe whether any source formulation actually derives a closed fourth-order parabolic Madelung equation of the displayed form from the Schrödinger equation, rather than merely identifying the quantum potential inside the coupled continuity/Euler system."
